@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Music and Movies",
+      "colorCode": "#0f0"
+    },
+    {
+      "id": 2,
+      "name": "History and Geography",
+      "colorCode": "#0f0"
+    },
+    {
+      "id": 3,
+      "name": "Sport",
+      "colorCode": "#0f0"
+    },
+    {
+      "id": 4,
+      "name": "Games",
+      "colorCode": "#0f0"
+    },
+    {
+      "id": 4,
+      "name": "Technology",
+      "colorCode": "#0f0"
+    },
+    {
+      "id": 4,
+      "name": "Food and wine",
+      "colorCode": "#0f0"
+    }
+  ]
+}
