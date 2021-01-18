@@ -1,0 +1,39 @@
+{
+  "perks": [
+    {
+      "id": 1,
+      "name": "Remove category",
+      "description": "Remove a category from someone. The player won't be able to play that category for the next 5 rounds"
+    },
+    {
+      "id": 2,
+      "name": "Give it to me baby!",
+      "description": "You get one point from each player! Yay!"
+    },
+    {
+      "id": 3,
+      "name": "Landmine!",
+      "description": "Boom!! You lose #INSERTHERE# points :("
+    },
+    {
+      "id": 4,
+      "name": "Robin Hood!",
+      "description": "The one with most points generously donates #INSERTHERE# points to the one with fewest. Feels good, right?"
+    },
+    {
+      "id": 5,
+      "name": "Robin Hood!",
+      "description": "The one with most points generously donates them to the one with fewest. Feels good, right?"
+    },
+    {
+      "id": 6,
+      "name": "Turn baby turn!",
+      "description": "Time to switch direction! Next turn is #INSERHERE#"
+    },
+    {
+      "id": 7,
+      "name": "RPS!",
+      "description": "Play rock paper scissors with #INSERTHERE# for a point!"
+    }
+  ]
+}
