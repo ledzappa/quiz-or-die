@@ -1,3 +1,10 @@
+.category {
+  background-color: #444;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
 .category.active {
   background-color: burlywood;
 }
