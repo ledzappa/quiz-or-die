@@ -3,33 +3,232 @@
     "movies": [
       {
         "question": "What movie did Leonardo Dicaprio win an oscar for?",
-        "answer": "The Revenant",
+        "answer": "The Revenant (2015)",
         "timeLimit": null
       },
       {
         "question": "Name 5 different Leonardo Dicaprio Movies",
-        "answer": "Google is your friend :)",
+        "answer": "Google is your friend!",
         "timeLimit": 20
       },
       {
-        "question": "What's the name of the first star wars movie?",
-        "answer": "Some answer",
+        "question": "What's the name of the first star wars movie (Episode IV)?",
+        "answer": "A New Hope (1977)",
+        "timeLimit": null
+      },
+      {
+        "question": "What's the name of the second star wars movie (Episode V)?",
+        "answer": "The Empire Strikes Back (1980)",
         "timeLimit": null
       },
       {
         "question": "What color was the pill that Neo took in the Matrix?",
-        "answer": "Some answer",
+        "answer": "The red pill",
         "timeLimit": null
       },
       {
         "question": "Name three different actors that has played James Bond.",
-        "answer": "Some answer",
+        "answer": "Sean Connery, George Lazenby, Roger Moore, Timothy Dalton, Pierce Brosnan, Daniel Craig",
         "timeLimit": null
       },
       {
         "question": "The head of what animal is in the center of an infamous scene from The Godfather?",
         "answer": "A horse",
         "timeLimit": null
+      },
+      {
+        "question": "For what movie did Steven Spielberg win his first Oscar for Best Director?",
+        "answer": "Schindler's List (1993)",
+        "timeLimit": null
+      },
+      {
+        "question": "In Apocalypse Now, Robert Duvall says, “I love the smell of _____ in the morning.",
+        "answer": "Napalm",
+        "timeLimit": null
+      },
+      {
+        "question": "Which Alfred Hitchcock thriller is notorious for its shocking “shower scene”?",
+        "answer": "Psycho",
+        "timeLimit": null
+      },
+      {
+        "question": "What year was the first Toy Story film released in cinemas?",
+        "answer": "1995",
+        "timeLimit": null
+      },
+      {
+        "question": "Who directed Titanic, Avatar and The Terminator?",
+        "answer": "James Cameron",
+        "timeLimit": null
+      },
+      {
+        "question": "Meryl Streep won a Best Actress BAFTA for which 2011 political drama?",
+        "answer": "The Iron Lady",
+        "timeLimit": null
+      },
+      {
+        "question": "What was the name of Tom Hanks round-shaped friend in Cast away?",
+        "answer": "Wilson",
+        "timeLimit": null
+      },
+      {
+        "question": "Name the film which boasts the famous line: “You can’t handle the truth!”",
+        "answer": "A Few Good Men (1992)",
+        "timeLimit": null
+      },
+      {
+        "question": "Name three different Star Wars movies!",
+        "answer": "IMDB is your friend!",
+        "timeLimit": null
+      },
+      {
+        "question": "What does Tom Hanks compare life to in Forest Gump?",
+        "answer": "A box of chocolates. You never know what you're gonna get.",
+        "timeLimit": null
+      },
+      {
+        "question": "One day Forrest Gump started running, for how long time did he run?",
+        "answer": "3 years, 2 months, 14 days and 16 hours",
+        "timeLimit": null
+      },
+      {
+        "question": "In the Avengers movies, what is the name of Thor's hammer?",
+        "answer": "Mjolnir",
+        "timeLimit": null
+      },
+      {
+        "question": "Who plays Aquaman in the 2018 movie?",
+        "answer": "Jason Momoa",
+        "timeLimit": null
+      },
+      {
+        "question": "He has played both super man and geralt the witcher, what's his name?",
+        "answer": "Henry Cavill",
+        "timeLimit": null
+      },
+      {
+        "question": "In what movie does Brad Pitt play Lieutenant Aldo Raine?",
+        "answer": "Inglourious Basterds",
+        "timeLimit": null
+      },
+      {
+        "question": "Name three movies of the top 10 highest rated movies on IMDB",
+        "answer": "IMDB is your friend!",
+        "timeLimit": null
+      },
+      {
+        "question": "Andy Dufresne (played by Tim Robbins) gets innocently imprisoned for murder in this masterpiece. What's the name of the movie?",
+        "answer": "The Shawshank Redemption (1994)",
+        "timeLimit": null
+      },
+      {
+        "question": "What year was the first Godfather movie released?",
+        "answer": "1972",
+        "timeLimit": null
+      },
+      {
+        "question": "Who directed the Godfather movies?",
+        "answer": "Francis Ford Coppola",
+        "timeLimit": null
+      },
+      {
+        "question": "Name a movie directed by Francis For Coppola EXCEPT the Godfahter movies!",
+        "answer": "IMDB is you friend!",
+        "timeLimit": null
+      },
+      {
+        "question": "Which movie has won the highest amount of oscars?",
+        "answer": "Titanic, Ben-Hur and The Lord of the Rings: The Return of the King, has won the same amount - 11 oscars!",
+        "timeLimit": null
+      },
+      {
+        "question": "What movie is the following quote from: \"A census taker once tried to test me. I ate his liver with some fava beans and a nice chianti\"?",
+        "answer": "The Silence of the Lambs (1991)",
+        "timeLimit": null
+      },
+      {
+        "question": "\"I'm gonna make him an offer he cant refuse\". What movie?",
+        "answer": "The Godfather (1972)",
+        "timeLimit": null
+      },
+      {
+        "question": "Who was the actor that shouted \"You can't handle the truth!\" in A Few Good Men (1992)?",
+        "answer": "Jack Nicholson",
+        "timeLimit": null
+      },
+      {
+        "question": "What number is supposedly the meaning of life in The Hitchhiker's Guide to the Galaxy?",
+        "answer": "42",
+        "timeLimit": null
+      },
+      {
+        "question": "What was in the box in Seven?",
+        "answer": "A head",
+        "timeLimit": null
+      },
+      {
+        "question": "\"A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.\" - what is the movie?",
+        "answer": "Gladiator (2000)",
+        "timeLimit": null
+      },
+      {
+        "question": "Who's oldest? Arnold Scharzenegger, Sylvester Stallone or Samuel L Jackson?",
+        "answer": "Sylvester Stallone (born 1946)",
+        "timeLimit": null
+      }
+    ],
+    "sports": [
+      {
+        "question": "What NHL team has the most Stnaley cup wins?",
+        "answer": "Montreal Canadiens (24)"
+      },
+      {
+        "question": "Which hockey team has won most olympic medals?",
+        "answer": "Canada (15)"
+      },
+      {
+        "question": "In what sport can we find names such as Jose Aldo, Anderson Silva and Ronda Rousey?",
+        "answer": "MMA"
+      },
+      {
+        "question": "Which boxers faced off in \"The Rumble in the Jungle?\"",
+        "answer": "Muhammad Ali and George Foreman"
+      },
+      {
+        "question": "Which England footballer was famously never given a yellow card?",
+        "answer": "Gary Lineker" 
+      },
+      {
+        "question": "What's Wayne Gretskys nickname?",
+        "answer": "The Great One" 
+      },
+      {
+        "question": "How many olympic gold medals has Sweden won in ice hockey?",
+        "answer": "Two (1994 and 2006)"
+      },
+      {
+        "question": "What does the term \"offside\" refer to in sports such as fotball and ice hockey?",
+        "answer": ""
+      },
+      {
+        "question": "How many points is a \"set\" in table tennis?",
+        "answer": "11 points"
+      },
+      {
+        "question": "What's the maximum score you can achieve in dart with three darts?",
+        "answer": "180"
+      },
+      {
+        "question": "What's super bowl?",
+        "answer": "The final game in NFL (National Fotball League)"
+      },
+      {
+        "question": "How many points is a \"perfect game\" in bowling?",
+        "answer": "300"
+      },
+      {
+        "question": "How many teams are there in NHL?",
+        "answer": "31"
       }
     ]
   }
