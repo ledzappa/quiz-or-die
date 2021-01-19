@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <h1>Quizmageddon</h1>
-      <p>Welcome to quizmageddon. Go ahead and add some players.</p>
+      <p className="animate__animated animate__zoomInDown">Welcome to quizmageddon. Go ahead and add some players.</p>
       <button
         className="btn btn-primary"
         onClick={() => history.push('/add-players')}

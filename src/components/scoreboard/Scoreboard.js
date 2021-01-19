@@ -23,7 +23,14 @@ export default function Scoreboard({
       <table className="table text-white">
         <tbody>
           {players.map((player, idx) => (
-            <tr key={idx}>
+            <tr
+              key={idx}
+              className={
+                currentPlayer.name === player.name
+                  ? 'animate__animated animate__flash'
+                  : ''
+              }
+            >
               <td>{player.name}</td>
               <td className="text-right">{player.points}p</td>
             </tr>
