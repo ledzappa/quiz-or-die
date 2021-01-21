@@ -1,0 +1,60 @@
+{
+  "themes": [
+    {
+      "description": "Car manufacturers",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Bands or artists that begin with the letter",
+      "randomizeLetter": true
+    },
+    {
+      "description": "Movies that begin with the letter",
+      "randomizeLetter": true
+    },
+    {
+      "description": "Subway stations on the green line in Stockholm",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Subway stations on the blue line in Stockholm",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Subway stations on the red line in Stockholm",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Animals that begin with the letter",
+      "randomizeLetter": true
+    },
+    {
+      "description": "Fruits",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Countries that start with the letter",
+      "randomizeLetter": true
+    },
+    {
+      "description": "Famous but dead musicians",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Famous but dead movie stars",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Boy names that begin with the letter",
+      "randomizeLetter": true
+    },
+    {
+      "description": "Girl names that begin with the letter",
+      "randomizeLetter": true
+    },
+    {
+      "description": "Simpson characters",
+      "randomizeLetter": false
+    }
+  ]
+}

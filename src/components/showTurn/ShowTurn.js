@@ -6,7 +6,15 @@ export default function ShowTurn({ currentPlayer }) {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push(Math.random() > 0.2 ? '/select-category' : '/perks');
+    const random = Math.random();
+    console.log(random);
+    history.push(
+      random < 0.2
+        ? '/perks'
+        : random < 0.9
+        ? '/round-and-round'
+        : '/select-category'
+    );
   };
 
   return (

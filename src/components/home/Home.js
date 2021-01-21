@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 export default function Home() {
   const history = useHistory();
   return (
-    <div class="text-center">
+    <div className="text-center">
       <h1>Quizmageddon</h1>
       <p>Welcome to quizmageddon - the best quiz game ever created by men. Start the game by adding players!</p>
       <button
