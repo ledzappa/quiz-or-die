@@ -1,20 +1,28 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSync, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import useSound from 'use-sound';
 import api from './api/Api';
 import './App.css';
 import AddPlayers from './components/addPlayers/AddPlayers';
 import Home from './components/home/Home';
+import Perks from './components/perks/Perks';
 import Question from './components/question/Question';
 import Scoreboard from './components/scoreboard/Scoreboard';
 import SelectCategory from './components/selectCategory/SelectCategory';
+import ShowTurn from './components/showTurn/ShowTurn';
+import sound from './sounds/robots.mp3';
+
+library.add(faSync, faAngleDoubleUp);
 
 function App() {
   const [players, setPlayers] = useState([]);
   const [questions, setQuestions] = useState({});
   const [categories, setCategories] = useState([]);
-  const [currentPlayer, setCurrentPlayer] = useState({});
-  const [currentCategory, setCurrentCategory] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState({});
+  const [direction, setDirection] = useState(1);
+  const [play] = useSound(sound, { volume: 0.25 });
 
   useEffect(() => {
     api.getCategories().then((res) => {
@@ -30,16 +38,23 @@ function App() {
     const numOfQuestionsInCategory = questions[category].length;
     const randomIndex = Math.floor(Math.random() * numOfQuestionsInCategory);
     const randomQuestion = questions[category][randomIndex];
-    setCurrentQuestion(randomQuestion);
+    setCurrentQuestion({ ...randomQuestion, category });
   };
 
   const updatePlayerPoints = () => {
     setPlayers(
       players.map((player) =>
-        player.name === currentPlayer.name
-          ? { ...player, points: player.points + 1 }
-          : player
+        player.isPlayersTurn ? { ...player, points: player.points + 1 } : player
       )
+    );
+  };
+
+  const setCurrentPlayer = (index) => {
+    setPlayers(
+      players.map((player, idx) => ({
+        ...player,
+        isPlayersTurn: index === idx,
+      }))
     );
   };
 
@@ -57,10 +72,27 @@ function App() {
               setCurrentPlayer={(player) => setCurrentPlayer(player)}
             ></AddPlayers>
           </Route>
+          <Route path="/show-turn">
+            <ShowTurn
+              currentPlayer={
+                players.filter((player) => player.isPlayersTurn)[0]
+              }
+            ></ShowTurn>
+          </Route>
+          <Route path="/perks">
+            <Perks
+              players={players}
+              setDirection={() => setDirection(direction * -1)}
+              setPlayers={(players) => setPlayers(players)}
+            ></Perks>
+          </Route>
           <Route path="/select-category">
             <SelectCategory
-              currentPlayer={currentPlayer}
+              currentPlayer={
+                players.filter((player) => player.isPlayersTurn)[0]
+              }
               categories={categories}
+              play={play}
               setCurrentCategory={(category) => {
                 _setCurrentQuestion('movies');
               }}
@@ -68,17 +100,18 @@ function App() {
           </Route>
           <Route path="/question">
             <Question
-              currentPlayer={currentPlayer}
+              currentPlayer={
+                players.filter((player) => player.isPlayersTurn)[0]
+              }
               currentQuestion={currentQuestion}
-              currentCategory={currentCategory}
               updatePlayerPoints={() => updatePlayerPoints()}
             ></Question>
           </Route>
           <Route path="/scoreboard">
             <Scoreboard
               players={players}
-              currentPlayer={currentPlayer}
-              setCurrentPlayer={(player) => setCurrentPlayer(player)}
+              setPlayers={(players) => setPlayers(players)}
+              direction={direction}
             ></Scoreboard>
           </Route>
         </Switch>

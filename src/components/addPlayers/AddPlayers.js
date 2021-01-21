@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import api from '../../api/Api';
 import './AddPlayers.css';
 
-export default function AddPlayers({ players, setPlayers, setCurrentPlayer }) {
+export default function AddPlayers({ players, setPlayers }) {
   const [playerInput, setPlayerInput] = useState('');
   const [playerWords, setPlayerWords] = useState([]);
   const history = useHistory();
@@ -20,7 +20,7 @@ export default function AddPlayers({ players, setPlayers, setCurrentPlayer }) {
         description: getRandomDescription(),
         points: 0,
         isPlayersTurn: false,
-        activePerks: [],
+        perks: { freedomOfChoice: 0 },
       },
     ]);
     setPlayerInput('');
@@ -32,12 +32,20 @@ export default function AddPlayers({ players, setPlayers, setCurrentPlayer }) {
 
   const randomizeFirstTurn = () => {
     const randomPlayer = Math.floor(Math.random() * players.length);
-    setCurrentPlayer(players[randomPlayer]);
+    setPlayers(
+      players.map((player, idx) => {
+        if (randomPlayer === idx) {
+          return { ...player, isPlayersTurn: true };
+        } else {
+          return player;
+        }
+      })
+    );
   };
 
   const startGame = () => {
     randomizeFirstTurn();
-    history.push('/select-category');
+    history.push('/show-turn');
   };
 
   const handlePlayerInputChange = (value) => setPlayerInput(value);
