@@ -1,7 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSync, faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleUp, faSync } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { MemoryRouter, Route, Switch } from 'react-router-dom';
 import useSound from 'use-sound';
 import api from './api/Api';
 import './App.css';
@@ -9,6 +9,7 @@ import AddPlayers from './components/addPlayers/AddPlayers';
 import Home from './components/home/Home';
 import Perks from './components/perks/Perks';
 import Question from './components/question/Question';
+import RoundAndRound from './components/roundAndRound/RoundAndRound';
 import Scoreboard from './components/scoreboard/Scoreboard';
 import SelectCategory from './components/selectCategory/SelectCategory';
 import ShowTurn from './components/showTurn/ShowTurn';
@@ -21,6 +22,7 @@ function App() {
   const [questions, setQuestions] = useState({});
   const [categories, setCategories] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
+  const [themes, setThemes] = useState({});
   const [direction, setDirection] = useState(1);
   const [play] = useSound(sound, { volume: 0.25 });
 
@@ -31,6 +33,10 @@ function App() {
 
     api.getQuestions().then((res) => {
       setQuestions(res.data.questions);
+    });
+
+    api.getRoundAndRoundThemes().then((res) => {
+      setThemes(res.data.themes);
     });
   }, []);
 
@@ -65,7 +71,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <MemoryRouter>
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -90,6 +96,13 @@ function App() {
               setDirection={() => setDirection(direction * -1)}
               setPlayers={(players) => setPlayers(players)}
             ></Perks>
+          </Route>
+          <Route path="/round-and-round">
+            <RoundAndRound
+              players={players}
+              themes={themes}
+              setPlayers={(players) => setPlayers(players)}
+            ></RoundAndRound>
           </Route>
           <Route path="/select-category">
             <SelectCategory
@@ -120,7 +133,7 @@ function App() {
             ></Scoreboard>
           </Route>
         </Switch>
-      </Router>
+      </MemoryRouter>
     </div>
   );
 }
