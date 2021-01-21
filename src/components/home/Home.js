@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom';
 export default function Home() {
   const history = useHistory();
   return (
-    <div>
+    <div class="text-center">
       <h1>Quizmageddon</h1>
-      <p className="animate__animated animate__zoomInDown">Welcome to quizmageddon. Go ahead and add some players.</p>
+      <p>Welcome to quizmageddon - the best quiz game ever created by men. Start the game by adding players!</p>
       <button
         className="btn btn-primary"
         onClick={() => history.push('/add-players')}

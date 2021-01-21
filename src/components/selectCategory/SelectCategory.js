@@ -47,7 +47,7 @@ export default function SelectCategory({
   return (
     <div className="text-center">
       <div className="mb-4">
-        <h1 className="mb-0">{currentPlayer.name}</h1>
+        <h1 className="mb-0 text-uppercase">{currentPlayer.name}</h1>
         <div>"{currentPlayer.description}"</div>
         <div>{currentPlayer.perks.freedomOfChoice}</div>
       </div>
@@ -57,7 +57,8 @@ export default function SelectCategory({
             <div
               onClick={() => handleClick(item)}
               className={
-                'category text-center' +
+                'category text-center ' +
+                item.cssClass +
                 (item.name === activeCategory?.name ? ' active' : '')
               }
             >

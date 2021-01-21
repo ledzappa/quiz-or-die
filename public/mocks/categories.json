@@ -3,32 +3,32 @@
     {
       "id": 1,
       "name": "Music and Movies",
-      "colorCode": "#0f0"
+      "cssClass": "music-and-movies"
     },
     {
       "id": 2,
       "name": "History and Geography",
-      "colorCode": "#0f0"
+      "cssClass": "history-and-geography"
     },
     {
       "id": 3,
-      "name": "Sport",
-      "colorCode": "#0f0"
+      "name": "Sports",
+      "cssClass": "sports"
     },
     {
       "id": 4,
       "name": "Games",
-      "colorCode": "#0f0"
+      "cssClass": "games"
     },
     {
       "id": 4,
       "name": "Technology",
-      "colorCode": "#0f0"
+      "cssClass": "technology"
     },
     {
       "id": 4,
       "name": "Food and wine",
-      "colorCode": "#0f0"
+      "cssClass": "food-and-wine"
     }
   ]
 }

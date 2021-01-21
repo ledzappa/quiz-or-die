@@ -20,7 +20,7 @@ export default function AddPlayers({ players, setPlayers }) {
         description: getRandomDescription(),
         points: 0,
         isPlayersTurn: false,
-        perks: { freedomOfChoice: 0 },
+        perks: { freedomOfChoice: 0, doubleUp: 0 },
       },
     ]);
     setPlayerInput('');
@@ -61,39 +61,43 @@ export default function AddPlayers({ players, setPlayers }) {
   };
 
   return (
-    <div>
-      <h1>Add players</h1>
-      <label>Name:</label>
-      <div className="input-group mb-3">
-        <input
-          type="text"
-          className="form-control"
-          value={playerInput}
-          onKeyPress={(e) => e.key === 'Enter' && addPlayer(playerInput)}
-          onChange={(e) => handlePlayerInputChange(e.target.value)}
-        />
-        <button
-          className="btn btn-primary"
-          onClick={() => addPlayer(playerInput)}
-        >
-          Add
+    <div className="row justify-content-center">
+      <div className="col-12 col-sm-6 col-lg-6 col-xl-4">
+        <h1>Add players</h1>
+        <label>Name:</label>
+        <div className="input-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            value={playerInput}
+            onKeyPress={(e) => e.key === 'Enter' && addPlayer(playerInput)}
+            onChange={(e) => handlePlayerInputChange(e.target.value)}
+          />
+          <button
+            className="btn btn-primary"
+            onClick={() => addPlayer(playerInput)}
+          >
+            Add
+          </button>
+        </div>
+        {players.map((player, idx) => (
+          <div
+            className="added-player"
+            key={idx}
+            onClick={() => removePlayer(idx)}
+          >
+            {idx + 1}.{' '}
+            <span className="font-weight-bold text-uppercase">
+              {player.name}
+            </span>{' '}
+            - {player.description}
+          </div>
+        ))}
+        <hr />
+        <button className="btn btn-primary" onClick={() => startGame()}>
+          Start Game!
         </button>
       </div>
-      {players.map((player, idx) => (
-        <div
-          className="added-player"
-          key={idx}
-          onClick={() => removePlayer(idx)}
-        >
-          {idx + 1}.{' '}
-          <span className="font-weight-bold text-uppercase">{player.name}</span>{' '}
-          - {player.description}
-        </div>
-      ))}
-      <hr />
-      <button className="btn btn-primary" onClick={() => startGame()}>
-        Start Game!
-      </button>
     </div>
   );
 }
