@@ -6,12 +6,13 @@ export default function SelectCategory({
   currentPlayer,
   setCurrentCategory,
   categories,
+  play,
 }) {
   const [activeCategory, setActiveCategory] = useState({ name: '' });
   const history = useHistory();
 
   useEffect(() => {
-    if (categories.length > 0) {
+    if (categories.length > 0 && currentPlayer.perks.freedomOfChoice === 0) {
       randomizeCategory();
     }
   }, [categories]);
@@ -32,20 +33,29 @@ export default function SelectCategory({
         setCurrentCategory(activeCategory);
         setTimeout(() => history.push('/question'), 2000);
       }
-    }, 100);
+      play();
+    }, 200);
+  };
+
+  const handleClick = (category) => {
+    if (currentPlayer.perks.freedomOfChoice > 0) {
+      setCurrentCategory(category);
+      history.push('/question');
+    }
   };
 
   return (
     <div className="text-center">
       <div className="mb-4">
-        <div>It's your turn</div>
         <h1 className="mb-0">{currentPlayer.name}</h1>
         <div>"{currentPlayer.description}"</div>
+        <div>{currentPlayer.perks.freedomOfChoice}</div>
       </div>
       <div className="row">
         {categories.map((item, idx) => (
-          <div className="col-6" key={idx}>
+          <div className="col-12 col-xs-6" key={idx}>
             <div
+              onClick={() => handleClick(item)}
               className={
                 'category text-center' +
                 (item.name === activeCategory?.name ? ' active' : '')

@@ -196,11 +196,11 @@
       },
       {
         "question": "Which England footballer was famously never given a yellow card?",
-        "answer": "Gary Lineker" 
+        "answer": "Gary Lineker"
       },
       {
         "question": "What's Wayne Gretskys nickname?",
-        "answer": "The Great One" 
+        "answer": "The Great One"
       },
       {
         "question": "How many olympic gold medals has Sweden won in ice hockey?",
@@ -229,7 +229,16 @@
       {
         "question": "How many teams are there in NHL?",
         "answer": "31"
+      },
+      {
+        "question": "Name 5 NHL teams!",
+        "answer": "Google is your friend :)"
       }
-    ]
+    ],
+    "history": [],
+    "geography": [],
+    "foodAndDrinks": [],
+    "technology": [],
+    "games": []
   }
 }

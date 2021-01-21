@@ -1,20 +1,58 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function Scoreboard({
-  players,
-  currentPlayer,
-  setCurrentPlayer,
-}) {
+export default function Scoreboard({ players, setPlayers, direction }) {
   const history = useHistory();
+
   const handleNextRoundClick = () => {
+    const nextTurnIndex = getNextTurnIndex(players, direction);
+    let _players = setNextTurn(players, nextTurnIndex);
+    _players = reducePlayerPerks(_players);
+
+    setPlayers(_players);
+    history.push('/show-turn');
+  };
+
+  const getNextTurnIndex = (players, direction) => {
     const currentPlayerIndex = players.findIndex(
-      (player) => currentPlayer.name === player.name
+      (player) => player.isPlayersTurn
     );
-    const nextPlayerIndex =
-      currentPlayerIndex === players.length - 1 ? 0 : currentPlayerIndex + 1;
-    setCurrentPlayer(players[nextPlayerIndex]);
-    history.push('select-category');
+
+    let nextPlayerIndex = null;
+    const isFirstPlayer = currentPlayerIndex === 0;
+    const isLastPlayer = currentPlayerIndex === players.length - 1;
+    if (direction === 1) {
+      nextPlayerIndex = isLastPlayer ? 0 : currentPlayerIndex + direction;
+    } else {
+      nextPlayerIndex = isFirstPlayer
+        ? players.length - 1
+        : currentPlayerIndex + direction;
+    }
+
+    return nextPlayerIndex;
+  };
+
+  const setNextTurn = (players, index) => {
+    return players.map((player, idx) => ({
+      ...player,
+      isPlayersTurn: index === idx,
+    }));
+  };
+
+  const reducePlayerPerks = (players) => {
+    return players.map((player) =>
+      player.isPlayersTurn
+        ? {
+            ...player,
+            perks: {
+              freedomOfChoice:
+                player.perks.freedomOfChoice > 0
+                  ? player.perks.freedomOfChoice - 1
+                  : 0,
+            },
+          }
+        : player
+    );
   };
 
   return (
@@ -26,9 +64,7 @@ export default function Scoreboard({
             <tr
               key={idx}
               className={
-                currentPlayer.name === player.name
-                  ? 'animate__animated animate__flash'
-                  : ''
+                player.isPlayersTurn ? 'animate__animated animate__flash' : ''
               }
             >
               <td>{player.name}</td>
