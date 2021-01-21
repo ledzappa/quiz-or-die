@@ -44,7 +44,12 @@ function App() {
   const updatePlayerPoints = () => {
     setPlayers(
       players.map((player) =>
-        player.isPlayersTurn ? { ...player, points: player.points + 1 } : player
+        player.isPlayersTurn
+          ? {
+              ...player,
+              points: player.points + (player.perks.doubleUp > 0 ? 2 : 1),
+            }
+          : player
       )
     );
   };

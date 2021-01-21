@@ -15,12 +15,12 @@ const playerPerks = [
     name: 'Freedom of choice!',
     description: 'Chose your category for the next 3 rounds!',
   },
-  {
+  /*{
     id: 'poisoned',
     name: 'Poisoned!',
     description:
       'You will lose one point for every wrong answer (active 3 rounds)',
-  },
+  },*/
 ];
 
 const globalPerks = [
@@ -52,10 +52,23 @@ export default function Perks({ setDirection, setPlayers, players }) {
   }, []);
 
   const randomizePerk = () => {
-    const perks = Math.random() < 0.5 ? playerPerks : globalPerks;
+    const perks = Math.random() < 1 ? playerPerks : globalPerks;
     const randomPerkIndex = Math.floor(perks.length * Math.random());
     setPerk(perks[randomPerkIndex]);
     handlePerk(perks[randomPerkIndex].id);
+  };
+
+  const updatePlayerPerks = (perkName, count) => {
+    setPlayers(
+      players.map((player) =>
+        player.isPlayersTurn
+          ? {
+              ...player,
+              perks: { ...player.perks, [perkName]: count },
+            }
+          : player
+      )
+    );
   };
 
   const handlePerk = (perkId) => {
@@ -64,16 +77,10 @@ export default function Perks({ setDirection, setPlayers, players }) {
         setDirection();
         break;
       case 'freedom-of-choice':
-        setPlayers(
-          players.map((player) =>
-            player.isPlayersTurn
-              ? {
-                  ...player,
-                  perks: { ...player.perks, freedomOfChoice: 3 },
-                }
-              : player
-          )
-        );
+        updatePlayerPerks('freedomOfChoice', 3);
+        break;
+      case 'double-up':
+        updatePlayerPerks('doubleUp', 1);
         break;
       default:
         break;

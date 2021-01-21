@@ -8,7 +8,6 @@ export default function Scoreboard({ players, setPlayers, direction }) {
     const nextTurnIndex = getNextTurnIndex(players, direction);
     let _players = setNextTurn(players, nextTurnIndex);
     _players = reducePlayerPerks(_players);
-
     setPlayers(_players);
     history.push('/show-turn');
   };
@@ -44,12 +43,13 @@ export default function Scoreboard({ players, setPlayers, direction }) {
       player.isPlayersTurn
         ? {
             ...player,
-            perks: {
-              freedomOfChoice:
-                player.perks.freedomOfChoice > 0
-                  ? player.perks.freedomOfChoice - 1
-                  : 0,
-            },
+            perks: Object.keys(player.perks).reduce(
+              (prev, cur) =>
+                player.perks[cur] > 0
+                  ? { ...prev, [cur]: player.perks[cur] - 1 }
+                  : prev,
+              { ...player.perks }
+            ),
           }
         : player
     );
