@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/quiz-or-die/static/css/main.25d14ef7.chunk.css",
-    "main.js": "/quiz-or-die/static/js/main.b2ac4437.chunk.js",
-    "main.js.map": "/quiz-or-die/static/js/main.b2ac4437.chunk.js.map",
+    "main.js": "/quiz-or-die/static/js/main.e2c473dc.chunk.js",
+    "main.js.map": "/quiz-or-die/static/js/main.e2c473dc.chunk.js.map",
     "runtime-main.js": "/quiz-or-die/static/js/runtime-main.b1bce35f.js",
     "runtime-main.js.map": "/quiz-or-die/static/js/runtime-main.b1bce35f.js.map",
     "static/css/2.8caa0767.chunk.css": "/quiz-or-die/static/css/2.8caa0767.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.8caa0767.chunk.css",
     "static/js/2.cde24c4c.chunk.js",
     "static/css/main.25d14ef7.chunk.css",
-    "static/js/main.b2ac4437.chunk.js"
+    "static/js/main.e2c473dc.chunk.js"
   ]
 }
