@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './RoundAndRound.css';
 
-export default function RoundAndRound({ themes, direction, players }) {
+export default function RoundAndRound({ themes, players }) {
   const [theme, setTheme] = useState({});
   const [showTheme, setShowTheme] = useState(false);
+  const [started, setStarted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(10);
+  const [timer, setTimer] = useState(null);
+  const [randomLetter, setRandomLetter] = useState('');
+  const [_players, _setPlayers] = useState(players);
+  const history = useHistory();
+
   useEffect(() => {
-    console.log(themes);
     setTheme(themes[Math.floor(themes.length * Math.random())]);
-    console.log(theme);
+    setRandomLetter(getRandomLetter());
   }, []);
+
+  useEffect(() => {
+    if (started) {
+      updateTime();
+    }
+  }, [timeLeft]);
 
   const getRandomLetter = () => {
     const letters = 'abcdefghijklmnoprstuvy'.split('');
@@ -17,6 +30,52 @@ export default function RoundAndRound({ themes, direction, players }) {
 
   const handleClick = () => {
     setShowTheme(true);
+  };
+
+  const updateTime = () => {
+    setTimer(
+      setTimeout(() => {
+        if (timeLeft > 1) {
+          setTimeLeft(timeLeft - 1);
+        } else {
+          nextTurn(true);
+        }
+      }, 1000)
+    );
+  };
+
+  const start = () => {
+    setStarted(true);
+    updateTime();
+  };
+
+  const nextTurn = (removeCurrent) => {
+    clearTimeout(timer);
+
+    const players = _players.filter((player) =>
+      removeCurrent ? !player.isPlayersTurn : true
+    );
+
+    if (players.length === 1) {
+      setTimeout(() => history.push('/scoreboard'), 3000);
+    }
+
+    const currentTurnIndex = players.findIndex(
+      (player) => player.isPlayersTurn
+    );
+    const nextTurnIndex =
+      currentTurnIndex === players.length - 1 ? 0 : currentTurnIndex + 1;
+
+    _setPlayers(
+      players.map((player, idx) => ({
+        ...player,
+        isPlayersTurn: nextTurnIndex === idx,
+      }))
+    );
+
+    if (players.length > 1) {
+      setTimeLeft(10);
+    }
   };
 
   return (
@@ -34,15 +93,36 @@ export default function RoundAndRound({ themes, direction, players }) {
       </button>
       {showTheme && (
         <div className="theme-wrapper">
-          <div>
+          <h3>
             {theme.description}{' '}
             {theme.randomizeLetter && (
               <span className="font-weight-bold">
-                {getRandomLetter().toUpperCase()}
+                {randomLetter.toLocaleUpperCase()}
               </span>
             )}
-          </div>
-          <button className="btn btn-putline-light">Begin!</button>
+          </h3>
+          <hr></hr>
+          {started ? (
+            <div>
+              <h2>
+                {_players.length > 1
+                  ? _players.filter((player) => player.isPlayersTurn)[0]?.name
+                  : _players[0]?.name + ' wins!'}
+              </h2>
+              <h3>{timeLeft}</h3>
+              <button
+                className="btn btn-outline-light w-100 p-4 mt-4"
+                onClick={() => nextTurn(false)}
+                disabled={!(timeLeft < 10)}
+              >
+                NEXT
+              </button>
+            </div>
+          ) : (
+            <button className="btn btn-outline-light" onClick={() => start()}>
+              Start!
+            </button>
+          )}
         </div>
       )}
     </div>

@@ -31,7 +31,7 @@ export default function SelectCategory({
       if (count === 15) {
         clearInterval(interval);
         setCurrentCategory(activeCategory);
-        setTimeout(() => history.push('/question'), 2000);
+        //setTimeout(() => history.push('/question'), 2000);
       }
       play();
     }, 200);
@@ -53,7 +53,7 @@ export default function SelectCategory({
       </div>
       <div className="row">
         {categories.map((item, idx) => (
-          <div className="col-12 col-xs-6" key={idx}>
+          <div className="col-6 p-0" key={idx}>
             <div
               onClick={() => handleClick(item)}
               className={

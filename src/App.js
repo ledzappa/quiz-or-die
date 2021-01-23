@@ -60,15 +60,6 @@ function App() {
     );
   };
 
-  const setCurrentPlayer = (index) => {
-    setPlayers(
-      players.map((player, idx) => ({
-        ...player,
-        isPlayersTurn: index === idx,
-      }))
-    );
-  };
-
   return (
     <div className="App">
       <MemoryRouter>
@@ -80,7 +71,6 @@ function App() {
             <AddPlayers
               players={players}
               setPlayers={(players) => setPlayers(players)}
-              setCurrentPlayer={(player) => setCurrentPlayer(player)}
             ></AddPlayers>
           </Route>
           <Route path="/show-turn">
