@@ -94,7 +94,11 @@ export default function AddPlayers({ players, setPlayers }) {
           </div>
         ))}
         <hr />
-        <button className="btn btn-primary" onClick={() => startGame()}>
+        <button
+          className="btn btn-primary"
+          onClick={() => startGame()}
+          disabled={players.length < 2}
+        >
           Start Game!
         </button>
       </div>
