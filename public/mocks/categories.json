@@ -2,12 +2,12 @@
   "categories": [
     {
       "id": 1,
-      "name": "Music and Movies",
+      "name": "Music",
       "cssClass": "music-and-movies"
     },
     {
       "id": 2,
-      "name": "History and Geography",
+      "name": "History",
       "cssClass": "history-and-geography"
     },
     {
