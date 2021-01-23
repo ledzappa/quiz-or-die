@@ -31,7 +31,7 @@ export default function SelectCategory({
       if (count === 15) {
         clearInterval(interval);
         setCurrentCategory(activeCategory);
-        //setTimeout(() => history.push('/question'), 2000);
+        setTimeout(() => history.push('/question'), 2000);
       }
       play();
     }, 200);
