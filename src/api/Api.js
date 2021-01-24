@@ -14,6 +14,7 @@ const api = {
     axios.get(mocks ? 'mocks/questions.json' : '/api/questions'),
   getRoundAndRoundThemes: () =>
     axios.get(mocks ? 'mocks/roundAndRound.json' : '/api/round-and-round'),
+  addQuestion: (formData) => axios.post('/api/questions', formData),
 };
 
 export default api;
