@@ -6,6 +6,7 @@ import useSound from 'use-sound';
 import api from './api/Api';
 import './App.css';
 import AddPlayers from './components/addPlayers/AddPlayers';
+import AddQuestion from './components/addQuestion/AddQuestion';
 import Home from './components/home/Home';
 import Perks from './components/perks/Perks';
 import Question from './components/question/Question';
@@ -121,6 +122,9 @@ function App() {
               setPlayers={(players) => setPlayers(players)}
               direction={direction}
             ></Scoreboard>
+          </Route>
+          <Route path="/add-question">
+            <AddQuestion categories={categories}></AddQuestion>
           </Route>
         </Switch>
       </MemoryRouter>

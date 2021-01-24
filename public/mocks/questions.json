@@ -175,6 +175,11 @@
         "question": "Who's oldest? Arnold Scharzenegger, Sylvester Stallone or Samuel L Jackson?",
         "answer": "Sylvester Stallone (born 1946)",
         "timeLimit": null
+      },
+      {
+        "question": "Whats wonder womans name as i civilian?",
+        "answer": "Diana Prince",
+        "timeLimit": null
       }
     ],
     "sports": [
@@ -235,10 +240,24 @@
         "answer": "Google is your friend :)"
       }
     ],
-    "history": [],
+    "history": [
+      {
+        "question": "Through what mountain chain in california goes pacific crest trail",
+        "answer": "Sierra nevada"
+      },
+      {
+        "question": "What russian masterpiece was written by leo tolstoj and contains more than 550 000 words?",
+        "answer": "War and peace"
+      }
+    ],
     "geography": [],
     "foodAndDrinks": [],
-    "technology": [],
+    "technology": [
+      {
+        "question": "Whats chinas biggest social network platform?",
+        "answer": "Weibo"
+      }
+    ],
     "games": []
   }
 }
