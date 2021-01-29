@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/Api';
 
-export default function AddQuestion({ categories }) {
+export const validateForm = ({ categoryId, question, answer }) => {
+  console.log(answer);
+  if (categoryId.length === 0) {
+    return false;
+  }
+  if (question.length < 10) {
+    return false;
+  }
+  if (answer.length === 0) {
+    return false;
+  }
+  return true;
+};
+
+export default function AddQuestion({ categories, setCategories }) {
   const [formData, setFormData] = useState({
-    category: '',
+    categoryId: 1,
     question: '',
     answer: '',
   });
@@ -17,25 +31,20 @@ export default function AddQuestion({ categories }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const validateForm = ({ category, question, answer }) => {
-    console.log(answer);
-    if (category.length === 0) {
-      return false;
-    }
-    if (question.length < 10) {
-      return false;
-    }
-    if (answer.length === 0) {
-      return false;
-    }
-    return true;
-  };
-
   const submitQuestion = () => {
     console.log(formData);
     api
       .addQuestion(formData)
-      .then(() => console.log('usccess'))
+      .then(() => {
+        setCategories(
+          categories.map((category) =>
+            category.id == formData.categoryId
+              ? { ...category, questions: category.questions + 1 }
+              : category
+          )
+        );
+        setFormData({ ...formData, question: '', answer: '' });
+      })
       .catch(() => console.log('error'));
   };
 
@@ -53,12 +62,12 @@ export default function AddQuestion({ categories }) {
             <label>Category</label>
             <select
               className="form-control"
-              name="category"
+              name="categoryId"
               onChange={(e) => handleFormChange(e.target)}
             >
               {categories.map((category, idx) => (
                 <option value={category.id} key={idx}>
-                  {category.name}
+                  {category.name} ({category.questions})
                 </option>
               ))}
             </select>

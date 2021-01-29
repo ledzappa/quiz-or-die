@@ -14,6 +14,7 @@ import RoundAndRound from './components/roundAndRound/RoundAndRound';
 import Scoreboard from './components/scoreboard/Scoreboard';
 import SelectCategory from './components/selectCategory/SelectCategory';
 import ShowTurn from './components/showTurn/ShowTurn';
+import ViewQuestions from './components/viewQuestions/ViewQuestions';
 import sound from './sounds/robots.mp3';
 
 library.add(faSync, faAngleDoubleUp);
@@ -124,7 +125,13 @@ function App() {
             ></Scoreboard>
           </Route>
           <Route path="/add-question">
-            <AddQuestion categories={categories}></AddQuestion>
+            <AddQuestion
+              categories={categories}
+              setCategories={(categories) => setCategories(categories)}
+            ></AddQuestion>
+          </Route>
+          <Route path="/admin/questions">
+            <ViewQuestions categories={categories}></ViewQuestions>
           </Route>
         </Switch>
       </MemoryRouter>
