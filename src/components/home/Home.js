@@ -22,6 +22,12 @@ export default function Home() {
       >
         Add question
       </button>
+      <button
+        className="btn btn-outline-light"
+        onClick={() => history.push('/admin/questions')}
+      >
+        Admin
+      </button>
     </div>
   );
 }
