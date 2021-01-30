@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AddQuestion from '../addQuestion/AddQuestion';
 import api from './../../api/Api';
 
 const filterQuestions = (questions, filterString, categoryId) => {
@@ -39,7 +40,7 @@ export default function ViewQuestions({ categories }) {
     <div>
       <h1>Questions</h1>
       <div className="row">
-        <div className="col-6">
+        <div className="col-4">
           <div className="form-group">
             <label>Category</label>
             <select
@@ -53,13 +54,24 @@ export default function ViewQuestions({ categories }) {
             </select>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-4">
           <div className="form-group">
             <label>Filter term</label>
             <input
               className="form-control"
               onChange={(e) => handleInputChange(e.target.value)}
             ></input>
+          </div>
+        </div>
+        <div className="col-4">
+          <div className="form-group">
+            <label>&nbsp;</label>
+            <AddQuestion
+              categories={categories}
+              setAllQuestions={(question) =>
+                setAllQuestions([...allQuestions, question])
+              }
+            ></AddQuestion>
           </div>
         </div>
       </div>

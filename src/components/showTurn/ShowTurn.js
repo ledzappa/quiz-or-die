@@ -13,9 +13,9 @@ export default function ShowTurn({ currentPlayer }) {
     const random = Math.random();
     console.log(random);
     history.push(
-      random < 0.2
+      random < 0.8
         ? '/perks'
-        : random < 0.4
+        : random < 0.9
         ? '/round-and-round'
         : '/select-category'
     );
