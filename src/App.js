@@ -16,6 +16,8 @@ import SelectCategory from './components/selectCategory/SelectCategory';
 import ShowTurn from './components/showTurn/ShowTurn';
 import ViewQuestions from './components/viewQuestions/ViewQuestions';
 import sound from './sounds/robots.mp3';
+import soundButton from './sounds/button.mp3';
+import goodPerk from './sounds/goodPerk.mp3';
 
 library.add(faSync, faAngleDoubleUp);
 
@@ -27,6 +29,8 @@ function App() {
   const [themes, setThemes] = useState({});
   const [direction, setDirection] = useState(1);
   const [play] = useSound(sound, { volume: 0.25 });
+  const [playBtnSound] = useSound(soundButton, { volume: 0.25 });
+  const [playGoodPerkSound] = useSound(goodPerk, { volume: 0.25 });
 
   useEffect(() => {
     api.getCategories().then((res) => {
@@ -63,7 +67,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" onClick={e => console.log(e.target)}>
       <MemoryRouter>
         <Switch>
           <Route exact path="/">
@@ -72,6 +76,7 @@ function App() {
           <Route path="/add-players">
             <AddPlayers
               players={players}
+              playBtnSound={playBtnSound}
               setPlayers={(players) => setPlayers(players)}
             ></AddPlayers>
           </Route>
@@ -87,6 +92,7 @@ function App() {
               players={players}
               setDirection={() => setDirection(direction * -1)}
               setPlayers={(players) => setPlayers(players)}
+              playGoodPerkSound={playGoodPerkSound}
             ></Perks>
           </Route>
           <Route path="/round-and-round">
@@ -104,7 +110,7 @@ function App() {
               categories={categories}
               play={play}
               setCurrentCategory={(category) => {
-                _setCurrentQuestion('movies');
+                _setCurrentQuestion(category.identifier);
               }}
             ></SelectCategory>
           </Route>
@@ -115,6 +121,7 @@ function App() {
               }
               currentQuestion={currentQuestion}
               updatePlayerPoints={() => updatePlayerPoints()}
+              playBtnSound={playBtnSound}
             ></Question>
           </Route>
           <Route path="/scoreboard">

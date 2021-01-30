@@ -6,13 +6,14 @@
 
 .category.active {
   border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgb(85, 76, 38);
 }
 
-.category.active.music-and-movies {
+.category.active.music {
   background-color: #d2691e;
 }
 
-.category.active.history-and-geography {
+.category.active.history {
   background-color: #5f9ea0;
 }
 
@@ -28,6 +29,6 @@
   background-color: #525252;
 }
 
-.category.active.food-and-wine {
+.category.active.food {
   background-color: #7b1d1d;
 }

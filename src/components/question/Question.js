@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function Question({ currentQuestion, updatePlayerPoints }) {
+export default function Question({ currentQuestion, updatePlayerPoints, playBtnSound }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(30);
   const [timer, setTimer] = useState(null);
@@ -30,6 +30,7 @@ export default function Question({ currentQuestion, updatePlayerPoints }) {
 
   const handleShowAnswerClick = () => {
     setShowAnswer(true);
+    playBtnSound();
   };
 
   const handleTimeout = () => {
@@ -38,10 +39,12 @@ export default function Question({ currentQuestion, updatePlayerPoints }) {
 
   const rightAnswer = () => {
     updatePlayerPoints();
+    playBtnSound();
     history.push('/scoreboard');
   };
 
   const wrongAnswer = () => {
+    playBtnSound();
     history.push('/scoreboard');
   };
 

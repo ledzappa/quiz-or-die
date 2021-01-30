@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import api from '../../api/Api';
 import './AddPlayers.css';
 
-export default function AddPlayers({ players, setPlayers }) {
+export default function AddPlayers({ players, setPlayers, playBtnSound }) {
   const [playerInput, setPlayerInput] = useState('');
   const [playerWords, setPlayerWords] = useState([]);
   const history = useHistory();
@@ -45,6 +45,7 @@ export default function AddPlayers({ players, setPlayers }) {
 
   const startGame = () => {
     randomizeFirstTurn();
+    playBtnSound();
     history.push('/show-turn');
   };
 

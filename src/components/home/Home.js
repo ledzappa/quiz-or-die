@@ -18,12 +18,6 @@ export default function Home() {
       </button>
       <button
         className="btn btn-outline-light"
-        onClick={() => history.push('/add-question')}
-      >
-        Add question
-      </button>
-      <button
-        className="btn btn-outline-light"
         onClick={() => history.push('/admin/questions')}
       >
         Admin

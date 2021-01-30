@@ -25,12 +25,13 @@ export default function SelectCategory({
       while (randomIndex === prevRandomIndex) {
         randomIndex = Math.floor(Math.random() * categories.length);
       }
+      console.log(randomIndex);
       setActiveCategory(categories[randomIndex]);
       prevRandomIndex = randomIndex;
       count++;
       if (count === 15) {
         clearInterval(interval);
-        setCurrentCategory(activeCategory);
+        setCurrentCategory(categories[randomIndex]);
         setTimeout(() => history.push('/question'), 2000);
       }
       play();
@@ -58,7 +59,7 @@ export default function SelectCategory({
               onClick={() => handleClick(item)}
               className={
                 'category text-center ' +
-                item.cssClass +
+                item.identifier +
                 (item.name === activeCategory?.name ? ' active' : '')
               }
             >

@@ -43,7 +43,7 @@ const globalPerks = [
   },
 ];
 
-export default function Perks({ setDirection, setPlayers, players }) {
+export default function Perks({ setDirection, setPlayers, players, playGoodPerkSound }) {
   const [perk, setPerk] = useState({});
   const history = useHistory();
 
@@ -75,12 +75,15 @@ export default function Perks({ setDirection, setPlayers, players }) {
     switch (perkId) {
       case 'change-direction':
         setDirection();
+        playGoodPerkSound();
         break;
       case 'freedom-of-choice':
         updatePlayerPerks('freedomOfChoice', 3);
+        playGoodPerkSound();
         break;
       case 'double-up':
         updatePlayerPerks('doubleUp', 1);
+        playGoodPerkSound();
         break;
       default:
         break;
