@@ -11,11 +11,10 @@ export default function ShowTurn({ currentPlayer }) {
 
   const handleClick = () => {
     const random = Math.random();
-    console.log(random);
     history.push(
-      random < 0.8
+      random < 0.2
         ? '/perks'
-        : random < 0.9
+        : random < 0.4
         ? '/round-and-round'
         : '/select-category'
     );
