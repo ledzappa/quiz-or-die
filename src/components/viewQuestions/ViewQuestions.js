@@ -38,9 +38,9 @@ export default function ViewQuestions({ categories }) {
 
   return (
     <div>
-      <h1>Questions</h1>
-      <div className="row">
-        <div className="col-4">
+      <h1 className="mb-4">Questions</h1>
+      <div className="row mb-4">
+        <div className="col-12 col-sm-4">
           <div className="form-group">
             <label>Category</label>
             <select
@@ -54,7 +54,7 @@ export default function ViewQuestions({ categories }) {
             </select>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-12 col-sm-4">
           <div className="form-group">
             <label>Filter term</label>
             <input
@@ -63,9 +63,9 @@ export default function ViewQuestions({ categories }) {
             ></input>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-12 col-sm-4">
           <div className="form-group">
-            <label>&nbsp;</label>
+            <label className="d-none d-sm-block">&nbsp;</label>
             <AddQuestion
               categories={categories}
               setAllQuestions={(question) =>

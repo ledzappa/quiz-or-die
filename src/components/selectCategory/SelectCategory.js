@@ -25,7 +25,6 @@ export default function SelectCategory({
       while (randomIndex === prevRandomIndex) {
         randomIndex = Math.floor(Math.random() * categories.length);
       }
-      console.log(randomIndex);
       setActiveCategory(categories[randomIndex]);
       prevRandomIndex = randomIndex;
       count++;

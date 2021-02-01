@@ -3,7 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import api from '../../api/Api';
 
 export const validateForm = ({ categoryId, question, answer }) => {
-  console.log(answer);
   if (categoryId.length === 0) {
     return false;
   }
@@ -62,42 +61,39 @@ export default function AddQuestion({ categories, setAllQuestions }) {
             question. Your question will be reviewed by an administrator before
             it gets added to the app. Thanks for making the game better! &lt;3
           </p>
-          <form>
-            <div className="form-group">
-              <label>Category</label>
-              <select
-                className="form-control"
-                name="categoryId"
-                onChange={(e) => handleFormChange(e.target)}
-              >
-                {categories.map((category, idx) => (
-                  <option value={category.id} key={idx}>
-                    {category.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Question</label>
-              <textarea
-                onChange={(e) => handleFormChange(e.target)}
-                className="form-control"
-                name="question"
-                value={formData.question}
-                rows="2"
-              ></textarea>
-            </div>
-            <div className="form-group">
-              <label>Answer</label>
-              <input
-                onChange={(e) => handleFormChange(e.target)}
-                className="form-control"
-                name="answer"
-                value={formData.answer}
-              ></input>
-            </div>
-            <hr />
-          </form>
+          <div className="form-group">
+            <label>Category</label>
+            <select
+              className="form-control"
+              name="categoryId"
+              onChange={(e) => handleFormChange(e.target)}
+            >
+              {categories.map((category, idx) => (
+                <option value={category.id} key={idx}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Question</label>
+            <textarea
+              onChange={(e) => handleFormChange(e.target)}
+              className="form-control"
+              name="question"
+              value={formData.question}
+              rows="2"
+            ></textarea>
+          </div>
+          <div className="form-group">
+            <label>Answer</label>
+            <input
+              onChange={(e) => handleFormChange(e.target)}
+              className="form-control"
+              name="answer"
+              value={formData.answer}
+            ></input>
+          </div>
         </Modal.Body>
 
         <Modal.Footer>
