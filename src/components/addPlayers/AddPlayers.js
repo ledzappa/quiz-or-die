@@ -69,8 +69,9 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }) {
         <div className="input-group mb-3">
           <input
             type="text"
-            className="form-control"
+            className="form-control add-player"
             value={playerInput}
+            autoFocus
             onKeyPress={(e) => e.key === 'Enter' && addPlayer(playerInput)}
             onChange={(e) => handlePlayerInputChange(e.target.value)}
           />
@@ -96,7 +97,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }) {
         ))}
         <hr />
         <button
-          className="btn btn-primary"
+          className="btn btn-primary start-game"
           onClick={() => startGame()}
           disabled={players.length < 2}
         >
