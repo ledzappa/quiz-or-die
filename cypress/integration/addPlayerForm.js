@@ -10,13 +10,24 @@ context('Add Player Input', () => {
     cy.get('input').first().focus().should('have.class', 'add-player');
   });
 
-  it('Start game button should be disabled', () => {
-    cy.get('button.start-game').first().should('be.disabled');
+  context('No added players', () => {
+    it('Start game button should be disabled', () => {
+      cy.get('button.start-game').first().should('be.disabled');
+    });
   });
 
-  it('Start game button should be enabled when two players are added', () => {
-    cy.get('input.add-player').type('player1{enter}');
-    cy.get('input.add-player').type('player2{enter}');
-    cy.get('button.start-game').first().should('not.be.disabled');
+  context('Added one player', () => {
+    it('Start game button should be disabled', () => {
+      cy.get('input.add-player').type('player1{enter}');
+      cy.get('button.start-game').first().should('be.disabled');
+    });
+  });
+
+  context('Added two players', () => {
+    it('Start game button should be enabled', () => {
+      cy.get('input.add-player').type('player1{enter}');
+      cy.get('input.add-player').type('player2{enter}');
+      cy.get('button.start-game').first().should('not.be.disabled');
+    });
   });
 });
