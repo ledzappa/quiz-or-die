@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Player, RoundAndRoundTheme } from '../../interfaces/interfaces';
 import './RoundAndRound.css';
 
-export default function RoundAndRound({ themes, players }) {
-  const [theme, setTheme] = useState({});
+export default function RoundAndRound({
+  themes,
+  players,
+}: {
+  themes: RoundAndRoundTheme[];
+  players: Player[];
+}) {
+  const [theme, setTheme] = useState({
+    description: '',
+    randomizeLetter: false,
+  });
   const [showTheme, setShowTheme] = useState(false);
   const [started, setStarted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
-  const [timer, setTimer] = useState(null);
+  const [timer, setTimer] = useState<any>(null);
   const [randomLetter, setRandomLetter] = useState('');
   const [_players, _setPlayers] = useState(players);
   const history = useHistory();
@@ -49,10 +59,10 @@ export default function RoundAndRound({ themes, players }) {
     updateTime();
   };
 
-  const nextTurn = (removeCurrent) => {
+  const nextTurn = (removeCurrent: boolean) => {
     clearTimeout(timer);
 
-    const players = _players.filter((player) =>
+    const players = _players.filter((player: Player) =>
       removeCurrent ? !player.isPlayersTurn : true
     );
 
@@ -61,13 +71,13 @@ export default function RoundAndRound({ themes, players }) {
     }
 
     const currentTurnIndex = players.findIndex(
-      (player) => player.isPlayersTurn
+      (player: Player) => player.isPlayersTurn
     );
     const nextTurnIndex =
       currentTurnIndex === players.length - 1 ? 0 : currentTurnIndex + 1;
 
     _setPlayers(
-      players.map((player, idx) => ({
+      players.map((player: Player, idx: number) => ({
         ...player,
         isPlayersTurn: nextTurnIndex === idx,
       }))
@@ -106,7 +116,8 @@ export default function RoundAndRound({ themes, players }) {
             <div>
               <h2>
                 {_players.length > 1
-                  ? _players.filter((player) => player.isPlayersTurn)[0]?.name
+                  ? _players.filter((player: Player) => player.isPlayersTurn)[0]
+                      ?.name
                   : _players[0]?.name + ' wins!'}
               </h2>
               <h3>{timeLeft}</h3>

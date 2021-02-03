@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Category } from '../../interfaces/interfaces';
 import './SelectCategory.css';
 
 export default function SelectCategory({
@@ -7,7 +8,7 @@ export default function SelectCategory({
   setCurrentCategory,
   categories,
   play,
-}) {
+}: any) {
   const [activeCategory, setActiveCategory] = useState({ name: '' });
   const history = useHistory();
 
@@ -19,7 +20,7 @@ export default function SelectCategory({
 
   const randomizeCategory = () => {
     let count = 0;
-    let prevRandomIndex;
+    let prevRandomIndex: any;
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * categories.length);
       while (randomIndex === prevRandomIndex) {
@@ -37,7 +38,7 @@ export default function SelectCategory({
     }, 200);
   };
 
-  const handleClick = (category) => {
+  const handleClick = (category: Category) => {
     if (currentPlayer.perks.freedomOfChoice > 0) {
       setCurrentCategory(category);
       history.push('/question');
@@ -52,7 +53,7 @@ export default function SelectCategory({
         <div>{currentPlayer.perks.freedomOfChoice}</div>
       </div>
       <div className="row">
-        {categories.map((item, idx) => (
+        {categories.map((item: Category, idx: number) => (
           <div className="col-6 p-0" key={idx}>
             <div
               onClick={() => handleClick(item)}

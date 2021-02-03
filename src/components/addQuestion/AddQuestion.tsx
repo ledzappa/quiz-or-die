@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import api from '../../api/Api';
+import { Category } from '../../interfaces/interfaces';
 
-export const validateForm = ({ categoryId, question, answer }) => {
+export const validateForm = ({ categoryId, question, answer }: any) => {
   if (categoryId.length === 0) {
     return false;
   }
@@ -15,7 +16,7 @@ export const validateForm = ({ categoryId, question, answer }) => {
   return true;
 };
 
-export default function AddQuestion({ categories, setAllQuestions }) {
+export default function AddQuestion({ categories, setAllQuestions }: any) {
   const [formData, setFormData] = useState({
     categoryId: 1,
     question: '',
@@ -28,7 +29,7 @@ export default function AddQuestion({ categories, setAllQuestions }) {
     setIsFormValid(validateForm(formData));
   }, [formData]);
 
-  const handleFormChange = ({ name, value }) => {
+  const handleFormChange = ({ name, value }: any) => {
     setFormData({ ...formData, [name]: value });
   };
 
@@ -68,7 +69,7 @@ export default function AddQuestion({ categories, setAllQuestions }) {
               name="categoryId"
               onChange={(e) => handleFormChange(e.target)}
             >
-              {categories.map((category, idx) => (
+              {categories.map((category: Category, idx: number) => (
                 <option value={category.id} key={idx}>
                   {category.name}
                 </option>
@@ -82,7 +83,7 @@ export default function AddQuestion({ categories, setAllQuestions }) {
               className="form-control"
               name="question"
               value={formData.question}
-              rows="2"
+              rows={2}
             ></textarea>
           </div>
           <div className="form-group">

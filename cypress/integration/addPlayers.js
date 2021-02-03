@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Add Player Input', () => {
+context('Add Players', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000');
     cy.get('button').first().click();

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Perks.css';
+import { Perk, Player } from '../../interfaces/interfaces';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const playerPerks = [
   {
@@ -43,8 +45,18 @@ const globalPerks = [
   },
 ];
 
-export default function Perks({ setDirection, setPlayers, players, playGoodPerkSound }) {
-  const [perk, setPerk] = useState({});
+export default function Perks({
+  setDirection,
+  setPlayers,
+  players,
+  playGoodPerkSound,
+}: any) {
+  const [perk, setPerk] = useState<Perk>({
+    id: '',
+    name: '',
+    description: '',
+    icon: '',
+  });
   const history = useHistory();
 
   useEffect(() => {
@@ -54,13 +66,14 @@ export default function Perks({ setDirection, setPlayers, players, playGoodPerkS
   const randomizePerk = () => {
     const perks = Math.random() < 1 ? playerPerks : globalPerks;
     const randomPerkIndex = Math.floor(perks.length * Math.random());
-    setPerk(perks[randomPerkIndex]);
+    const perk = perks[randomPerkIndex] as Perk;
+    setPerk(perk);
     handlePerk(perks[randomPerkIndex].id);
   };
 
-  const updatePlayerPerks = (perkName, count) => {
+  const updatePlayerPerks = (perkName: string, count: number) => {
     setPlayers(
-      players.map((player) =>
+      players.map((player: Player) =>
         player.isPlayersTurn
           ? {
               ...player,
@@ -71,7 +84,7 @@ export default function Perks({ setDirection, setPlayers, players, playGoodPerkS
     );
   };
 
-  const handlePerk = (perkId) => {
+  const handlePerk = (perkId: string) => {
     switch (perkId) {
       case 'change-direction':
         setDirection();
@@ -94,7 +107,7 @@ export default function Perks({ setDirection, setPlayers, players, playGoodPerkS
     <div id={perk.id} className="perk-wrapper text-center">
       <div className="pb-5 w-100">
         <div className="perk-icon animate__animated animate__rotateIn">
-          <FontAwesomeIcon icon={perk.icon} />
+          <FontAwesomeIcon icon={perk.icon as IconProp} />
         </div>
         <h1>{perk.name}</h1>
         <p>{perk.description}</p>

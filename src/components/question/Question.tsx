@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function Question({ currentQuestion, updatePlayerPoints, playBtnSound }) {
+export default function Question({ currentQuestion, updatePlayerPoints, playBtnSound } : any) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(30);
-  const [timer, setTimer] = useState(null);
+  const [timer, setTimer] = useState<any>();
   const history = useHistory();
 
   useEffect(() => {

@@ -1,7 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Player } from '../../interfaces/interfaces';
 
-export default function Scoreboard({ players, setPlayers, direction }) {
+export default function Scoreboard({ players, setPlayers, direction }: any) {
   const history = useHistory();
 
   const handleNextRoundClick = () => {
@@ -12,7 +13,7 @@ export default function Scoreboard({ players, setPlayers, direction }) {
     history.push('/show-turn');
   };
 
-  const getNextTurnIndex = (players, direction) => {
+  const getNextTurnIndex = (players: Player[], direction: number) => {
     const currentPlayerIndex = players.findIndex(
       (player) => player.isPlayersTurn
     );
@@ -31,15 +32,15 @@ export default function Scoreboard({ players, setPlayers, direction }) {
     return nextPlayerIndex;
   };
 
-  const setNextTurn = (players, index) => {
+  const setNextTurn = (players: Player[], index: number) => {
     return players.map((player, idx) => ({
       ...player,
       isPlayersTurn: index === idx,
     }));
   };
 
-  const reducePlayerPerks = (players) => {
-    return players.map((player) =>
+  const reducePlayerPerks = (players: Player[]) => {
+    return players.map((player: any) =>
       player.isPlayersTurn
         ? {
             ...player,
@@ -60,7 +61,7 @@ export default function Scoreboard({ players, setPlayers, direction }) {
       <h2>Scoreboard:</h2>
       <table className="table text-white">
         <tbody>
-          {players.map((player, idx) => (
+          {players.map((player: Player, idx: number) => (
             <tr
               key={idx}
               className={

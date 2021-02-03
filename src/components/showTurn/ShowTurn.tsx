@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Player } from '../../interfaces/interfaces';
 import './ShowTurn.css';
 
-export default function ShowTurn({ currentPlayer }) {
+export default function ShowTurn({ currentPlayer }: { currentPlayer: Player }) {
   const history = useHistory();
 
   useEffect(() => {

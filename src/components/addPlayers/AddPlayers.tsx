@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import api from '../../api/Api';
+import { Player } from '../../interfaces/interfaces';
 import './AddPlayers.css';
 
-export default function AddPlayers({ players, setPlayers, playBtnSound }) {
+export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
   const [playerInput, setPlayerInput] = useState('');
-  const [playerWords, setPlayerWords] = useState([]);
+  const [playerWords, setPlayerWords] = useState({nouns: [], adjectives: []});
   const history = useHistory();
 
   useEffect(() => {
     api.getPlayerDescriptionWords().then((res) => setPlayerWords(res.data));
   }, []);
 
-  const addPlayer = (name) => {
+  const addPlayer = (name: String) => {
     setPlayers([
       ...players,
       {
@@ -26,14 +27,14 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }) {
     setPlayerInput('');
   };
 
-  const removePlayer = (idx) => {
-    setPlayers(players.filter((item, i) => idx !== i));
+  const removePlayer = (idx: Number) => {
+    setPlayers(players.filter((_: any, i: Number) => idx !== i));
   };
 
   const randomizeFirstTurn = () => {
     const randomPlayer = Math.floor(Math.random() * players.length);
     setPlayers(
-      players.map((player, idx) => {
+      players.map((player: Player, idx: Number) => {
         if (randomPlayer === idx) {
           return { ...player, isPlayersTurn: true };
         } else {
@@ -49,7 +50,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }) {
     history.push('/show-turn');
   };
 
-  const handlePlayerInputChange = (value) => setPlayerInput(value);
+  const handlePlayerInputChange = (value: string) => setPlayerInput(value);
 
   const getRandomDescription = () => {
     const nounsLength = playerWords.nouns.length;
@@ -82,7 +83,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }) {
             Add
           </button>
         </div>
-        {players.map((player, idx) => (
+        {players.map((player: Player, idx: number) => (
           <div
             className="added-player"
             key={idx}

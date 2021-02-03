@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import AddQuestion from '../addQuestion/AddQuestion';
-import api from './../../api/Api';
+import api from '../../api/Api';
+import { Category, Question } from '../../interfaces/interfaces';
 
-const filterQuestions = (questions, filterString, categoryId) => {
+const filterQuestions = (questions: any, filterString: string, categoryId: number) => {
   return questions.filter(
-    (question) =>
+    (question: any) =>
       (question?.question?.toLowerCase().includes(filterString) ||
         question?.answer?.toLowerCase().includes(filterString)) &&
       (categoryId == 0 || question?.categoryId == categoryId)
   );
 };
 
-export default function ViewQuestions({ categories }) {
-  const [allQuestions, setAllQuestions] = useState([]);
+export default function ViewQuestions({
+  categories,
+}: {
+  categories: Category[];
+}) {
+  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [questions, setQuestions] = useState([]);
   const [filterString, setFilterString] = useState('');
   const [categoryId, setCategoryId] = useState(0);
@@ -24,16 +29,16 @@ export default function ViewQuestions({ categories }) {
     });
   }, []);
 
-  const handleInputChange = (filterString) => {
+  const handleInputChange = (filterString: string) => {
     setFilterString(filterString.toLowerCase());
     setQuestions(
       filterQuestions(allQuestions, filterString.toLowerCase(), categoryId)
     );
   };
 
-  const handleSelectCategoryChange = (categoryId) => {
-    setCategoryId(categoryId);
-    setQuestions(filterQuestions(allQuestions, filterString, categoryId));
+  const handleSelectCategoryChange = (categoryId: string) => {
+    setCategoryId(Number(categoryId));
+    setQuestions(filterQuestions(allQuestions, filterString, Number(categoryId)));
   };
 
   return (
@@ -68,7 +73,7 @@ export default function ViewQuestions({ categories }) {
             <label className="d-none d-sm-block">&nbsp;</label>
             <AddQuestion
               categories={categories}
-              setAllQuestions={(question) =>
+              setAllQuestions={(question: Question) =>
                 setAllQuestions([...allQuestions, question])
               }
             ></AddQuestion>
@@ -86,7 +91,7 @@ export default function ViewQuestions({ categories }) {
             </tr>
           </thead>
           <tbody>
-            {questions.map((question) => (
+            {questions.map((question: Question) => (
               <tr>
                 <td>{question.question}</td>
                 <td>{question.answer}</td>
