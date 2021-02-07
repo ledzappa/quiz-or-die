@@ -1,9 +1,8 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleDoubleUp, faSync } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { MemoryRouter, Route, Switch } from 'react-router-dom';
 import useSound from 'use-sound';
-import api from './api/Api';
 import './App.css';
 import AddPlayers from './components/addPlayers/AddPlayers';
 import Home from './components/home/Home';
@@ -17,6 +16,7 @@ import ViewQuestions from './components/viewQuestions/ViewQuestions';
 import sound from './sounds/robots.mp3';
 import soundButton from './sounds/button.mp3';
 import goodPerk from './sounds/goodPerk.mp3';
+import Login from './components/login/Login';
 
 library.add(faSync, faAngleDoubleUp);
 
@@ -27,29 +27,22 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [themes, setThemes] = useState({});
   const [direction, setDirection] = useState(1);
+  const [user, setUser] = useState({});
   const [play] = useSound(sound, { volume: 0.25 });
   const [playBtnSound] = useSound(soundButton, { volume: 0.25 });
   const [playGoodPerkSound] = useSound(goodPerk, { volume: 0.25 });
 
-  useEffect(() => {
-    api.getCategories().then((res) => {
-      setCategories(res.data.categories);
-    });
-
-    api.getQuestions().then((res) => {
-      setQuestions(res.data.questions);
-    });
-
-    api.getRoundAndRoundThemes().then((res) => {
-      setThemes(res.data.themes);
-    });
-  }, []);
-
   const _setCurrentQuestion = (category) => {
-    const numOfQuestionsInCategory = questions[category].length;
+    const questionsByCategory = questions.filter(
+      (question) => question.categoryId === category.id
+    );
+    const numOfQuestionsInCategory = questionsByCategory.length;
     const randomIndex = Math.floor(Math.random() * numOfQuestionsInCategory);
-    const randomQuestion = questions[category][randomIndex];
-    setCurrentQuestion({ ...randomQuestion, category });
+    const randomQuestion = questionsByCategory[randomIndex];
+    setQuestions(
+      questions.filter((question) => question.id !== randomQuestion.id)
+    );
+    setCurrentQuestion({ ...randomQuestion, category: category.identifier });
   };
 
   const updatePlayerPoints = () => {
@@ -66,11 +59,19 @@ function App() {
   };
 
   return (
-    <div className="App" onClick={e => console.log(e.target)}>
+    <div className="App" onClick={(e) => console.log(e.target)}>
       <MemoryRouter>
         <Switch>
           <Route exact path="/">
-            <Home></Home>
+            <Login setUser={(user) => setUser(user)}></Login>
+          </Route>
+          <Route path="/home">
+            <Home
+              user={user}
+              setCategories={(categories) => setCategories(categories)}
+              setQuestions={(questions) => setQuestions(questions)}
+              setThemes={(themes) => setThemes(themes)}
+            ></Home>
           </Route>
           <Route path="/add-players">
             <AddPlayers
@@ -99,6 +100,8 @@ function App() {
               players={players}
               themes={themes}
               setPlayers={(players) => setPlayers(players)}
+              playGoodPerkSound={playGoodPerkSound}
+              playBtnSound={playBtnSound}
             ></RoundAndRound>
           </Route>
           <Route path="/select-category">
@@ -109,7 +112,7 @@ function App() {
               categories={categories}
               play={play}
               setCurrentCategory={(category) => {
-                _setCurrentQuestion(category.identifier);
+                _setCurrentQuestion(category);
               }}
             ></SelectCategory>
           </Route>

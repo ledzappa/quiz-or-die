@@ -1,7 +1,8 @@
 export interface Player {
-  name: String;
-  description: String;
+  name: string;
+  description: string;
   perks: {
+    freedomOfChoice: number;
     doubleUp: number;
   };
   isPlayersTurn: boolean;
@@ -11,7 +12,7 @@ export interface Player {
 export interface Category {
   id: number;
   identifier: string;
-  name: String;
+  name: string;
 }
 
 export interface Perk {

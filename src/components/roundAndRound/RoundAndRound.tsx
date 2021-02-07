@@ -6,9 +6,13 @@ import './RoundAndRound.css';
 export default function RoundAndRound({
   themes,
   players,
+  playGoodPerkSound,
+  playBtnSound
 }: {
   themes: RoundAndRoundTheme[];
   players: Player[];
+  playGoodPerkSound: any;
+  playBtnSound: any;
 }) {
   const [theme, setTheme] = useState({
     description: '',
@@ -23,6 +27,7 @@ export default function RoundAndRound({
   const history = useHistory();
 
   useEffect(() => {
+    playGoodPerkSound();
     setTheme(themes[Math.floor(themes.length * Math.random())]);
     setRandomLetter(getRandomLetter());
   }, []);
@@ -39,6 +44,7 @@ export default function RoundAndRound({
   };
 
   const handleClick = () => {
+    playBtnSound();
     setShowTheme(true);
   };
 
@@ -55,11 +61,13 @@ export default function RoundAndRound({
   };
 
   const start = () => {
+    playBtnSound();
     setStarted(true);
     updateTime();
   };
 
   const nextTurn = (removeCurrent: boolean) => {
+    playBtnSound();
     clearTimeout(timer);
 
     const players = _players.filter((player: Player) =>
@@ -90,17 +98,19 @@ export default function RoundAndRound({
 
   return (
     <div>
-      <h1>Round and round!</h1>
-      <p>
-        It's round and round time! Everyone gets 10 seconds to come up with an
-        answer for a given theme, for example "Movies from the 90s". Tap the
-        screen once you've told your answer and the turn will go over to the
-        next player. The player that remains gets 3 points!
-      </p>
-      <p></p>
-      <button className="btn btn-outline-light" onClick={() => handleClick()}>
-        Show theme and begin!
-      </button>
+      <div className="round-and-round animate__animated animate__rotateIn">
+        <h1>It's Round and round time!</h1>
+        <p>
+          Everyone gets 10 seconds to come up with an answer for a random theme,
+          for example "Name a movie from the 90s". Press NEXT when a player
+          answers successfully and the turn will go to the next player. If a
+          player can't come up with an answer within 10 seconds the player gets
+          eliminated. The last player that remains gets 3 points!
+        </p>
+        <button className="btn btn-outline-light" onClick={() => handleClick()}>
+          Show theme and begin!
+        </button>
+      </div>
       {showTheme && (
         <div className="theme-wrapper">
           <h3>
@@ -114,19 +124,19 @@ export default function RoundAndRound({
           <hr></hr>
           {started ? (
             <div>
-              <h2>
-                {_players.length > 1
-                  ? _players.filter((player: Player) => player.isPlayersTurn)[0]
-                      ?.name
-                  : _players[0]?.name + ' wins!'}
-              </h2>
               <h3>{timeLeft}</h3>
               <button
-                className="btn btn-outline-light w-100 p-4 mt-4"
+                className="btn btn-primary btn-next w-100 p-4 mt-4"
                 onClick={() => nextTurn(false)}
                 disabled={!(timeLeft < 10)}
               >
-                NEXT
+                <h1 className="text-uppercase">
+                  {_players.length > 1
+                    ? _players.filter(
+                        (player: Player) => player.isPlayersTurn
+                      )[0]?.name
+                    : _players[0]?.name + ' wins!'}
+                </h1>
               </button>
             </div>
           ) : (

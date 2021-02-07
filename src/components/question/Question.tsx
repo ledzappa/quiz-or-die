@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import ViewQuestions from '../viewQuestions/ViewQuestions';
 
-export default function Question({ currentQuestion, updatePlayerPoints, playBtnSound } : any) {
+export default function Question({
+  currentQuestion,
+  updatePlayerPoints,
+  playBtnSound,
+}: any) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(30);
   const [timer, setTimer] = useState<any>();
@@ -10,6 +15,18 @@ export default function Question({ currentQuestion, updatePlayerPoints, playBtnS
   useEffect(() => {
     updateTime();
   }, [timeRemaining, showAnswer]);
+
+  const extractAlternatives = (question: string) => {
+    if (question.includes('#ALT#')) {
+      const questions = question.replace('#ALTEND#', '').split('#ALT#');
+      const alternatives = questions[1].split(';;');
+      const last = alternatives.pop();
+      const alternativesText = `${alternatives.join(', ')} or ${last}?`;
+      return questions[0] + alternativesText;
+    } else {
+      return question;
+    }
+  };
 
   const updateTime = () => {
     if (!showAnswer) {
@@ -52,7 +69,7 @@ export default function Question({ currentQuestion, updatePlayerPoints, playBtnS
     <div>
       <div className="mb-4">
         <h1 className="text-capitalize">{currentQuestion.category}</h1>
-        <p>{currentQuestion.question}</p>
+        <p>{extractAlternatives(currentQuestion.question)}</p>
       </div>
       {showAnswer ? (
         <div>

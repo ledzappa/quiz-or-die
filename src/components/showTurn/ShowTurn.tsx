@@ -12,13 +12,7 @@ export default function ShowTurn({ currentPlayer }: { currentPlayer: Player }) {
 
   const handleClick = () => {
     const random = Math.random();
-    history.push(
-      random < 0.2
-        ? '/perks'
-        : random < 0.4
-        ? '/round-and-round'
-        : '/select-category'
-    );
+    history.push(random < 0.1 ? '/perks' : '/select-category');
   };
 
   return (

@@ -6,11 +6,15 @@ export default function Scoreboard({ players, setPlayers, direction }: any) {
   const history = useHistory();
 
   const handleNextRoundClick = () => {
-    const nextTurnIndex = getNextTurnIndex(players, direction);
-    let _players = setNextTurn(players, nextTurnIndex);
-    _players = reducePlayerPerks(_players);
-    setPlayers(_players);
-    history.push('/show-turn');
+    if (Math.random() > 0.05) {
+      const nextTurnIndex = getNextTurnIndex(players, direction);
+      let _players = setNextTurn(players, nextTurnIndex);
+      _players = reducePlayerPerks(_players);
+      setPlayers(_players);
+      history.push('/show-turn');
+    } else {
+      history.push('/round-and-round');
+    }
   };
 
   const getNextTurnIndex = (players: Player[], direction: number) => {
@@ -61,17 +65,19 @@ export default function Scoreboard({ players, setPlayers, direction }: any) {
       <h2>Scoreboard:</h2>
       <table className="table text-white">
         <tbody>
-          {players.map((player: Player, idx: number) => (
-            <tr
-              key={idx}
-              className={
-                player.isPlayersTurn ? 'animate__animated animate__flash' : ''
-              }
-            >
-              <td>{player.name}</td>
-              <td className="text-right">{player.points}p</td>
-            </tr>
-          ))}
+          {[...players]
+            .sort((a: Player, b: Player) => b.points - a.points)
+            .map((player: Player, idx: number) => (
+              <tr
+                key={idx}
+                className={
+                  player.isPlayersTurn ? 'animate__animated animate__flash' : ''
+                }
+              >
+                <td className="text-uppercase">{player.name}</td>
+                <td className="text-right">{player.points}p</td>
+              </tr>
+            ))}
         </tbody>
       </table>
       <button

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Category } from '../../interfaces/interfaces';
+import { Category, Player } from '../../interfaces/interfaces';
 import './SelectCategory.css';
 
 export default function SelectCategory({
@@ -8,8 +8,17 @@ export default function SelectCategory({
   setCurrentCategory,
   categories,
   play,
-}: any) {
-  const [activeCategory, setActiveCategory] = useState({ name: '' });
+}: {
+  currentPlayer: Player;
+  setCurrentCategory: any;
+  categories: Category[];
+  play: any;
+}) {
+  const [activeCategory, setActiveCategory] = useState({
+    id: 0,
+    identifier: '',
+    name: '',
+  });
   const history = useHistory();
 
   useEffect(() => {
@@ -48,9 +57,16 @@ export default function SelectCategory({
   return (
     <div className="text-center">
       <div className="mb-4">
-        <h1 className="mb-0 text-uppercase">{currentPlayer.name}</h1>
+        <h1 className="mb-0 text-uppercase">
+          {currentPlayer.name}
+        </h1>
         <div>"{currentPlayer.description}"</div>
-        <div>{currentPlayer.perks.freedomOfChoice}</div>
+        <div>({currentPlayer.points} points)</div>
+        {currentPlayer.perks.freedomOfChoice > 0 && (
+          <div>
+            Freedom Of Choice left: {currentPlayer.perks.freedomOfChoice}
+          </div>
+        )}
       </div>
       <div className="row">
         {categories.map((item: Category, idx: number) => (

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Perks.css';
 import { Perk, Player } from '../../interfaces/interfaces';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { setConstantValue } from 'typescript';
 
 const playerPerks = [
   {
@@ -30,7 +31,7 @@ const globalPerks = [
     id: 'robin-hood',
     name: 'Robin Hood',
     description:
-      'The one with the mosts points generously donates two points to the one with the least points',
+      'The player with the mosts points generously donates 2 points to the one with the least points',
   },
   {
     id: 'change-direction',
@@ -64,11 +65,11 @@ export default function Perks({
   }, []);
 
   const randomizePerk = () => {
-    const perks = Math.random() < 1 ? playerPerks : globalPerks;
+    const perks = Math.random() < 0.6 ? playerPerks : globalPerks;
     const randomPerkIndex = Math.floor(perks.length * Math.random());
     const perk = perks[randomPerkIndex] as Perk;
     setPerk(perk);
-    handlePerk(perks[randomPerkIndex].id);
+    playGoodPerkSound();
   };
 
   const updatePlayerPerks = (perkName: string, count: number) => {
@@ -84,23 +85,81 @@ export default function Perks({
     );
   };
 
-  const handlePerk = (perkId: string) => {
+  const getRobinHoodText = (players: Player[]): string => {
+    let minPoints = 100;
+    let maxPoints = -100;
+    let minPlayerName = '';
+    let maxPlayerName = '';
+    players.forEach((player) => {
+      if (player.points < minPoints) {
+        minPoints = player.points;
+        minPlayerName = player.name;
+      }
+      if (player.points > maxPoints) {
+        maxPoints = player.points;
+        maxPlayerName = player.name;
+      }
+    });
+    return `${maxPlayerName} generously donates 2 points to ${minPlayerName}`;
+  };
+
+  const subtractPlayerPoints = (players: Player[]) => {
+    return players.map((player) => ({ ...player, points: player.points - 1 }));
+  };
+
+  const switchPlayerPoints = (players: Player[]) => {
+    let minPoints = 100;
+    let maxPoints = -100;
+    let minPointsIdx = 0;
+    let maxPointsIdx = 0;
+
+    players.forEach((player, idx) => {
+      if (player.points < minPoints) {
+        minPoints = player.points;
+        minPointsIdx = idx;
+      }
+      if (player.points > maxPoints) {
+        maxPoints = player.points;
+        maxPointsIdx = idx;
+      }
+    });
+
+    return players.map((player, idx) => {
+      if (idx === minPointsIdx) {
+        return { ...player, points: player.points + 2 };
+      }
+      if (idx === maxPointsIdx) {
+        return { ...player, points: player.points - 2 };
+      }
+      return player;
+    });
+  };
+
+  const activatePerk = (perkId: string) => {
     switch (perkId) {
       case 'change-direction':
         setDirection();
-        playGoodPerkSound();
         break;
       case 'freedom-of-choice':
         updatePlayerPerks('freedomOfChoice', 3);
-        playGoodPerkSound();
         break;
       case 'double-up':
         updatePlayerPerks('doubleUp', 1);
-        playGoodPerkSound();
+        break;
+      case 'robin-hood':
+        setPlayers(switchPlayerPoints(players));
+        break;
+      case 'landmine':
+        setPlayers(subtractPlayerPoints(players));
         break;
       default:
         break;
     }
+  };
+
+  const handleContinueClick = () => {
+    activatePerk(perk.id);
+    history.push('/select-category');
   };
 
   return (
@@ -110,11 +169,12 @@ export default function Perks({
           <FontAwesomeIcon icon={perk.icon as IconProp} />
         </div>
         <h1>{perk.name}</h1>
-        <p>{perk.description}</p>
-        <button
-          className="btn btn-outline-light"
-          onClick={() => history.push('/select-category')}
-        >
+        <p>
+          {perk.id === 'robin-hood'
+            ? getRobinHoodText(players)
+            : perk.description}
+        </p>
+        <button className="btn btn-outline-light" onClick={handleContinueClick}>
           Continue
         </button>
       </div>
