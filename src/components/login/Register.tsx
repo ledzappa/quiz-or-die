@@ -29,7 +29,7 @@ export default function Register() {
   });
 
   const handleRegisterClick = () => {
-    const { error, value } = schema.validate(formData);
+    const { error } = schema.validate(formData);
 
     if (!error) {
       api

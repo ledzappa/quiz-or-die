@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import api from '../../api/Api';
-import { Category } from '../../interfaces/interfaces';
+import { Category, Question } from '../../interfaces/interfaces';
 
 export const validateForm = ({ categoryId, question, answer }: any) => {
   if (categoryId.length === 0) {
@@ -16,27 +16,38 @@ export const validateForm = ({ categoryId, question, answer }: any) => {
   return true;
 };
 
-export default function AddQuestion({ categories, setAllQuestions }: any) {
-  const [formData, setFormData] = useState({
-    categoryId: 1,
-    question: '',
-    answer: '',
-  });
+const defaultFormValues = {
+  id: null,
+  categoryId: 1,
+  question: '',
+  answer: '',
+};
+
+export default function AddQuestion({
+  categories,
+  setAllQuestions,
+  showModal,
+  setShowModal,
+  question,
+}: any) {
+  const [formData, setFormData] = useState<Question>(defaultFormValues);
   const [isFormValid, setIsFormValid] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setIsFormValid(validateForm(formData));
   }, [formData]);
+
+  useEffect(() => {
+    setFormData(question || defaultFormValues);
+  }, [showModal, question]);
 
   const handleFormChange = ({ name, value }: any) => {
     setFormData({ ...formData, [name]: value });
   };
 
   const handleClose = () => setShowModal(false);
-  const openModal = () => setShowModal(true);
 
-  const submitQuestion = () => {
+  const handleAddQuestionClick = () => {
     api
       .addQuestion(formData)
       .then(() => {
@@ -46,16 +57,23 @@ export default function AddQuestion({ categories, setAllQuestions }: any) {
       .catch((e) => console.log(e));
   };
 
+  const handleSaveQuestionClick = () => {
+    api
+      .saveQuestion(formData)
+      .then(() => {
+        setAllQuestions(formData);
+        setFormData({ ...formData, question: '', answer: '' });
+        setShowModal(false);
+      })
+      .catch((e) => console.log(e));
+  };
+
   return (
     <div>
-      <button className="btn btn-outline-light w-100" onClick={openModal}>
-        Add Question
-      </button>
       <Modal className="text-dark" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add question</Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
           <p>
             Select a category and fill out the form in order to submit a
@@ -67,6 +85,7 @@ export default function AddQuestion({ categories, setAllQuestions }: any) {
             <select
               className="form-control"
               name="categoryId"
+              value={formData.categoryId}
               onChange={(e) => handleFormChange(e.target)}
             >
               {categories.map((category: Category, idx: number) => (
@@ -101,10 +120,12 @@ export default function AddQuestion({ categories, setAllQuestions }: any) {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={() => submitQuestion()}
+            onClick={
+              question ? handleSaveQuestionClick : handleAddQuestionClick
+            }
             disabled={!isFormValid}
           >
-            Submit question
+            {question ? 'Save ' : 'Add '}question
           </button>
         </Modal.Footer>
       </Modal>

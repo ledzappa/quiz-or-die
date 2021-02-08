@@ -1,63 +1,26 @@
-import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Player } from '../../interfaces/interfaces';
+import { Direction, Player } from '../../interfaces/interfaces';
 
-export default function Scoreboard({ players, setPlayers, direction }: any) {
+export default function Scoreboard({
+  players,
+  setPlayers,
+  direction,
+}: {
+  players: Player[];
+  setPlayers: any;
+  direction: Direction;
+}) {
   const history = useHistory();
 
   const handleNextRoundClick = () => {
     if (Math.random() > 0.05) {
-      const nextTurnIndex = getNextTurnIndex(players, direction);
-      let _players = setNextTurn(players, nextTurnIndex);
+      let _players = setNextTurn(players, direction);
       _players = reducePlayerPerks(_players);
       setPlayers(_players);
       history.push('/show-turn');
     } else {
       history.push('/round-and-round');
     }
-  };
-
-  const getNextTurnIndex = (players: Player[], direction: number) => {
-    const currentPlayerIndex = players.findIndex(
-      (player) => player.isPlayersTurn
-    );
-
-    let nextPlayerIndex = null;
-    const isFirstPlayer = currentPlayerIndex === 0;
-    const isLastPlayer = currentPlayerIndex === players.length - 1;
-    if (direction === 1) {
-      nextPlayerIndex = isLastPlayer ? 0 : currentPlayerIndex + direction;
-    } else {
-      nextPlayerIndex = isFirstPlayer
-        ? players.length - 1
-        : currentPlayerIndex + direction;
-    }
-
-    return nextPlayerIndex;
-  };
-
-  const setNextTurn = (players: Player[], index: number) => {
-    return players.map((player, idx) => ({
-      ...player,
-      isPlayersTurn: index === idx,
-    }));
-  };
-
-  const reducePlayerPerks = (players: Player[]) => {
-    return players.map((player: any) =>
-      player.isPlayersTurn
-        ? {
-            ...player,
-            perks: Object.keys(player.perks).reduce(
-              (prev, cur) =>
-                player.perks[cur] > 0
-                  ? { ...prev, [cur]: player.perks[cur] - 1 }
-                  : prev,
-              { ...player.perks }
-            ),
-          }
-        : player
-    );
   };
 
   return (
@@ -74,7 +37,9 @@ export default function Scoreboard({ players, setPlayers, direction }: any) {
                   player.isPlayersTurn ? 'animate__animated animate__flash' : ''
                 }
               >
-                <td className="text-uppercase">{idx + 1}. {player.name}</td>
+                <td className="text-uppercase">
+                  {idx + 1}. {player.name}
+                </td>
                 <td className="text-right">{player.points}p</td>
               </tr>
             ))}
@@ -89,3 +54,42 @@ export default function Scoreboard({ players, setPlayers, direction }: any) {
     </div>
   );
 }
+
+export const setNextTurn = (players: Player[], direction: Direction) => {
+  const currentPlayerIndex = players.findIndex(
+    (player) => player.isPlayersTurn
+  );
+
+  let nextIndex = 0;
+  const isFirstPlayer = currentPlayerIndex === 0;
+  const isLastPlayer = currentPlayerIndex === players.length - 1;
+  if (direction === 1) {
+    nextIndex = isLastPlayer ? 0 : currentPlayerIndex + direction;
+  } else {
+    nextIndex = isFirstPlayer
+      ? players.length - 1
+      : currentPlayerIndex + direction;
+  }
+
+  return players.map((player, idx) => ({
+    ...player,
+    isPlayersTurn: nextIndex === idx,
+  }));
+};
+
+const reducePlayerPerks = (players: Player[]) => {
+  return players.map((player: any) =>
+    player.isPlayersTurn
+      ? {
+          ...player,
+          perks: Object.keys(player.perks).reduce(
+            (prev, cur) =>
+              player.perks[cur] > 0
+                ? { ...prev, [cur]: player.perks[cur] - 1 }
+                : prev,
+            { ...player.perks }
+          ),
+        }
+      : player
+  );
+};

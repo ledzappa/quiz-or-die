@@ -45,19 +45,6 @@ function App() {
     setCurrentQuestion({ ...randomQuestion, category: category.identifier });
   };
 
-  const updatePlayerPoints = () => {
-    setPlayers(
-      players.map((player) =>
-        player.isPlayersTurn
-          ? {
-              ...player,
-              points: player.points + (player.perks.doubleUp > 0 ? 2 : 1),
-            }
-          : player
-      )
-    );
-  };
-
   return (
     <div className="App" onClick={(e) => console.log(e.target)}>
       <MemoryRouter>
@@ -90,18 +77,18 @@ function App() {
           <Route path="/perks">
             <Perks
               players={players}
-              setDirection={() => setDirection(direction * -1)}
-              setPlayers={(players) => setPlayers(players)}
               playGoodPerkSound={playGoodPerkSound}
+              setPlayers={(players) => setPlayers(players)}
+              setDirection={() => setDirection(direction * -1)}
             ></Perks>
           </Route>
           <Route path="/round-and-round">
             <RoundAndRound
               players={players}
               themes={themes}
-              setPlayers={(players) => setPlayers(players)}
               playGoodPerkSound={playGoodPerkSound}
               playBtnSound={playBtnSound}
+              setPlayers={(players) => setPlayers(players)}
             ></RoundAndRound>
           </Route>
           <Route path="/select-category">
@@ -122,15 +109,16 @@ function App() {
                 players.filter((player) => player.isPlayersTurn)[0]
               }
               currentQuestion={currentQuestion}
-              updatePlayerPoints={() => updatePlayerPoints()}
+              players={players}
               playBtnSound={playBtnSound}
+              setPlayers={(players) => setPlayers(players)}
             ></Question>
           </Route>
           <Route path="/scoreboard">
             <Scoreboard
               players={players}
-              setPlayers={(players) => setPlayers(players)}
               direction={direction}
+              setPlayers={(players) => setPlayers(players)}
             ></Scoreboard>
           </Route>
           <Route path="/admin/questions">

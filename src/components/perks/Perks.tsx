@@ -18,6 +18,11 @@ const playerPerks = [
     name: 'Freedom of choice!',
     description: 'Choose your category for the next 3 rounds.',
   },
+  {
+    id: 'landmine',
+    name: 'Landmine!',
+    description: 'BOOM! You lose 1 point if you answer wrong.',
+  },
 ];
 
 const globalPerks = [
@@ -31,12 +36,7 @@ const globalPerks = [
     name: 'Direction change!',
     description: 'The direction changes after this turn.',
     icon: 'sync',
-  },
-  {
-    id: 'landmine',
-    name: 'Landmine!',
-    description: 'BOOM! Everyone loses 1 point',
-  },
+  }
 ];
 
 export default function Perks({
@@ -58,9 +58,13 @@ export default function Perks({
   }, []);
 
   const randomizePerk = () => {
-    const perks = Math.random() < 0.6 ? playerPerks : globalPerks;
+    const perks = Math.random() < 0.99 ? playerPerks : globalPerks;
     const randomPerkIndex = Math.floor(perks.length * Math.random());
     const perk = perks[randomPerkIndex] as Perk;
+    if (perk.id === 'robin-hood' && !isRobinHoodEnabled(players)) {
+      randomizePerk();
+      return;
+    }
     setPerk(perk);
     playGoodPerkSound();
   };
@@ -78,56 +82,6 @@ export default function Perks({
     );
   };
 
-  const getRobinHoodText = (players: Player[]): string => {
-    let minPoints = 100;
-    let maxPoints = -100;
-    let minPlayerName = '';
-    let maxPlayerName = '';
-    players.forEach((player) => {
-      if (player.points < minPoints) {
-        minPoints = player.points;
-        minPlayerName = player.name;
-      }
-      if (player.points > maxPoints) {
-        maxPoints = player.points;
-        maxPlayerName = player.name;
-      }
-    });
-    return `${maxPlayerName} generously donates 1 point to ${minPlayerName}`;
-  };
-
-  const subtractPlayerPoints = (players: Player[]) => {
-    return players.map((player) => ({ ...player, points: player.points - 1 }));
-  };
-
-  const switchPlayerPoints = (players: Player[]) => {
-    let minPoints = 100;
-    let maxPoints = -100;
-    let minPointsIdx = 0;
-    let maxPointsIdx = 0;
-
-    players.forEach((player, idx) => {
-      if (player.points < minPoints) {
-        minPoints = player.points;
-        minPointsIdx = idx;
-      }
-      if (player.points > maxPoints) {
-        maxPoints = player.points;
-        maxPointsIdx = idx;
-      }
-    });
-
-    return players.map((player, idx) => {
-      if (idx === minPointsIdx) {
-        return { ...player, points: player.points + 1 };
-      }
-      if (idx === maxPointsIdx) {
-        return { ...player, points: player.points - 1 };
-      }
-      return player;
-    });
-  };
-
   const activatePerk = (perkId: string) => {
     switch (perkId) {
       case 'change-direction':
@@ -143,7 +97,7 @@ export default function Perks({
         setPlayers(switchPlayerPoints(players));
         break;
       case 'landmine':
-        setPlayers(subtractPlayerPoints(players));
+        updatePlayerPerks('landmine', 1);
         break;
       default:
         break;
@@ -174,3 +128,42 @@ export default function Perks({
     </div>
   );
 }
+
+export const subtractPointFromAllPlayers = (players: Player[]) => {
+  return players.map((player) => ({ ...player, points: player.points - 1 }));
+};
+
+export const isRobinHoodEnabled = (players: Player[]) => {
+  const maxPoints = Math.max(...players.map((player) => player.points));
+  const minPoints = Math.min(...players.map((player) => player.points));
+  const minAndMaxAreUnique =
+    players.filter((player) => player.points === maxPoints).length === 1 &&
+    players.filter((player) => player.points === minPoints).length === 1;
+  return maxPoints !== minPoints && minAndMaxAreUnique;
+};
+
+export const getRobinHoodText = (players: Player[]): string => {
+  const maxPoints = Math.max(...players.map((player) => player.points));
+  const minPoints = Math.min(...players.map((player) => player.points));
+  const maxPlayerName = players.filter(
+    (player) => player.points === maxPoints
+  )[0].name;
+  const minPlayerName = players.filter(
+    (player) => player.points === minPoints
+  )[0].name;
+  return `${maxPlayerName} generously donates 1 point to ${minPlayerName}`;
+};
+
+export const switchPlayerPoints = (players: Player[]) => {
+  const maxPoints = Math.max(...players.map((player) => player.points));
+  const minPoints = Math.min(...players.map((player) => player.points));
+  return players.map((player) => {
+    if (player.points === minPoints) {
+      return { ...player, points: player.points + 1 };
+    }
+    if (player.points === maxPoints) {
+      return { ...player, points: player.points - 1 };
+    }
+    return player;
+  });
+};

@@ -21,6 +21,8 @@ const api = {
   getRoundAndRoundThemes: () =>
     axios.get(true ? 'mocks/roundAndRound.json' : '/api/round-and-round'),
   addQuestion: (formData) => axios.post('/api/questions', formData),
+  saveQuestion: (formData) => axios.put('/api/questions', formData),
+  deleteQuestion: (formData) => axios.delete('/api/questions', formData),
   addUser: (formData) => axios.post('/api/users', formData),
   login: (formData) => axios.post('/api/login', formData),
 };

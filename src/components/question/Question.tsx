@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Player, Question as Question2 } from '../../interfaces/interfaces';
+import { Player, Question as _Question } from '../../interfaces/interfaces';
 
 export default function Question({
   currentQuestion,
   currentPlayer,
-  updatePlayerPoints,
+  players,
+  setPlayers,
   playBtnSound,
 }: {
-  currentQuestion: Question2;
+  currentQuestion: _Question;
   currentPlayer: Player;
-  updatePlayerPoints: any;
+  players: Player[];
+  setPlayers: any;
   playBtnSound: any;
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -61,14 +63,31 @@ export default function Question({
   };
 
   const rightAnswer = () => {
-    updatePlayerPoints();
+    const earnedPoints = currentPlayer.perks.doubleUp > 0 ? 2 : 1;
+    const _players = updateCurrentPlayerPoints(players, earnedPoints);
+    setPlayers(_players);
     playBtnSound();
     history.push('/scoreboard');
   };
 
   const wrongAnswer = () => {
+    if (currentPlayer.perks.landmine > 0) {
+      const _players = updateCurrentPlayerPoints(players, -1);
+      setPlayers(_players);
+    }
     playBtnSound();
     history.push('/scoreboard');
+  };
+
+  const updateCurrentPlayerPoints = (players: Player[], points: number) => {
+    return players.map((player) =>
+      player.isPlayersTurn
+        ? {
+            ...player,
+            points: player.points + points,
+          }
+        : player
+    );
   };
 
   return (

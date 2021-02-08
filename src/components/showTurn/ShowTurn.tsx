@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Player } from '../../interfaces/interfaces';
 import './ShowTurn.css';
@@ -7,13 +7,10 @@ export default function ShowTurn({ currentPlayer }: { currentPlayer: Player }) {
   const history = useHistory();
 
   useEffect(() => {
-    setTimeout(() => handleClick(), 3000);
+    setTimeout(() => {
+      history.push(Math.random() < 0.99 ? '/perks' : '/select-category');
+    }, 3000);
   }, []);
-
-  const handleClick = () => {
-    const random = Math.random();
-    history.push(random < 0.25 ? '/perks' : '/select-category');
-  };
 
   return (
     <div className="show-turn-wrapper">

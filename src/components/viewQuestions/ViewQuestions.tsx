@@ -3,12 +3,16 @@ import AddQuestion from '../addQuestion/AddQuestion';
 import api from '../../api/Api';
 import { Category, Question } from '../../interfaces/interfaces';
 
-const filterQuestions = (questions: any, filterString: string, categoryId: number) => {
+const filterQuestions = (
+  questions: any,
+  filterString: string,
+  categoryId: number
+) => {
   return questions.filter(
     (question: any) =>
       (question?.question?.toLowerCase().includes(filterString) ||
         question?.answer?.toLowerCase().includes(filterString)) &&
-      (categoryId == 0 || question?.categoryId == categoryId)
+      (categoryId === 0 || question?.categoryId === categoryId)
   );
 };
 
@@ -21,6 +25,10 @@ export default function ViewQuestions({
   const [questions, setQuestions] = useState([]);
   const [filterString, setFilterString] = useState('');
   const [categoryId, setCategoryId] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedQuestion, setSelectedQuestion] = useState<
+    Question | undefined
+  >(undefined);
 
   useEffect(() => {
     api.getAllQuestions().then((res) => {
@@ -38,7 +46,19 @@ export default function ViewQuestions({
 
   const handleSelectCategoryChange = (categoryId: string) => {
     setCategoryId(Number(categoryId));
-    setQuestions(filterQuestions(allQuestions, filterString, Number(categoryId)));
+    setQuestions(
+      filterQuestions(allQuestions, filterString, Number(categoryId))
+    );
+  };
+
+  const handleAddQuestionClick = () => {
+    setSelectedQuestion(undefined);
+    setShowModal(true);
+  };
+
+  const handleEditModalClick = (question: Question) => {
+    setSelectedQuestion(question);
+    setShowModal(true);
   };
 
   return (
@@ -71,18 +91,18 @@ export default function ViewQuestions({
         <div className="col-12 col-sm-4">
           <div className="form-group">
             <label className="d-none d-sm-block">&nbsp;</label>
-            <AddQuestion
-              categories={categories}
-              setAllQuestions={(question: Question) =>
-                setAllQuestions([...allQuestions, question])
-              }
-            ></AddQuestion>
+            <button
+              className="btn btn-outline-light w-100"
+              onClick={handleAddQuestionClick}
+            >
+              Add Question
+            </button>
           </div>
         </div>
       </div>
       <p>{questions.length} questions</p>
       {questions.length > 0 && (
-        <table className="table text-white">
+        <table className="table text-white table-dark table-hover">
           <thead>
             <tr>
               <th>Question</th>
@@ -92,7 +112,7 @@ export default function ViewQuestions({
           </thead>
           <tbody>
             {questions.map((question: Question) => (
-              <tr>
+              <tr onClick={() => handleEditModalClick(question)}>
                 <td>{question.question}</td>
                 <td>{question.answer}</td>
                 <td>{question.tags}</td>
@@ -101,6 +121,15 @@ export default function ViewQuestions({
           </tbody>
         </table>
       )}
+      <AddQuestion
+        categories={categories}
+        question={selectedQuestion}
+        showModal={showModal}
+        setShowModal={(showModal: boolean) => setShowModal(showModal)}
+        setAllQuestions={(question: Question) =>
+          setAllQuestions([...allQuestions, question])
+        }
+      ></AddQuestion>
     </div>
   );
 }

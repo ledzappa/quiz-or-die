@@ -11,6 +11,7 @@ export default function SelectCategory({
 }: {
   currentPlayer: Player;
   setCurrentCategory: any;
+  setCurrentQuestion: any,
   categories: Category[];
   play: any;
 }) {
