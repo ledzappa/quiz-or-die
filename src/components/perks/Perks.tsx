@@ -4,34 +4,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Perks.css';
 import { Perk, Player } from '../../interfaces/interfaces';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { setConstantValue } from 'typescript';
 
 const playerPerks = [
   {
     id: 'double-up',
     name: 'Double up!',
-    description: 'You get 2 points for a correct answer on the next question!',
+    description:
+      'Yay! You get 2 points for a correct answer on the next question.',
     icon: 'angle-double-up',
   },
   {
     id: 'freedom-of-choice',
     name: 'Freedom of choice!',
-    description: 'Chose your category for the next 3 rounds!',
+    description: 'Choose your category for the next 3 rounds.',
   },
-  /*{
-    id: 'poisoned',
-    name: 'Poisoned!',
-    description:
-      'You will lose one point for every wrong answer (active 3 rounds)',
-  },*/
 ];
 
 const globalPerks = [
   {
     id: 'robin-hood',
     name: 'Robin Hood',
-    description:
-      'The player with the mosts points generously donates 2 points to the one with the least points',
+    description: '#generated#',
   },
   {
     id: 'change-direction',
@@ -100,7 +93,7 @@ export default function Perks({
         maxPlayerName = player.name;
       }
     });
-    return `${maxPlayerName} generously donates 2 points to ${minPlayerName}`;
+    return `${maxPlayerName} generously donates 1 point to ${minPlayerName}`;
   };
 
   const subtractPlayerPoints = (players: Player[]) => {
@@ -126,10 +119,10 @@ export default function Perks({
 
     return players.map((player, idx) => {
       if (idx === minPointsIdx) {
-        return { ...player, points: player.points + 2 };
+        return { ...player, points: player.points + 1 };
       }
       if (idx === maxPointsIdx) {
-        return { ...player, points: player.points - 2 };
+        return { ...player, points: player.points - 1 };
       }
       return player;
     });

@@ -66,7 +66,8 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
     <div className="row justify-content-center">
       <div className="col-12 col-sm-6 col-lg-6 col-xl-4">
         <h1>Add players</h1>
-        <label>Name:</label>
+        <p>Enter a name and press enter or the "Add" button.</p>
+        <label>Name</label>
         <div className="input-group mb-3">
           <input
             type="text"
@@ -98,7 +99,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
         ))}
         <hr />
         <button
-          className="btn btn-primary start-game"
+          className="btn btn-primary w-100 start-game"
           onClick={() => startGame()}
           disabled={players.length < 2}
         >

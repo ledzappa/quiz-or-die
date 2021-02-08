@@ -26,6 +26,7 @@ export interface Question {
   question: string;
   answer: string;
   tags: string;
+  category?: string;
 }
 
 export interface RoundAndRoundTheme {

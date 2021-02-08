@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import ViewQuestions from '../viewQuestions/ViewQuestions';
+import { Player, Question as Question2 } from '../../interfaces/interfaces';
 
 export default function Question({
   currentQuestion,
+  currentPlayer,
   updatePlayerPoints,
   playBtnSound,
-}: any) {
+}: {
+  currentQuestion: Question2;
+  currentPlayer: Player;
+  updatePlayerPoints: any;
+  playBtnSound: any;
+}) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(30);
   const [timer, setTimer] = useState<any>();
@@ -68,6 +74,7 @@ export default function Question({
   return (
     <div>
       <div className="mb-4">
+        <div className="text-uppercase">{currentPlayer.name}</div>
         <h1 className="text-capitalize">{currentQuestion.category}</h1>
         <p>{extractAlternatives(currentQuestion.question)}</p>
       </div>

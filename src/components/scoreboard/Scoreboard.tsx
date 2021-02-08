@@ -62,7 +62,7 @@ export default function Scoreboard({ players, setPlayers, direction }: any) {
 
   return (
     <div>
-      <h2>Scoreboard:</h2>
+      <h2>Scoreboard</h2>
       <table className="table text-white">
         <tbody>
           {[...players]
@@ -74,7 +74,7 @@ export default function Scoreboard({ players, setPlayers, direction }: any) {
                   player.isPlayersTurn ? 'animate__animated animate__flash' : ''
                 }
               >
-                <td className="text-uppercase">{player.name}</td>
+                <td className="text-uppercase">{idx + 1}. {player.name}</td>
                 <td className="text-right">{player.points}p</td>
               </tr>
             ))}
