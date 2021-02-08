@@ -30,7 +30,7 @@ export default function Login({ setUser }: any) {
   return (
     <div>
       <div className="row justify-content-center">
-        <div className="col-12 col-sm-6 pt-0 pt-sm-5">
+        <div className="col-12 col-sm-6 col-md-4 pt-0 pt-sm-5">
           <h1>Login</h1>
           <p>Login below to start playing Quizmageddon!</p>
 

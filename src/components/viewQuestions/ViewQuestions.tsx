@@ -112,7 +112,7 @@ export default function ViewQuestions({
           </thead>
           <tbody>
             {questions.map((question: Question) => (
-              <tr onClick={() => handleEditModalClick(question)}>
+              <tr className="clickable" onClick={() => handleEditModalClick(question)}>
                 <td>{question.question}</td>
                 <td>{question.answer}</td>
                 <td>{question.tags}</td>

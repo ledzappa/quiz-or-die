@@ -8,7 +8,7 @@ export default function ShowTurn({ currentPlayer }: { currentPlayer: Player }) {
 
   useEffect(() => {
     setTimeout(() => {
-      history.push(Math.random() < 0.99 ? '/perks' : '/select-category');
+      history.push(Math.random() < 0.25 ? '/perks' : '/select-category');
     }, 3000);
   }, []);
 

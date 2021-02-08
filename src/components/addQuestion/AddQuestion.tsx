@@ -72,7 +72,7 @@ export default function AddQuestion({
     <div>
       <Modal className="text-dark" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add question</Modal.Title>
+          <Modal.Title>{question ? 'Edit ' : 'Add '}question</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>

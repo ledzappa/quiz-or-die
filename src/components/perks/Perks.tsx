@@ -58,7 +58,7 @@ export default function Perks({
   }, []);
 
   const randomizePerk = () => {
-    const perks = Math.random() < 0.99 ? playerPerks : globalPerks;
+    const perks = Math.random() < 0.60 ? playerPerks : globalPerks;
     const randomPerkIndex = Math.floor(perks.length * Math.random());
     const perk = perks[randomPerkIndex] as Perk;
     if (perk.id === 'robin-hood' && !isRobinHoodEnabled(players)) {
