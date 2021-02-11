@@ -25,7 +25,7 @@ const api = {
   deleteQuestion: (formData) => axios.delete('/api/questions', formData),
   addUser: (formData) => axios.post('/api/users', formData),
   login: (formData) =>
-    axios.post(mocks ? 'mocks/login.json' : '/api/login', formData),
+    mocks ? axios.get('mocks/login.json') : axios.post('/api/login', formData),
 };
 
 export default api;
