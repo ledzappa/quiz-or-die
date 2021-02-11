@@ -1,263 +1,2292 @@
 {
-  "questions": {
-    "movies": [
-      {
-        "question": "What movie did Leonardo Dicaprio win an oscar for?",
-        "answer": "The Revenant (2015)",
-        "timeLimit": null
-      },
-      {
-        "question": "Name 5 different Leonardo Dicaprio Movies",
-        "answer": "Google is your friend!",
-        "timeLimit": 20
-      },
-      {
-        "question": "What's the name of the first star wars movie (Episode IV)?",
-        "answer": "A New Hope (1977)",
-        "timeLimit": null
-      },
-      {
-        "question": "What's the name of the second star wars movie (Episode V)?",
-        "answer": "The Empire Strikes Back (1980)",
-        "timeLimit": null
-      },
-      {
-        "question": "What color was the pill that Neo took in the Matrix?",
-        "answer": "The red pill",
-        "timeLimit": null
-      },
-      {
-        "question": "Name three different actors that has played James Bond.",
-        "answer": "Sean Connery, George Lazenby, Roger Moore, Timothy Dalton, Pierce Brosnan, Daniel Craig",
-        "timeLimit": null
-      },
-      {
-        "question": "The head of what animal is in the center of an infamous scene from The Godfather?",
-        "answer": "A horse",
-        "timeLimit": null
-      },
-      {
-        "question": "For what movie did Steven Spielberg win his first Oscar for Best Director?",
-        "answer": "Schindler's List (1993)",
-        "timeLimit": null
-      },
-      {
-        "question": "In Apocalypse Now, Robert Duvall says, “I love the smell of _____ in the morning.",
-        "answer": "Napalm",
-        "timeLimit": null
-      },
-      {
-        "question": "Which Alfred Hitchcock thriller is notorious for its shocking “shower scene”?",
-        "answer": "Psycho",
-        "timeLimit": null
-      },
-      {
-        "question": "What year was the first Toy Story film released in cinemas?",
-        "answer": "1995",
-        "timeLimit": null
-      },
-      {
-        "question": "Who directed Titanic, Avatar and The Terminator?",
-        "answer": "James Cameron",
-        "timeLimit": null
-      },
-      {
-        "question": "Meryl Streep won a Best Actress BAFTA for which 2011 political drama?",
-        "answer": "The Iron Lady",
-        "timeLimit": null
-      },
-      {
-        "question": "What was the name of Tom Hanks round-shaped friend in Cast away?",
-        "answer": "Wilson",
-        "timeLimit": null
-      },
-      {
-        "question": "Name the film which boasts the famous line: “You can’t handle the truth!”",
-        "answer": "A Few Good Men (1992)",
-        "timeLimit": null
-      },
-      {
-        "question": "Name three different Star Wars movies!",
-        "answer": "IMDB is your friend!",
-        "timeLimit": null
-      },
-      {
-        "question": "What does Tom Hanks compare life to in Forest Gump?",
-        "answer": "A box of chocolates. You never know what you're gonna get.",
-        "timeLimit": null
-      },
-      {
-        "question": "One day Forrest Gump started running, for how long time did he run?",
-        "answer": "3 years, 2 months, 14 days and 16 hours",
-        "timeLimit": null
-      },
-      {
-        "question": "In the Avengers movies, what is the name of Thor's hammer?",
-        "answer": "Mjolnir",
-        "timeLimit": null
-      },
-      {
-        "question": "Who plays Aquaman in the 2018 movie?",
-        "answer": "Jason Momoa",
-        "timeLimit": null
-      },
-      {
-        "question": "He has played both super man and geralt the witcher, what's his name?",
-        "answer": "Henry Cavill",
-        "timeLimit": null
-      },
-      {
-        "question": "In what movie does Brad Pitt play Lieutenant Aldo Raine?",
-        "answer": "Inglourious Basterds",
-        "timeLimit": null
-      },
-      {
-        "question": "Name three movies of the top 10 highest rated movies on IMDB",
-        "answer": "IMDB is your friend!",
-        "timeLimit": null
-      },
-      {
-        "question": "Andy Dufresne (played by Tim Robbins) gets innocently imprisoned for murder in this masterpiece. What's the name of the movie?",
-        "answer": "The Shawshank Redemption (1994)",
-        "timeLimit": null
-      },
-      {
-        "question": "What year was the first Godfather movie released?",
-        "answer": "1972",
-        "timeLimit": null
-      },
-      {
-        "question": "Who directed the Godfather movies?",
-        "answer": "Francis Ford Coppola",
-        "timeLimit": null
-      },
-      {
-        "question": "Name a movie directed by Francis For Coppola EXCEPT the Godfahter movies!",
-        "answer": "IMDB is you friend!",
-        "timeLimit": null
-      },
-      {
-        "question": "Which movie has won the highest amount of oscars?",
-        "answer": "Titanic, Ben-Hur and The Lord of the Rings: The Return of the King, has won the same amount - 11 oscars!",
-        "timeLimit": null
-      },
-      {
-        "question": "What movie is the following quote from: \"A census taker once tried to test me. I ate his liver with some fava beans and a nice chianti\"?",
-        "answer": "The Silence of the Lambs (1991)",
-        "timeLimit": null
-      },
-      {
-        "question": "\"I'm gonna make him an offer he cant refuse\". What movie?",
-        "answer": "The Godfather (1972)",
-        "timeLimit": null
-      },
-      {
-        "question": "Who was the actor that shouted \"You can't handle the truth!\" in A Few Good Men (1992)?",
-        "answer": "Jack Nicholson",
-        "timeLimit": null
-      },
-      {
-        "question": "What number is supposedly the meaning of life in The Hitchhiker's Guide to the Galaxy?",
-        "answer": "42",
-        "timeLimit": null
-      },
-      {
-        "question": "What was in the box in Seven?",
-        "answer": "A head",
-        "timeLimit": null
-      },
-      {
-        "question": "\"A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.\" - what is the movie?",
-        "answer": "Gladiator (2000)",
-        "timeLimit": null
-      },
-      {
-        "question": "Who's oldest? Arnold Scharzenegger, Sylvester Stallone or Samuel L Jackson?",
-        "answer": "Sylvester Stallone (born 1946)",
-        "timeLimit": null
-      },
-      {
-        "question": "Whats wonder womans name as i civilian?",
-        "answer": "Diana Prince",
-        "timeLimit": null
-      }
-    ],
-    "sports": [
-      {
-        "question": "What NHL team has the most Stnaley cup wins?",
-        "answer": "Montreal Canadiens (24)"
-      },
-      {
-        "question": "Which hockey team has won most olympic medals?",
-        "answer": "Canada (15)"
-      },
-      {
-        "question": "In what sport can we find names such as Jose Aldo, Anderson Silva and Ronda Rousey?",
-        "answer": "MMA"
-      },
-      {
-        "question": "Which boxers faced off in \"The Rumble in the Jungle?\"",
-        "answer": "Muhammad Ali and George Foreman"
-      },
-      {
-        "question": "Which England footballer was famously never given a yellow card?",
-        "answer": "Gary Lineker"
-      },
-      {
-        "question": "What's Wayne Gretskys nickname?",
-        "answer": "The Great One"
-      },
-      {
-        "question": "How many olympic gold medals has Sweden won in ice hockey?",
-        "answer": "Two (1994 and 2006)"
-      },
-      {
-        "question": "What does the term \"offside\" refer to in sports such as fotball and ice hockey?",
-        "answer": ""
-      },
-      {
-        "question": "How many points is a \"set\" in table tennis?",
-        "answer": "11 points"
-      },
-      {
-        "question": "What's the maximum score you can achieve in dart with three darts?",
-        "answer": "180"
-      },
-      {
-        "question": "What's super bowl?",
-        "answer": "The final game in NFL (National Fotball League)"
-      },
-      {
-        "question": "How many points is a \"perfect game\" in bowling?",
-        "answer": "300"
-      },
-      {
-        "question": "How many teams are there in NHL?",
-        "answer": "31"
-      },
-      {
-        "question": "Name 5 NHL teams!",
-        "answer": "Google is your friend :)"
-      }
-    ],
-    "history": [
-      {
-        "question": "Through what mountain chain in california goes pacific crest trail",
-        "answer": "Sierra nevada"
-      },
-      {
-        "question": "What russian masterpiece was written by leo tolstoj and contains more than 550 000 words?",
-        "answer": "War and peace"
-      }
-    ],
-    "geography": [],
-    "foodAndDrinks": [],
-    "technology": [
-      {
-        "question": "Whats chinas biggest social network platform?",
-        "answer": "Weibo"
-      }
-    ],
-    "games": []
-  }
+  "questions": [
+    {
+      "id": 18,
+      "categoryId": 1,
+      "question": "What movie did Leonardo Dicaprio win an oscar for?",
+      "answer": "The Revenant (2015)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:00:45.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 19,
+      "categoryId": 1,
+      "question": "Name 5 different Leonardo Dicaprio Movies",
+      "answer": "Google is your friend!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:01:20.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 20,
+      "categoryId": 1,
+      "question": "What's the name of the first star wars movie (Episode IV)?",
+      "answer": "A New Hope (1977)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:03:48.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 21,
+      "categoryId": 1,
+      "question": "What's the name of the second star wars movie (Episode V)?",
+      "answer": "The Empire Strikes Back (1980)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:09:41.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 22,
+      "categoryId": 1,
+      "question": "What color was the pill that Neo took in the Matrix?",
+      "answer": "The red pill",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:10:01.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 23,
+      "categoryId": 1,
+      "question": "Name three different actors that has played James Bond.",
+      "answer": "Sean Connery, George Lazenby, Roger Moore, Timothy Dalton, Pierce Brosnan, Daniel Craig",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:12:25.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 24,
+      "categoryId": 1,
+      "question": "The head of what animal is in the center of an infamous scene from The Godfather?",
+      "answer": "A horse",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:12:39.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 25,
+      "categoryId": 1,
+      "question": "For what movie did Steven Spielberg win his first Oscar for Best Director?",
+      "answer": "Schindler's List (1993)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:12:58.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 26,
+      "categoryId": 1,
+      "question": "In Apocalypse Now, Robert Duvall says, “I love the smell of _____ in the morning.",
+      "answer": "Napalm",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:13:18.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 27,
+      "categoryId": 1,
+      "question": "Which Alfred Hitchcock thriller is notorious for its shocking “shower scene”?",
+      "answer": "Psycho",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:13:36.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 28,
+      "categoryId": 1,
+      "question": "What year was the first Toy Story film released in cinemas?",
+      "answer": "1995",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:13:56.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 29,
+      "categoryId": 1,
+      "question": "Who directed Titanic, Avatar and The Terminator?",
+      "answer": "James Cameron",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:14:12.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 30,
+      "categoryId": 1,
+      "question": "Meryl Streep won a Best Actress BAFTA for which 2011 political drama?",
+      "answer": "The Iron Lady",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:14:29.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 31,
+      "categoryId": 1,
+      "question": "What was the name of Tom Hanks round-shaped friend in Cast away?",
+      "answer": "Wilson",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:14:41.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 32,
+      "categoryId": 1,
+      "question": "Name the film which boasts the famous line: “You can’t handle the truth!”",
+      "answer": "A Few Good Men (1992)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:15:00.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 33,
+      "categoryId": 1,
+      "question": "Name three different Star Wars movies!",
+      "answer": "IMDB is your friend!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:15:20.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 34,
+      "categoryId": 1,
+      "question": "What does Tom Hanks compare life to in Forest Gump?",
+      "answer": "A box of chocolates. You never know what you're gonna get.",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:15:38.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 35,
+      "categoryId": 1,
+      "question": "One day Forrest Gump started running, for how many years did he run?",
+      "answer": "3 years. (More precisely 3 years, 2 months, 14 days and 16 hours)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:17:44.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 36,
+      "categoryId": 1,
+      "question": "In the Avengers movies, what is the name of Thor's hammer?",
+      "answer": "Mjolnir",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:18:04.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 37,
+      "categoryId": 1,
+      "question": "Who plays Aquaman in the 2018 movie?",
+      "answer": "Jason Momoa",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:18:23.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 38,
+      "categoryId": 1,
+      "question": "He has played both super man and geralt the witcher, what's his name?",
+      "answer": "Henry Cavill",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:18:38.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 39,
+      "categoryId": 1,
+      "question": "In what movie does Brad Pitt play Lieutenant Aldo Raine?",
+      "answer": "Inglourious Basterds",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:18:56.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 40,
+      "categoryId": 1,
+      "question": "Name three movies of the top 10 highest rated movies on IMDB",
+      "answer": "IMDB is your friend!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:19:15.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 41,
+      "categoryId": 1,
+      "question": "Andy Dufresne (played by Tim Robbins) gets innocently imprisoned for murder in this masterpiece. What's the name of the movie?",
+      "answer": "The Shawshank Redemption (1994)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:19:40.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 42,
+      "categoryId": 1,
+      "question": "What year was the first Godfather movie released?",
+      "answer": "1972",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:19:52.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 43,
+      "categoryId": 1,
+      "question": "Who directed the Godfather movies?",
+      "answer": "Francis Ford Coppola",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:20:09.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 44,
+      "categoryId": 1,
+      "question": "Name a movie directed by Francis For Coppola EXCEPT the Godfahter movies!",
+      "answer": "IMDB is you friend!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:20:30.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 45,
+      "categoryId": 1,
+      "question": "Which movie has won the highest amount of oscars?",
+      "answer": "Titanic, Ben-Hur and The Lord of the Rings: The Return of the King, has won the same amount - 11 oscars!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:20:49.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 46,
+      "categoryId": 1,
+      "question": "What movie is the following quote from: \\\"A census taker once tried to test me. I ate his liver with some fava beans and a nice chianti\\\"?",
+      "answer": "The Silence of the Lambs (1991)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:21:12.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 47,
+      "categoryId": 1,
+      "question": "\"I'm gonna make him an offer he cant refuse\". What movie?",
+      "answer": "The Godfather (1972)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:21:48.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 48,
+      "categoryId": 1,
+      "question": "Who was the actor that shouted \"You can't handle the truth!\" in A Few Good Men (1992)?",
+      "answer": "Jack Nicholson",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:22:14.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 49,
+      "categoryId": 1,
+      "question": "What number is supposedly the meaning of life in The Hitchhiker's Guide to the Galaxy?",
+      "answer": "42",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:22:27.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 50,
+      "categoryId": 1,
+      "question": "What was in the box in Seven?",
+      "answer": "A head",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:22:40.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 51,
+      "categoryId": 1,
+      "question": "\"A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.\" - what is the movie?",
+      "answer": "Gladiator (2000)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:23:12.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 52,
+      "categoryId": 1,
+      "question": "Who's the oldest? Arnold Scharzenegger, Sylvester Stallone or Samuel L Jackson?",
+      "answer": "Sylvester Stallone (born 1946)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:23:32.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 53,
+      "categoryId": 1,
+      "question": "What's Wonder Woman's name as a civilian?",
+      "answer": "Diana Prince",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T15:24:11.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 54,
+      "categoryId": 4,
+      "question": "What is the highest mountain in Afghanistan? Aratrat, Demavend, Nowshaq or Alam-kuh?",
+      "answer": "Nowshaq",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T16:10:54.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 55,
+      "categoryId": 4,
+      "question": "What year did RMS Titanic sink? 1910, 1911, 1912 or 1913?",
+      "answer": "1912",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T16:12:15.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 56,
+      "categoryId": 4,
+      "question": "When did the Swedish king Gustav Vasa die? #ALT#1555;;1560;;1565;;1570#ALTEND#",
+      "answer": "1560",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T16:17:54.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 57,
+      "categoryId": 4,
+      "question": "Who wrote the novel \"Anna Karenina\"?\n#ALT#Lev Tolstoj;;Jane Austen;;Fjodor Dostojevskij;;Elsa Morante#ALTEND#",
+      "answer": "Lev Tolstoj",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T16:22:22.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 58,
+      "categoryId": 4,
+      "question": "How was the German anti-nazi resistance fighter Sophie Scholl executed?\n#ALT#By hangig;;A shot to the head;;Starvation;;By guillotine#ALTEND#",
+      "answer": "By guillotine",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T16:24:13.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 59,
+      "categoryId": 4,
+      "question": "How old was Anne Frank when she, as a birthday gift, got her diary? #ALT#She turned 13;;She turned 11;; She turned 14;;She turned 12#ALTEND#",
+      "answer": "She turned 13 (The diary describes her life from June 1942 until August 1944.))",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T16:26:42.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 60,
+      "categoryId": 4,
+      "question": "William Shakespeare got married in 1582. What was the name of his wife? #ALT#Anne Hathaway;;Mary Heathrow;;Sarah Hammonds;;Erin Galloway#ALTEND#",
+      "answer": "Anne Hathaway",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-27T16:28:22.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 72,
+      "categoryId": 1,
+      "question": "In what lord of the rings move are the \"ents\" introduced?",
+      "answer": "The two towers",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T21:35:18.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 73,
+      "categoryId": 1,
+      "question": "What was the ancient demon, which the fellowship of the ring encounters in the mines of Moria, called?",
+      "answer": "A Balrog",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T21:41:29.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 74,
+      "categoryId": 1,
+      "question": "What's the name of Live Tylors character in The Lord of the Rings?",
+      "answer": "Arwen",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T21:49:00.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 75,
+      "categoryId": 5,
+      "question": "What's the second highest mountain in the world?",
+      "answer": "K2 (8611 m)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T21:56:14.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 76,
+      "categoryId": 2,
+      "question": "What was the name of Michael Jacksons monkey?",
+      "answer": "Bubbles",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T22:03:02.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 77,
+      "categoryId": 2,
+      "question": "What was the name of Michael Jacksons ranch?",
+      "answer": "Neverland",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T22:03:41.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 78,
+      "categoryId": 2,
+      "question": "What skin disease did Michael Jackson claim that he suffered from?",
+      "answer": "Vitiligo",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T22:07:13.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 79,
+      "categoryId": 2,
+      "question": "What song is the phrase \"Annie, are you ok?\" from?",
+      "answer": "Michael Jackson - Smooth Criminal",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T22:10:14.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 80,
+      "categoryId": 3,
+      "question": "In what game can you find characters such as Squirtle, Rattata and Geodude?",
+      "answer": "Pokemon",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T23:16:12.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 81,
+      "categoryId": 3,
+      "question": "What game console has sold most units?",
+      "answer": "Playstation 2 (around 155 million)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T23:19:56.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 82,
+      "categoryId": 3,
+      "question": "In what game franchise can you find characters such as Bianca, Ken and Zangief?",
+      "answer": "Street Fighter",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T23:23:07.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 83,
+      "categoryId": 3,
+      "question": "What are the opposing teams called in Counter Strike?",
+      "answer": "Terrorists and counter-terrorists",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T23:31:19.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 84,
+      "categoryId": 3,
+      "question": "How many players are there in a team in a competitive Counter Strike match?",
+      "answer": "5",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-29T23:33:26.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 85,
+      "categoryId": 2,
+      "question": "What's Lady Gagas real name?",
+      "answer": "Stefani (Joanne Angelina) Germanotta",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-30T20:32:29.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 86,
+      "categoryId": 8,
+      "question": "What are Python and Perl and examples of?",
+      "answer": "Programming languages",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-30T23:58:36.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 87,
+      "categoryId": 8,
+      "question": "What was the name of the space craft that carried the first humans to the moon?",
+      "answer": "Apollo 11",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:00:34.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 88,
+      "categoryId": 8,
+      "question": "What year was the first iPhone launched?",
+      "answer": "2007",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:01:36.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 89,
+      "categoryId": 8,
+      "question": "Who invented the telephone?",
+      "answer": "Alexander Graham Bell",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:02:40.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 90,
+      "categoryId": 8,
+      "question": "What was the code name for the American-led effort to develop a functional atomic weapon during World War II?",
+      "answer": "Project Manhattan",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:05:17.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 91,
+      "categoryId": 8,
+      "question": "What's the name of the biggest smart phone manufacturer in China?",
+      "answer": "Huawei",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:08:34.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 92,
+      "categoryId": 8,
+      "question": "Who is said to have uttered the words \"Do not disturb my circles!\"?",
+      "answer": "Archimedes (in reference to a geometric figure he had outlined on the sand - when he was confronted by a Roman soldier.)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:11:06.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 93,
+      "categoryId": 8,
+      "question": "What is LP and EP abbreviations for when it comes to vinyl records?",
+      "answer": "Long Playing and Extended Play",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:18:03.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 94,
+      "categoryId": 8,
+      "question": "What was the name of the turbojet-powered supersonic passenger airliner that was operated until 2003?",
+      "answer": "Concorde",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:19:52.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 95,
+      "categoryId": 8,
+      "question": "What does the term CD-ROM stand for?",
+      "answer": "Compact Disc - Read Only Memory",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:21:29.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 96,
+      "categoryId": 8,
+      "question": "What company was founded in 2002 by Elon Musk, with the goal of reducing space transportation costs to enable the colonization of Mars?",
+      "answer": "SpaceX",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:30:19.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 97,
+      "categoryId": 8,
+      "question": "What does pdf stand for?",
+      "answer": "Portable Document Format",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:35:08.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 98,
+      "categoryId": 2,
+      "question": "What is the music producer Nadir Khayat better known as?",
+      "answer": "RedOne",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:37:56.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 99,
+      "categoryId": 6,
+      "question": "What drink do you get if you mix whiskey, simple syrup, lemon juice and egg white?",
+      "answer": "Whiskey Sour - try it!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-01-31T00:41:35.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 102,
+      "categoryId": 7,
+      "question": "What NHL team has the most Stanley cup wins?",
+      "answer": "Montreal Canadiens (24)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:30:26.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 103,
+      "categoryId": 7,
+      "question": "Which hockey team has won most olympic medals?",
+      "answer": "Canada (15)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:30:48.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 104,
+      "categoryId": 7,
+      "question": "In what sport can we find names such as Jose Aldo, Anderson Silva and Ronda Rousey?",
+      "answer": "MMA",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:31:06.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 105,
+      "categoryId": 7,
+      "question": "Which boxers faced off in \"The Rumble in the Jungle?\"",
+      "answer": "Muhammad Ali and George Foreman",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:31:29.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 106,
+      "categoryId": 7,
+      "question": "Which England footballer was famously never given a yellow card?",
+      "answer": "Gary Lineker",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:31:46.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 107,
+      "categoryId": 7,
+      "question": "What's Wayne Gretskys nickname?",
+      "answer": "The Great One",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:32:02.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 108,
+      "categoryId": 7,
+      "question": "How many olympic gold medals has Sweden won in ice hockey?",
+      "answer": "Two (1994 and 2006)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:32:21.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 109,
+      "categoryId": 7,
+      "question": "How many points is a \"set\" in table tennis?",
+      "answer": "11 points",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:32:47.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 110,
+      "categoryId": 7,
+      "question": "What's the maximum score you can achieve in dart with three darts?",
+      "answer": "180",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:33:03.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 111,
+      "categoryId": 7,
+      "question": "What's super bowl?",
+      "answer": "The final game in NFL (National Fotball League)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:33:23.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 112,
+      "categoryId": 7,
+      "question": "How many points is a \"perfect game\" in bowling?",
+      "answer": "300",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:33:39.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 113,
+      "categoryId": 7,
+      "question": "How much does a curling stone weigh?",
+      "answer": "Between 38 and 44 pounds (~17 and 20 kg)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:41:54.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 114,
+      "categoryId": 7,
+      "question": "What colours are the five Olympic rings?",
+      "answer": "Blue, yellow, black, green and red",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:56:33.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 115,
+      "categoryId": 7,
+      "question": "Which team did Kobe Bryant spend his entire basketball career with?",
+      "answer": "LA Lakers",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:57:17.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 116,
+      "categoryId": 7,
+      "question": "What is Usain Bolt’s 100m world record time?",
+      "answer": "9.58 seconds",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T11:59:52.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 117,
+      "categoryId": 7,
+      "question": "In bowling, what is the term given for three consecutive strikes?",
+      "answer": "A turkey",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T12:00:56.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 118,
+      "categoryId": 7,
+      "question": "The LA Lakers and New York Knicks play which sport?",
+      "answer": "Basketball",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T12:02:03.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 119,
+      "categoryId": 7,
+      "question": "Which footballer has scored the most goals in World Cup history?",
+      "answer": "Miroslav Klose",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T12:06:56.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 120,
+      "categoryId": 7,
+      "question": "What does WWE stand for?",
+      "answer": "World Wrestling Entertainment",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T12:07:27.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 121,
+      "categoryId": 7,
+      "question": "In American Football, how many points do you score for a touchdown?",
+      "answer": "6",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T12:08:12.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 122,
+      "categoryId": 6,
+      "question": "How many calories are in one gram of fat? #ALT#9;;13;;21#ALTEND#",
+      "answer": "9",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T12:20:02.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 123,
+      "categoryId": 4,
+      "question": "What war has the most American deaths?",
+      "answer": "The Civil War (between 620,000 and 750,000 soldiers died)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:12:52.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 124,
+      "categoryId": 4,
+      "question": "Who was the first human to journey into space?",
+      "answer": "Soviet cosmonaut Yuri Gagarin, in April 1961",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:14:36.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 125,
+      "categoryId": 2,
+      "question": "Who was the oldest Beatle?",
+      "answer": "Ringo Starr (born in July 1940)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:18:02.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 126,
+      "categoryId": 2,
+      "question": "Who were the members of the Beatles?",
+      "answer": "John Lennon, Paul McCartney, George Harrison, and Ringo Starr.",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:19:02.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 127,
+      "categoryId": 2,
+      "question": "What was the first video shown on MTV?",
+      "answer": "The Buggles - Video Killed the Radio Star",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:24:25.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 128,
+      "categoryId": 2,
+      "question": "What year was MTV launched: #ALT#1979;;1981;;1984;;1986#ALTEND#",
+      "answer": "1981",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:26:56.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 129,
+      "categoryId": 2,
+      "question": "What does Kurt Cobain, Janis Joplin and Jimi Hendrix have in common?",
+      "answer": "They are all in the 27 club (died at age 27)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:32:33.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 130,
+      "categoryId": 2,
+      "question": "Who was the most streamed artist on Spotify in 2019?",
+      "answer": "Post Malone",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:34:55.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 131,
+      "categoryId": 2,
+      "question": "Who was the youngest Beatle?",
+      "answer": "George Harrison",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:36:36.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 132,
+      "categoryId": 2,
+      "question": "Which rock band was founded by Trent Reznor in 1988?",
+      "answer": "Nine Inch Nails",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:39:57.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 133,
+      "categoryId": 2,
+      "question": "Which ABBA song won the Eurovision?",
+      "answer": "Waterloo",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:42:13.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 134,
+      "categoryId": 2,
+      "question": "What pop group was Robbie Williams a member of prior to his solo career?",
+      "answer": "Take That",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:48:47.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 135,
+      "categoryId": 2,
+      "question": "Name the different \"spices\" of Spice Girls!",
+      "answer": "Scary, Posh, Sporty, Baby, and Ginger Spice",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:53:08.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 136,
+      "categoryId": 2,
+      "question": "What was the Spice Girls debut single, released in 1996?",
+      "answer": "Wannabe (it hit number one in 37 countries)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:54:40.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 137,
+      "categoryId": 2,
+      "question": "Who was the first spice girl to leave the group?",
+      "answer": "Geri, aka Ginger Spice (she said she was suffering from exhaustion and needed a break)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T13:56:23.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 138,
+      "categoryId": 2,
+      "question": "Which bands are referred to as \"THE BIG FOUR\" when it comes to metal music?",
+      "answer": "Metallica, Megadeth, Slayer and Anthrax",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:01:20.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 139,
+      "categoryId": 2,
+      "question": "What's the next line in Miley Cyrus hit song \"wrecking ball\"? \"I came in like a wrecking ball, ______________________\". ",
+      "answer": "\"I never hit so hard in love\"",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:04:12.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 140,
+      "categoryId": 3,
+      "question": "In what card game can you get cards such as \"see the future\", \"nope card\" and \"taco cat\"?",
+      "answer": "Exploding kittens",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:06:27.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 141,
+      "categoryId": 3,
+      "question": "What Stanley Kubrick movie from 1964 features an unhinged United States Air Force general who orders a first strike nuclear attack on the Soviet Union.",
+      "answer": "Dr Strangelove",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:24:08.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 142,
+      "categoryId": 4,
+      "question": "What year did the nazis lose the battle of Stalingrad?",
+      "answer": "1943 (it was considered a turning point for WW2)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:25:12.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 143,
+      "categoryId": 8,
+      "question": "What media player is usually associated with the .mov file format?",
+      "answer": "Apple QuickTime",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:26:59.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 144,
+      "categoryId": 6,
+      "question": "What are the basic ingredients of beer?",
+      "answer": "Water, Malt, Hops, Yeast",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:32:02.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 145,
+      "categoryId": 1,
+      "question": "What's the name of Al Pacinos character in Scarface?",
+      "answer": "Tony Montana",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:34:07.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 146,
+      "categoryId": 6,
+      "question": "What is Gruyère and Appenzeller examples of?",
+      "answer": "Swiss cheese",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:38:18.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 147,
+      "categoryId": 6,
+      "question": "What is Veuve Clicquot, Nicolas Feuillatte and Piper-Heidsieck examples of?",
+      "answer": "Champagne brands",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:41:04.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 148,
+      "categoryId": 6,
+      "question": "What's the name of a dish that serves sea-food and steak as a single course?",
+      "answer": "Surf and Turf",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:42:18.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 149,
+      "categoryId": 4,
+      "question": "What year did World War 2 start?",
+      "answer": "1939",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:44:50.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 150,
+      "categoryId": 4,
+      "question": "Which countries did the axis powers consist of during world war 2?",
+      "answer": "Germany, Italy and Japan",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:48:17.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 151,
+      "categoryId": 8,
+      "question": "What year was the modern toothbrush invented? #ALT#1928;;1938;;1948#ALTEND#",
+      "answer": "1938",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T14:55:56.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 152,
+      "categoryId": 5,
+      "question": "How many legs does a lobster have?",
+      "answer": "10",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:04:35.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 153,
+      "categoryId": 5,
+      "question": "What's the latin word for bluebell?",
+      "answer": "Hyacinthoides non-scripta",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:10:15.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 154,
+      "categoryId": 5,
+      "question": "What is the world's most common houseplant?",
+      "answer": "Saintpaulia",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:13:26.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 155,
+      "categoryId": 5,
+      "question": "How many wings does a mosquito have?",
+      "answer": "Two",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:15:25.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 156,
+      "categoryId": 5,
+      "question": "How many hearts do octopuses have?",
+      "answer": "Three",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:16:02.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 157,
+      "categoryId": 5,
+      "question": "What is the biggest planet in our solar system?",
+      "answer": "Jupiter",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:16:55.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 158,
+      "categoryId": 5,
+      "question": "In which continent would you naturally find the Iberian lynx?",
+      "answer": "Europe",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:19:30.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 159,
+      "categoryId": 5,
+      "question": "Which animal’s scientific name is Balaenoptera musculus?",
+      "answer": "Blue Whale",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:20:24.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 160,
+      "categoryId": 5,
+      "question": "What is the smallest planet in the solar system?",
+      "answer": "Mercury",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:21:19.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 161,
+      "categoryId": 5,
+      "question": "What is the largest animal that has ever existed on earth?",
+      "answer": "Blue Whale",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:24:56.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 162,
+      "categoryId": 5,
+      "question": "How big was the dinosaur Stegosaurus' brain?",
+      "answer": "Like a walnut",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:31:11.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 163,
+      "categoryId": 5,
+      "question": "Which predatory dinosaur is the largest ever found?",
+      "answer": "Spinosaurus",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:34:26.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 164,
+      "categoryId": 5,
+      "question": "If a fungus is worm-eaten, can it still be toxic to humans?",
+      "answer": "Yes",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:38:58.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 165,
+      "categoryId": 5,
+      "question": "Does evolution always lead to animals getting bigger and stronger?",
+      "answer": "No, it benefits the traits that lead to most offspring.",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:41:13.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 166,
+      "categoryId": 5,
+      "question": "Vad heter läran om växter?",
+      "answer": "Botany",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T15:46:36.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 167,
+      "categoryId": 3,
+      "question": "Which console was Super Mario Sunshine released on?",
+      "answer": "Nintendo GameCube",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:47:20.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 168,
+      "categoryId": 3,
+      "question": "What is the best selling video game of all times?",
+      "answer": "Minecraft (about 200.000.000 copies sold)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:49:20.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 169,
+      "categoryId": 3,
+      "question": "What year was the Super Nintendo Entertainment System (SNES) released?",
+      "answer": "1991",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:51:58.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 170,
+      "categoryId": 3,
+      "question": "Blizzard Entertainment is most well known for what video game franchise?",
+      "answer": "World of warcraft",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:52:20.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 171,
+      "categoryId": 3,
+      "question": "The Umbrella Corporation is a fictitious pharmaceutical company in what game?",
+      "answer": "Resident Evil",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:53:45.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 172,
+      "categoryId": 3,
+      "question": "What organization hosts a bi-annual charity event on twitch revolving around speedruns on popular video games?",
+      "answer": "Games Done Quick",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:54:39.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 173,
+      "categoryId": 3,
+      "question": "What gaming console was largely considered a ‘flop’ and ‘before its time’ and effectively ended Sega’s console efforts in 2001?",
+      "answer": "Dreamcast",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:55:14.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 174,
+      "categoryId": 3,
+      "question": "What popular streaming service launched in June 2011, allows content creators to stream video games while chatting with viewers?",
+      "answer": "Twitch",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T16:56:28.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 175,
+      "categoryId": 8,
+      "question": "What does CPU stand for?",
+      "answer": "Central Processing Unit",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:00:09.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 176,
+      "categoryId": 8,
+      "question": "What year did the first Apple iPhone launch?",
+      "answer": "2007",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:00:37.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 177,
+      "categoryId": 8,
+      "question": "What does a Geiger Counter measure?",
+      "answer": "Radiation",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:00:54.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 178,
+      "categoryId": 8,
+      "question": "Which social media app only lets you view pictures and messages for a limited time?",
+      "answer": "Snapchat",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:01:18.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 179,
+      "categoryId": 3,
+      "question": "When was Nintendo founded: #ALT#1889;;1946;;1975#ALTEND#",
+      "answer": "1889 (Yup! It's true!)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:03:46.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 180,
+      "categoryId": 8,
+      "question": "From 2017 onwards, how many characters long can tweets be?",
+      "answer": "280 characters",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:04:23.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 181,
+      "categoryId": 8,
+      "question": "In which decade was the Sony Walkman launched?",
+      "answer": "In the 1970s",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:04:49.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 182,
+      "categoryId": 3,
+      "question": "What is the name of the classic 1972 arcade game based on table tennis?",
+      "answer": "Pong!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:05:13.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 183,
+      "categoryId": 8,
+      "question": "Originally Amazon only sold what kind of product?",
+      "answer": "Books",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:06:32.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 184,
+      "categoryId": 4,
+      "question": "What year did the first world war start?",
+      "answer": "1914 (28 july)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:07:53.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 185,
+      "categoryId": 4,
+      "question": "What year did the first world war end?",
+      "answer": "1918 (November 11)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:08:35.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 186,
+      "categoryId": 4,
+      "question": "Who was God of the Sea according to greek mythology?",
+      "answer": "Poseidon",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:11:57.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 187,
+      "categoryId": 4,
+      "question": "Who was God of archery, music, poetry, prophecy, medicine, and later on the god of the sun, according to greek mythology?",
+      "answer": "Apollo",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:12:50.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 188,
+      "categoryId": 4,
+      "question": "Which greek god was Goddess of Love and Beauty?",
+      "answer": "Aphrodite",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:14:01.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 189,
+      "categoryId": 4,
+      "question": "Who was Goddess of Marriage, Mothers and Families according to greek mythology?",
+      "answer": "Hera",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:15:24.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 190,
+      "categoryId": 4,
+      "question": "According to greek mythology, what is the name of the multi-headed dog that guards the gates of the Underworld to prevent the dead from leaving",
+      "answer": "Cerberus",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:16:58.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 191,
+      "categoryId": 4,
+      "question": "Who is the god of thunder according to norse mythology?",
+      "answer": "Thor",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:19:11.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 192,
+      "categoryId": 8,
+      "question": "What does BMW stand for?",
+      "answer": "Bayerische Motoren Werke",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:23:25.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 193,
+      "categoryId": 8,
+      "question": "What year was the first iPad launched?",
+      "answer": "2010",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:25:00.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 194,
+      "categoryId": 8,
+      "question": "What's the name of Phoebes sister in Friends?",
+      "answer": "Ursula",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:27:17.000Z",
+      "identifier": "technology"
+    },
+    {
+      "id": 195,
+      "categoryId": 6,
+      "question": "What does the scoville scale measure?",
+      "answer": "Spiciness or \"heat\" of chili peppers",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:29:37.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 196,
+      "categoryId": 6,
+      "question": "What ingredients do you need to make the drink \"screwdriver\"?",
+      "answer": "Vodka and orange juice (simple but efficient!)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T17:30:45.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 197,
+      "categoryId": 3,
+      "question": "In what game franchise features characters such as Cervantes, Kilik and Sigfried?",
+      "answer": "Soul Calibur",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:17:35.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 198,
+      "categoryId": 6,
+      "question": "If you ordered nigiri from a Japanese restaurant menu, what would you be served?",
+      "answer": "A type of sushi featuring rice, topped with fish or seafood",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:20:29.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 199,
+      "categoryId": 6,
+      "question": "In Indonesian and Malay cuisine what does the word ‘nasi’ refer to? #ALT#Rice;;Egg;;The bowl or dish the food is served in;;Curry#ALTEND#",
+      "answer": "Rice",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:22:00.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 200,
+      "categoryId": 6,
+      "question": "A Magnum holds two standard bottles of champagne, a Réhoboam holds six, but how many bottles of champagne in a Nebuchadnezzar? #ALT#6;;12;;20;;16#ALTEND#",
+      "answer": "20",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:23:23.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 201,
+      "categoryId": 6,
+      "question": "What does IPA stand for?",
+      "answer": "India Pale Ale",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:24:36.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 202,
+      "categoryId": 6,
+      "question": "What makes the Kopi luwak coffee special?",
+      "answer": "It’s made from poop! (Or rather, it’s made from coffee beans that are partially digested and then pooped out by the civet, a catlike creature.)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:27:35.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 203,
+      "categoryId": 6,
+      "question": "What is Carolina Reaper?",
+      "answer": "It's currently the hottest pepper in the world, measuring over 2 Million Scoville Heat Units",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:30:29.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 204,
+      "categoryId": 6,
+      "question": "What do you get if you mix 2 oz silver tequila, 1 oz Cointreau and 1 oz lime juice?",
+      "answer": "A Margarita! Yum!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:33:55.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 205,
+      "categoryId": 6,
+      "question": "What do you get if you mix 2 oz vodka, 4 to 6 oz ginger beer and .5 oz lime juice?",
+      "answer": "A Moscow mule! Refreshing!",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:35:09.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 206,
+      "categoryId": 6,
+      "question": "Which country consumes most beer per capita?",
+      "answer": " The Czech Republic (191 liters per year and person according to wikipedia). Austria comes second with 107 litres.",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:42:25.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 207,
+      "categoryId": 6,
+      "question": "From which country is the Heineken brand?",
+      "answer": "The Netherlands",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:43:46.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 208,
+      "categoryId": 6,
+      "question": "What is the national dish of Thailand?",
+      "answer": "Pad Thai",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:44:59.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 209,
+      "categoryId": 6,
+      "question": "What does APA stand when it comes to beer?",
+      "answer": "American Pale Ale",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:46:19.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 210,
+      "categoryId": 6,
+      "question": "What does HP stand for in HP sauce?",
+      "answer": "Houses of Parliament",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:47:51.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 211,
+      "categoryId": 6,
+      "question": "What drink is it bad luck to toast with?",
+      "answer": "Water",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:48:14.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 212,
+      "categoryId": 1,
+      "question": "What was the television show called, that featured Jamie Oliver and started airing 1999?",
+      "answer": "The Naked Chef",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T18:57:31.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 213,
+      "categoryId": 6,
+      "question": "What is the world's most produced fruit?",
+      "answer": "Tomatoes! (182.3 million tons per year. Bananas take the second place with 115.74 million tons)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:07:00.000Z",
+      "identifier": "food"
+    },
+    {
+      "id": 214,
+      "categoryId": 5,
+      "question": "What is the most populated city in the world?",
+      "answer": "Tokyo, Japan, is the most populated city in the world with 38,140,000 people",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:09:25.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 215,
+      "categoryId": 5,
+      "question": "What animal is responsible for killing most humans each year?",
+      "answer": "Mosquitoes (responsible of killing around one million humans each year)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:12:08.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 216,
+      "categoryId": 5,
+      "question": "Which is the largest internal organ in the human body?",
+      "answer": "The liver",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:15:23.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 217,
+      "categoryId": 5,
+      "question": "Humans and chimpanzees share roughly how much DNA?",
+      "answer": "98% (Answers above 90% are OK!)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:16:39.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 218,
+      "categoryId": 5,
+      "question": "On the periodic table, what symbol stands for silver?",
+      "answer": "Ag",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:17:03.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 219,
+      "categoryId": 5,
+      "question": "What's the biggest animal on the planet?",
+      "answer": "The Antarctic blue whale (weighing up to 400,000 pounds, equivalent to 33 elephants)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:21:53.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 220,
+      "categoryId": 3,
+      "question": "What is the name of the main character from the \"Uncharted\" game series?",
+      "answer": "Nathan Drake",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:25:44.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 221,
+      "categoryId": 3,
+      "question": "What game studio is behind titles such as \"The Witcher\"?",
+      "answer": "CD Project Red",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:27:06.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 222,
+      "categoryId": 3,
+      "question": "Which game series features the Belmonts?",
+      "answer": "Castlevania",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:30:41.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 223,
+      "categoryId": 3,
+      "question": "What was the title of the second Zelda game that was released to the NES console?",
+      "answer": "Zelda II: The Adventure of Link",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:32:59.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 224,
+      "categoryId": 3,
+      "question": "In what game series do you have to fight the evil Dr. Willy and a bunch of his robots?",
+      "answer": "Mega Man",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:35:24.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 225,
+      "categoryId": 3,
+      "question": "What year was nintendo switch released?",
+      "answer": "2017",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:44:34.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 226,
+      "categoryId": 3,
+      "question": "How many consoles has nintendo released (excluding hand-helds)",
+      "answer": "7. (NES, SNES, N64, GAMECUBE, WII, WII U, SWITCH)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:46:34.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 227,
+      "categoryId": 3,
+      "question": "What is the most sold nintendo game?",
+      "answer": "Wii sports (82,900,000 units)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T19:49:20.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 228,
+      "categoryId": 5,
+      "question": "in what country can you find the Tazmanian Devil?",
+      "answer": "Australia",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T20:07:05.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 229,
+      "categoryId": 1,
+      "question": "What movie was Dwayne The Rock Johnsons debut?",
+      "answer": "The mummy returns",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T20:11:52.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 230,
+      "categoryId": 2,
+      "question": "Who wrote the original Girls Just Want to have fun?",
+      "answer": "Robert Hazard",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T20:16:41.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 231,
+      "categoryId": 1,
+      "question": "What year did The Simpsons premiere",
+      "answer": "1989",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-06T20:19:40.000Z",
+      "identifier": "movies"
+    },
+    {
+      "id": 232,
+      "categoryId": 3,
+      "question": "What egg shaped device was released in the late 90s and had the player care for a virtual pet?",
+      "answer": "Tamagotchi",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-07T22:06:08.000Z",
+      "identifier": "games"
+    },
+    {
+      "id": 233,
+      "categoryId": 5,
+      "question": "What is Arachnophobia?",
+      "answer": "Fear of spiders",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-07T22:09:57.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 234,
+      "categoryId": 2,
+      "question": "What band has released hits such as \"Walk this way\" and \"I don't want to miss a thing\"?",
+      "answer": "Aerosmith",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-07T22:19:17.000Z",
+      "identifier": "music"
+    },
+    {
+      "id": 235,
+      "categoryId": 5,
+      "question": "What is the capital of Cambodia?",
+      "answer": "Phnom Penh",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-07T22:22:28.000Z",
+      "identifier": "nature"
+    },
+    {
+      "id": 236,
+      "categoryId": 4,
+      "question": "With what famous words did John F Kennedy end his 1963 speech in west Berlin?",
+      "answer": "”Ich bin ein Berliner”",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-07T22:27:23.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 237,
+      "categoryId": 4,
+      "question": "What year did World War II end?",
+      "answer": "1945 (2 sep)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-07T22:59:41.000Z",
+      "identifier": "history"
+    },
+    {
+      "id": 238,
+      "categoryId": 4,
+      "question": "Which TV show features an iconic bass guitar intro?",
+      "answer": "Seinfeld (slap that bass!)",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-07T23:25:31.000Z",
+      "identifier": "history"
+    }
+  ]
 }

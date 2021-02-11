@@ -2,33 +2,67 @@
   "categories": [
     {
       "id": 1,
-      "name": "Music",
-      "cssClass": "music-and-movies"
+      "identifier": "movies",
+      "name": "Movies and TV",
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 43
+    },
+    {
+      "id": 4,
+      "identifier": "history",
+      "name": "History",
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 23
+    },
+    {
+      "id": 5,
+      "identifier": "nature",
+      "name": "Nature",
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 25
     },
     {
       "id": 2,
-      "name": "History",
-      "cssClass": "history-and-geography"
+      "identifier": "music",
+      "name": "Music",
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 23
     },
     {
       "id": 3,
-      "name": "Sports",
-      "cssClass": "sports"
-    },
-    {
-      "id": 4,
+      "identifier": "games",
       "name": "Games",
-      "cssClass": "games"
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 27
     },
     {
-      "id": 4,
+      "id": 8,
+      "identifier": "technology",
       "name": "Technology",
-      "cssClass": "technology"
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 24
     },
     {
-      "id": 4,
-      "name": "Food and wine",
-      "cssClass": "food-and-wine"
+      "id": 6,
+      "identifier": "food",
+      "name": "Food and drinks",
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 23
+    },
+    {
+      "id": 7,
+      "identifier": "sport",
+      "name": "Sport",
+      "description": null,
+      "createdAt": "2021-01-25T12:03:09.000Z",
+      "questions": 20
     }
   ]
 }
