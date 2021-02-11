@@ -1,5 +1,5 @@
 import axios from 'axios';
-const mocks = false;
+const mocks = true;
 
 const api = {
   getCategories: () =>
@@ -24,7 +24,8 @@ const api = {
   saveQuestion: (formData) => axios.put('/api/questions', formData),
   deleteQuestion: (formData) => axios.delete('/api/questions', formData),
   addUser: (formData) => axios.post('/api/users', formData),
-  login: (formData) => axios.post('/api/login', formData),
+  login: (formData) =>
+    axios.post(mocks ? 'mocks/login.json' : '/api/login', formData),
 };
 
 export default api;
