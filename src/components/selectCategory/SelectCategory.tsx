@@ -71,7 +71,7 @@ export default function SelectCategory({
       </div>
       <div className="row">
         {categories.map((item: Category, idx: number) => (
-          <div className="col-6 p-0" key={idx}>
+          <div className="col-6 p-1" key={idx}>
             <div
               onClick={() => handleClick(item)}
               className={

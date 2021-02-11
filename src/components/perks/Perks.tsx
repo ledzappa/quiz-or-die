@@ -36,7 +36,7 @@ const globalPerks = [
     name: 'Direction change!',
     description: 'The direction changes after this turn.',
     icon: 'sync',
-  }
+  },
 ];
 
 export default function Perks({
@@ -58,13 +58,19 @@ export default function Perks({
   }, []);
 
   const randomizePerk = () => {
-    const perks = Math.random() < 0.60 ? playerPerks : globalPerks;
+    const perks = Math.random() < 0.6 ? playerPerks : globalPerks;
     const randomPerkIndex = Math.floor(perks.length * Math.random());
     const perk = perks[randomPerkIndex] as Perk;
     if (perk.id === 'robin-hood' && !isRobinHoodEnabled(players)) {
       randomizePerk();
       return;
     }
+
+    if (perk.id === 'change-direction' && !isChangeDirectionEnabled(players)) {
+      randomizePerk();
+      return;
+    }
+
     setPerk(perk);
     playGoodPerkSound();
   };
@@ -131,6 +137,10 @@ export default function Perks({
 
 export const subtractPointFromAllPlayers = (players: Player[]) => {
   return players.map((player) => ({ ...player, points: player.points - 1 }));
+};
+
+export const isChangeDirectionEnabled = (players: Player[]) => {
+  return players.length >= 3;
 };
 
 export const isRobinHoodEnabled = (players: Player[]) => {
