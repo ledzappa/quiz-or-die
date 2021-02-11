@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/quizmageddon-app/static/css/main.4cce52b7.chunk.css",
-    "main.js": "/quizmageddon-app/static/js/main.6c5a330e.chunk.js",
-    "main.js.map": "/quizmageddon-app/static/js/main.6c5a330e.chunk.js.map",
+    "main.css": "/quizmageddon-app/static/css/main.f73a4d40.chunk.css",
+    "main.js": "/quizmageddon-app/static/js/main.c9c2dbf8.chunk.js",
+    "main.js.map": "/quizmageddon-app/static/js/main.c9c2dbf8.chunk.js.map",
     "runtime-main.js": "/quizmageddon-app/static/js/runtime-main.087a2ef6.js",
     "runtime-main.js.map": "/quizmageddon-app/static/js/runtime-main.087a2ef6.js.map",
     "static/css/2.8caa0767.chunk.css": "/quizmageddon-app/static/css/2.8caa0767.chunk.css",
@@ -14,7 +14,7 @@
     "static/js/4.784047dc.chunk.js.map": "/quizmageddon-app/static/js/4.784047dc.chunk.js.map",
     "index.html": "/quizmageddon-app/index.html",
     "static/css/2.8caa0767.chunk.css.map": "/quizmageddon-app/static/css/2.8caa0767.chunk.css.map",
-    "static/css/main.4cce52b7.chunk.css.map": "/quizmageddon-app/static/css/main.4cce52b7.chunk.css.map",
+    "static/css/main.f73a4d40.chunk.css.map": "/quizmageddon-app/static/css/main.f73a4d40.chunk.css.map",
     "static/js/2.3a324bcd.chunk.js.LICENSE.txt": "/quizmageddon-app/static/js/2.3a324bcd.chunk.js.LICENSE.txt",
     "static/js/3.7c3e2117.chunk.js.LICENSE.txt": "/quizmageddon-app/static/js/3.7c3e2117.chunk.js.LICENSE.txt",
     "static/media/button.6be18c19.mp3": "/quizmageddon-app/static/media/button.6be18c19.mp3",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.087a2ef6.js",
     "static/css/2.8caa0767.chunk.css",
     "static/js/2.3a324bcd.chunk.js",
-    "static/css/main.4cce52b7.chunk.css",
-    "static/js/main.6c5a330e.chunk.js"
+    "static/css/main.f73a4d40.chunk.css",
+    "static/js/main.c9c2dbf8.chunk.js"
   ]
 }
