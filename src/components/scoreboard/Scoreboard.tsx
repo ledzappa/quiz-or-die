@@ -77,7 +77,7 @@ export const setNextTurn = (players: Player[], direction: Direction) => {
   }));
 };
 
-const reducePlayerPerks = (players: Player[]) => {
+export const reducePlayerPerks = (players: Player[]) => {
   return players.map((player: any) =>
     player.isPlayersTurn
       ? {

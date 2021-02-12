@@ -1,17 +1,23 @@
 import { Player } from '../../../interfaces/interfaces';
-import { setNextTurn } from '../Scoreboard';
+import Perks from '../../perks/Perks';
+import { setNextTurn, reducePlayerPerks } from '../Scoreboard';
 
 describe('Scoreboard', () => {
-  const playerMock: Player = {
-    name: 'string',
-    description: 'string',
-    perks: {
-      freedomOfChoice: 0,
-      doubleUp: 0,
-    },
-    isPlayersTurn: false,
-    points: 0,
-  };
+  let playerMock: Player;
+
+  beforeEach(() => {
+    playerMock = {
+      name: 'string',
+      description: 'string',
+      perks: {
+        freedomOfChoice: 0,
+        doubleUp: 0,
+        landmine: 0,
+      },
+      isPlayersTurn: false,
+      points: 0,
+    };
+  });
 
   describe('setNextTurn', () => {
     describe('positive direction and last players turn', () => {
@@ -74,6 +80,43 @@ describe('Scoreboard', () => {
             .isPlayersTurn
         ).toBe(true);
       });
+    });
+  });
+
+  describe('reducePlayerPerks', () => {
+    test('should reduce current players perks by one if more than 0', () => {
+      const mockWithPerks = {
+        ...playerMock,
+        perks: { freedomOfChoice: 3, doubleUp: 1, landmine: 0 },
+      };
+      const input = [
+        {
+          ...mockWithPerks,
+          name: 'player1',
+          isPlayersTurn: false,
+        },
+        {
+          ...mockWithPerks,
+          name: 'player2',
+          isPlayersTurn: true,
+        },
+        {
+          ...mockWithPerks,
+          name: 'player3',
+          isPlayersTurn: false,
+        },
+      ];
+
+      const output = reducePlayerPerks(input);
+      expect(output[0].perks.freedomOfChoice).toBe(3);
+      expect(output[0].perks.doubleUp).toBe(1);
+      expect(output[0].perks.landmine).toBe(0);
+      expect(output[1].perks.freedomOfChoice).toBe(2);
+      expect(output[1].perks.doubleUp).toBe(0);
+      expect(output[1].perks.landmine).toBe(0);
+      expect(output[2].perks.freedomOfChoice).toBe(3);
+      expect(output[2].perks.doubleUp).toBe(1);
+      expect(output[2].perks.landmine).toBe(0);
     });
   });
 });
