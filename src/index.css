@@ -10,3 +10,13 @@ body,
 .clickable {
   cursor: pointer;
 }
+
+.btn-danger {
+  background-color: #94000e;
+  border-color: #94000e;
+}
+
+.btn-success {
+  background-color: #459256;
+  border-color: #459256;
+}

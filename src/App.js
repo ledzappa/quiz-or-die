@@ -3,6 +3,11 @@ import {
   faAngleDoubleUp,
   faSync,
   faTrophy,
+  faHandSparkles,
+  faBomb,
+  faCheck,
+  faTimes,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { MemoryRouter, Route, Switch } from 'react-router-dom';
@@ -22,10 +27,25 @@ import soundButton from './sounds/button.mp3';
 import goodPerk from './sounds/goodPerk.mp3';
 import Login from './components/login/Login';
 
-library.add(faSync, faAngleDoubleUp, faTrophy);
+library.add(
+  faSync,
+  faAngleDoubleUp,
+  faTrophy,
+  faHandSparkles,
+  faBomb,
+  faCheck,
+  faTimes,
+  faArrowRight
+);
 
 function App() {
   const [players, setPlayers] = useState([]);
+  const [settings, setSettings] = useState({
+    pointsToWin: 10,
+    probRoundAndRound: 0.05,
+    probPerk: 0.2,
+    probPlayerPerk: 0.6,
+  });
   const [questions, setQuestions] = useState({});
   const [categories, setCategories] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});

@@ -77,12 +77,14 @@ export default function Scoreboard({
         </tbody>
       </table>
       {!winner && (
-        <button
-          onClick={() => handleNextRoundClick()}
-          className="btn btn-primary"
-        >
-          Next round!
-        </button>
+        <div className="text-center pt-5">
+          <button
+            onClick={() => handleNextRoundClick()}
+            className="btn btn-primary px-3 py-3"
+          >
+            Next round <FontAwesomeIcon className="ml-2" icon="arrow-right" />
+          </button>
+        </div>
       )}
       {showWinner && (
         <div className="winner-wrapper animate__animated animate__fadeIn">

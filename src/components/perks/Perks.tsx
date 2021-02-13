@@ -17,11 +17,13 @@ const playerPerks = [
     id: 'freedom-of-choice',
     name: 'Freedom of choice!',
     description: 'Choose your category for the next 3 rounds.',
+    icon: 'hand-sparkles',
   },
   {
     id: 'landmine',
     name: 'Landmine!',
     description: 'BOOM! You lose 1 point if you answer wrong.',
+    icon: 'bomb',
   },
 ];
 

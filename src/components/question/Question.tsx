@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Player, Question as _Question } from '../../interfaces/interfaces';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Question({
   currentQuestion,
@@ -106,18 +107,18 @@ export default function Question({
           <div className="row">
             <div className="col-6">
               <button
-                className="btn btn-success w-100 p-3"
+                className="btn btn-success w-100 p-3 font-weight-bold yes-button"
                 onClick={() => rightAnswer()}
               >
-                YES
+                <FontAwesomeIcon icon="check" />&nbsp;&nbsp;Yes
               </button>
             </div>
             <div className="col-6">
               <button
-                className="btn btn-danger w-100 p-3"
+                className="btn btn-danger w-100 p-3 font-weight-bold no-button"
                 onClick={() => wrongAnswer()}
               >
-                NO
+                <FontAwesomeIcon icon="times" />&nbsp;&nbsp;No
               </button>
             </div>
           </div>
