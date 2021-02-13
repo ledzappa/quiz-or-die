@@ -6,7 +6,7 @@ import './AddPlayers.css';
 
 export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
   const [playerInput, setPlayerInput] = useState('');
-  const [playerWords, setPlayerWords] = useState({nouns: [], adjectives: []});
+  const [playerWords, setPlayerWords] = useState({ nouns: [], adjectives: [] });
   const history = useHistory();
 
   useEffect(() => {
@@ -21,6 +21,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
         description: getRandomDescription(),
         points: 0,
         isPlayersTurn: false,
+        isRoundAndRoundWinner: false,
         perks: { freedomOfChoice: 0, doubleUp: 0 },
       },
     ]);

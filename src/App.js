@@ -1,5 +1,9 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleDoubleUp, faSync } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleDoubleUp,
+  faSync,
+  faTrophy,
+} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { MemoryRouter, Route, Switch } from 'react-router-dom';
 import useSound from 'use-sound';
@@ -18,7 +22,7 @@ import soundButton from './sounds/button.mp3';
 import goodPerk from './sounds/goodPerk.mp3';
 import Login from './components/login/Login';
 
-library.add(faSync, faAngleDoubleUp);
+library.add(faSync, faAngleDoubleUp, faTrophy);
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -28,6 +32,7 @@ function App() {
   const [themes, setThemes] = useState({});
   const [direction, setDirection] = useState(1);
   const [user, setUser] = useState({});
+  const [isRoundAndRound, setIsRoundAndRound] = useState(false);
   const [play] = useSound(sound, { volume: 0.25 });
   const [playBtnSound] = useSound(soundButton, { volume: 0.25 });
   const [playGoodPerkSound] = useSound(goodPerk, { volume: 0.25 });
@@ -50,21 +55,21 @@ function App() {
       <MemoryRouter>
         <Switch>
           <Route exact path="/">
-            <Login setUser={(user) => setUser(user)}></Login>
+            <Login setUser={setUser}></Login>
           </Route>
           <Route path="/home">
             <Home
               user={user}
-              setCategories={(categories) => setCategories(categories)}
-              setQuestions={(questions) => setQuestions(questions)}
-              setThemes={(themes) => setThemes(themes)}
+              setCategories={setCategories}
+              setQuestions={setQuestions}
+              setThemes={setThemes}
             ></Home>
           </Route>
           <Route path="/add-players">
             <AddPlayers
               players={players}
               playBtnSound={playBtnSound}
-              setPlayers={(players) => setPlayers(players)}
+              setPlayers={setPlayers}
             ></AddPlayers>
           </Route>
           <Route path="/show-turn">
@@ -78,7 +83,7 @@ function App() {
             <Perks
               players={players}
               playGoodPerkSound={playGoodPerkSound}
-              setPlayers={(players) => setPlayers(players)}
+              setPlayers={setPlayers}
               setDirection={() => setDirection(direction * -1)}
             ></Perks>
           </Route>
@@ -88,7 +93,7 @@ function App() {
               themes={themes}
               playGoodPerkSound={playGoodPerkSound}
               playBtnSound={playBtnSound}
-              setPlayers={(players) => setPlayers(players)}
+              setPlayers={setPlayers}
             ></RoundAndRound>
           </Route>
           <Route path="/select-category">
@@ -98,9 +103,7 @@ function App() {
               }
               categories={categories}
               play={play}
-              setCurrentCategory={(category) => {
-                _setCurrentQuestion(category);
-              }}
+              setCurrentCategory={_setCurrentQuestion}
             ></SelectCategory>
           </Route>
           <Route path="/question">
@@ -111,14 +114,17 @@ function App() {
               currentQuestion={currentQuestion}
               players={players}
               playBtnSound={playBtnSound}
-              setPlayers={(players) => setPlayers(players)}
+              setPlayers={setPlayers}
             ></Question>
           </Route>
           <Route path="/scoreboard">
             <Scoreboard
-              players={players}
               direction={direction}
-              setPlayers={(players) => setPlayers(players)}
+              players={players}
+              setPlayers={setPlayers}
+              isRoundAndRound={isRoundAndRound}
+              setIsRoundAndRound={setIsRoundAndRound}
+              playGoodPerkSound={playGoodPerkSound}
             ></Scoreboard>
           </Route>
           <Route path="/admin/questions">

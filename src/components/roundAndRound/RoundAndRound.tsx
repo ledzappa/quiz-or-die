@@ -6,11 +6,13 @@ import './RoundAndRound.css';
 export default function RoundAndRound({
   themes,
   players,
+  setPlayers,
   playGoodPerkSound,
-  playBtnSound
+  playBtnSound,
 }: {
   themes: RoundAndRoundTheme[];
   players: Player[];
+  setPlayers: any;
   playGoodPerkSound: any;
   playBtnSound: any;
 }) {
@@ -23,7 +25,7 @@ export default function RoundAndRound({
   const [timeLeft, setTimeLeft] = useState(10);
   const [timer, setTimer] = useState<any>(null);
   const [randomLetter, setRandomLetter] = useState('');
-  const [_players, _setPlayers] = useState(players);
+  const [roundAndRoundPlayers, setRoundAndRoundPlayers] = useState(players);
   const history = useHistory();
 
   useEffect(() => {
@@ -70,28 +72,39 @@ export default function RoundAndRound({
     playBtnSound();
     clearTimeout(timer);
 
-    const players = _players.filter((player: Player) =>
+    const _players = roundAndRoundPlayers.filter((player: Player) =>
       removeCurrent ? !player.isPlayersTurn : true
     );
 
-    if (players.length === 1) {
+    if (_players.length === 1) {
+      setPlayers(
+        players.map((player) =>
+          player.name === _players[0].name
+            ? {
+                ...player,
+                points: player.points + 2,
+                isRoundAndRoundWinner: true,
+              }
+            : player
+        )
+      );
       setTimeout(() => history.push('/scoreboard'), 3000);
     }
 
-    const currentTurnIndex = players.findIndex(
+    const currentTurnIndex = _players.findIndex(
       (player: Player) => player.isPlayersTurn
     );
     const nextTurnIndex =
-      currentTurnIndex === players.length - 1 ? 0 : currentTurnIndex + 1;
+      currentTurnIndex === _players.length - 1 ? 0 : currentTurnIndex + 1;
 
-    _setPlayers(
-      players.map((player: Player, idx: number) => ({
+    setRoundAndRoundPlayers(
+      _players.map((player: Player, idx: number) => ({
         ...player,
         isPlayersTurn: nextTurnIndex === idx,
       }))
     );
 
-    if (players.length > 1) {
+    if (_players.length > 1) {
       setTimeLeft(10);
     }
   };
@@ -131,11 +144,11 @@ export default function RoundAndRound({
                 disabled={!(timeLeft < 10)}
               >
                 <h1 className="text-uppercase">
-                  {_players.length > 1
-                    ? _players.filter(
+                  {roundAndRoundPlayers.length > 1
+                    ? roundAndRoundPlayers.filter(
                         (player: Player) => player.isPlayersTurn
                       )[0]?.name
-                    : _players[0]?.name + ' wins!'}
+                    : roundAndRoundPlayers[0]?.name + ' wins!'}
                 </h1>
               </button>
             </div>

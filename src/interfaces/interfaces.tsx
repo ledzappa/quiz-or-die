@@ -8,6 +8,7 @@ export interface Player {
     landmine: number;
   };
   isPlayersTurn: boolean;
+  isRoundAndRoundWinner: boolean;
   points: number;
 }
 

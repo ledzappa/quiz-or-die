@@ -80,14 +80,14 @@ export default function Question({
   };
 
   const updateCurrentPlayerPoints = (players: Player[], points: number) => {
-    return players.map((player) =>
-      player.isPlayersTurn
+    return players.map((player) => {
+      return player.isPlayersTurn
         ? {
             ...player,
-            points: player.points + points,
+            points: Math.max(0, player.points + points),
           }
-        : player
-    );
+        : player;
+    });
   };
 
   return (

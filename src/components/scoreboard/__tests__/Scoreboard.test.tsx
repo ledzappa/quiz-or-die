@@ -1,6 +1,8 @@
 import { Player } from '../../../interfaces/interfaces';
-import Perks from '../../perks/Perks';
-import { setNextTurn, reducePlayerPerks } from '../Scoreboard';
+import {
+  setNextPlayersTurn,
+  reduceCurrentPlayersPerksByOne,
+} from '../Scoreboard';
 
 describe('Scoreboard', () => {
   let playerMock: Player;
@@ -14,12 +16,13 @@ describe('Scoreboard', () => {
         doubleUp: 0,
         landmine: 0,
       },
+      isRoundAndRoundWinner: false,
       isPlayersTurn: false,
       points: 0,
     };
   });
 
-  describe('setNextTurn', () => {
+  describe('setNextPlayersTurn', () => {
     describe('positive direction and last players turn', () => {
       const direction = 1;
       test('should set next turn to first player', () => {
@@ -40,7 +43,7 @@ describe('Scoreboard', () => {
             isPlayersTurn: true,
           },
         ];
-        const output = setNextTurn(input, direction);
+        const output = setNextPlayersTurn(input, direction);
         expect(
           output.filter((player: Player) => player.isPlayersTurn).length
         ).toBe(1);
@@ -71,7 +74,7 @@ describe('Scoreboard', () => {
             isPlayersTurn: false,
           },
         ];
-        const output = setNextTurn(input, direction);
+        const output = setNextPlayersTurn(input, direction);
         expect(
           output.filter((player: Player) => player.isPlayersTurn).length
         ).toBe(1);
@@ -83,7 +86,7 @@ describe('Scoreboard', () => {
     });
   });
 
-  describe('reducePlayerPerks', () => {
+  describe('reduceCurrentPlayersPerksByOne', () => {
     test('should reduce current players perks by one if more than 0', () => {
       const mockWithPerks = {
         ...playerMock,
@@ -107,7 +110,7 @@ describe('Scoreboard', () => {
         },
       ];
 
-      const output = reducePlayerPerks(input);
+      const output = reduceCurrentPlayersPerksByOne(input);
       expect(output[0].perks.freedomOfChoice).toBe(3);
       expect(output[0].perks.doubleUp).toBe(1);
       expect(output[0].perks.landmine).toBe(0);
