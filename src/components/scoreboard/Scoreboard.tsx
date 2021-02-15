@@ -1,8 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Direction, Player } from '../../interfaces/interfaces';
 import './Scoreboard.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Scoreboard({
   players,
@@ -13,11 +13,11 @@ export default function Scoreboard({
   playGoodPerkSound,
 }: {
   players: Player[];
-  setPlayers: any;
   direction: Direction;
   isRoundAndRound: boolean;
-  setIsRoundAndRound: any;
-  playGoodPerkSound: any;
+  setPlayers: Function;
+  setIsRoundAndRound: Function;
+  playGoodPerkSound: Function;
 }) {
   const [winner, setWinner] = useState<Player>();
   const [showWinner, setShowWinner] = useState(false);

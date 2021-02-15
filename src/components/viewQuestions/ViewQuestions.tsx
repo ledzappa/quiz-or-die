@@ -125,9 +125,12 @@ export default function ViewQuestions({
         categories={categories}
         question={selectedQuestion}
         showModal={showModal}
-        setShowModal={(showModal: boolean) => setShowModal(showModal)}
-        setAllQuestions={(question: Question) =>
-          setAllQuestions([...allQuestions, question])
+        setShowModal={setShowModal}
+        setAllQuestions={(question: Question) => {
+          const questions = [...allQuestions, question];
+          console.log(questions);
+          setAllQuestions(questions);
+        }
         }
       ></AddQuestion>
     </div>

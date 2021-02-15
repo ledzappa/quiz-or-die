@@ -55,6 +55,14 @@
     {
       "description": "Simpson characters",
       "randomizeLetter": false
+    },
+    {
+      "description": "States of the USA",
+      "randomizeLetter": false
+    },
+    {
+      "description": "European Countries",
+      "randomizeLetter": false
     }
   ]
 }

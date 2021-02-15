@@ -42,7 +42,8 @@ export default function AddQuestion({
   }, [showModal, question]);
 
   const handleFormChange = ({ name, value }: any) => {
-    setFormData({ ...formData, [name]: value });
+    let _value = name === 'categoryId' ? Number(value) : value;
+    setFormData({ ...formData, [name]: _value });
   };
 
   const handleClose = () => setShowModal(false);
