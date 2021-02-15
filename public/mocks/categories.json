@@ -6,7 +6,7 @@
       "name": "Movies and TV",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 43
+      "questions": 55
     },
     {
       "id": 4,
@@ -14,7 +14,7 @@
       "name": "History",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 23
+      "questions": 28
     },
     {
       "id": 5,
@@ -22,7 +22,7 @@
       "name": "Nature",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 25
+      "questions": 34
     },
     {
       "id": 2,
@@ -30,7 +30,7 @@
       "name": "Music",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 23
+      "questions": 31
     },
     {
       "id": 3,
@@ -38,7 +38,7 @@
       "name": "Games",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 27
+      "questions": 29
     },
     {
       "id": 8,
@@ -46,7 +46,7 @@
       "name": "Technology",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 24
+      "questions": 31
     },
     {
       "id": 6,
@@ -54,7 +54,7 @@
       "name": "Food and drinks",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 23
+      "questions": 25
     },
     {
       "id": 7,
@@ -62,7 +62,15 @@
       "name": "Sport",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 20
+      "questions": 32
+    },
+    {
+      "id": 9,
+      "identifier": "general",
+      "name": "General",
+      "description": null,
+      "createdAt": "2021-02-14T22:46:13.000Z",
+      "questions": 8
     }
   ]
 }

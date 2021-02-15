@@ -74,7 +74,9 @@ export default function ViewQuestions({
             >
               <option value="0">All categories</option>
               {categories.map((category) => (
-                <option value={category.id}>{category.name}</option>
+                <option value={category.id}>
+                  {category.name} ({category.questions})
+                </option>
               ))}
             </select>
           </div>
@@ -112,7 +114,10 @@ export default function ViewQuestions({
           </thead>
           <tbody>
             {questions.map((question: Question) => (
-              <tr className="clickable" onClick={() => handleEditModalClick(question)}>
+              <tr
+                className="clickable"
+                onClick={() => handleEditModalClick(question)}
+              >
                 <td>{question.question}</td>
                 <td>{question.answer}</td>
                 <td>{question.tags}</td>
@@ -130,8 +135,7 @@ export default function ViewQuestions({
           const questions = [...allQuestions, question];
           console.log(questions);
           setAllQuestions(questions);
-        }
-        }
+        }}
       ></AddQuestion>
     </div>
   );

@@ -16,6 +16,7 @@ export interface Category {
   id: number;
   identifier: string;
   name: string;
+  questions: number;
 }
 
 export interface Perk {
