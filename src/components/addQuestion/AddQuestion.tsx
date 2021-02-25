@@ -4,27 +4,22 @@ import api from '../../api/Api';
 import { Category, Question } from '../../interfaces/interfaces';
 
 export const validateForm = ({ categoryId, question, answer }: any) => {
-  if (categoryId.length === 0) {
-    return false;
-  }
-  if (question.length < 10) {
-    return false;
-  }
-  if (answer.length === 0) {
-    return false;
-  }
+  if (Number(categoryId) === 0) return false;
+  if (question.length < 10) return false;
+  if (answer.length === 0) return false;
   return true;
 };
 
 const defaultFormValues = {
   id: null,
-  categoryId: 1,
   question: '',
   answer: '',
+  categoryId: 0,
 };
 
 export default function AddQuestion({
   categories,
+  categoryId,
   setAllQuestions,
   showModal,
   setShowModal,
@@ -38,13 +33,17 @@ export default function AddQuestion({
   }, [formData]);
 
   useEffect(() => {
-    setFormData(question || defaultFormValues);
+    setFormData(question || { ...defaultFormValues, categoryId });
   }, [showModal, question]);
 
   const handleFormChange = ({ name, value }: any) => {
     let _value = name === 'categoryId' ? Number(value) : value;
     setFormData({ ...formData, [name]: _value });
   };
+
+  const handleImageChange = (target: any) => {
+    console.log(target.files[0]);
+  }
 
   const handleClose = () => setShowModal(false);
 
@@ -89,6 +88,7 @@ export default function AddQuestion({
               value={formData.categoryId}
               onChange={(e) => handleFormChange(e.target)}
             >
+              <option value="0">Choose</option>
               {categories.map((category: Category, idx: number) => (
                 <option value={category.id} key={idx}>
                   {category.name}
@@ -105,6 +105,15 @@ export default function AddQuestion({
               value={formData.question}
               rows={2}
             ></textarea>
+          </div>
+          <div className="form-group">
+            <label>Image</label>
+            <input
+              type="file"
+              onChange={(e) => handleImageChange(e.target)}
+              className="form-control"
+              name="img"
+            />
           </div>
           <div className="form-group">
             <label>Answer</label>

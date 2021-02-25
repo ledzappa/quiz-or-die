@@ -17,6 +17,7 @@ export interface Category {
   identifier: string;
   name: string;
   questions: number;
+  disabled?: boolean;
 }
 
 export interface Perk {

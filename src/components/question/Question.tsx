@@ -1,7 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Player, Question as _Question } from '../../interfaces/interfaces';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Question.css';
 
 export default function Question({
   currentQuestion,
@@ -97,6 +98,9 @@ export default function Question({
         <div className="text-uppercase">{currentPlayer.name}</div>
         <h1 className="text-capitalize">{currentQuestion.category}</h1>
         <p>{extractAlternatives(currentQuestion.question)}</p>
+        {currentQuestion.img && <div className="text-center">
+          <img src={currentQuestion.img} />
+        </div>}
       </div>
       {showAnswer ? (
         <div>
@@ -110,7 +114,8 @@ export default function Question({
                 className="btn btn-success w-100 p-3 font-weight-bold yes-button"
                 onClick={() => rightAnswer()}
               >
-                <FontAwesomeIcon icon="check" />&nbsp;&nbsp;Yes
+                <FontAwesomeIcon icon="check" />
+                &nbsp;&nbsp;Yes
               </button>
             </div>
             <div className="col-6">
@@ -118,7 +123,8 @@ export default function Question({
                 className="btn btn-danger w-100 p-3 font-weight-bold no-button"
                 onClick={() => wrongAnswer()}
               >
-                <FontAwesomeIcon icon="times" />&nbsp;&nbsp;No
+                <FontAwesomeIcon icon="times" />
+                &nbsp;&nbsp;No
               </button>
             </div>
           </div>

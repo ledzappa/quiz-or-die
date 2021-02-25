@@ -11,7 +11,7 @@ export default function SelectCategory({
 }: {
   currentPlayer: Player;
   setCurrentCategory: any;
-  setCurrentQuestion: any,
+  setCurrentQuestion: any;
   categories: Category[];
   play: any;
 }) {
@@ -23,12 +23,11 @@ export default function SelectCategory({
   const history = useHistory();
 
   useEffect(() => {
-    if (categories.length > 0 && currentPlayer.perks.freedomOfChoice === 0) {
-      randomizeCategory();
-    }
-  }, [categories]);
+    randomizeCategory();
+  }, []);
 
   const randomizeCategory = () => {
+    if (currentPlayer.perks.freedomOfChoice > 0) return;
     let count = 0;
     let prevRandomIndex: any;
     const interval = setInterval(() => {
@@ -58,9 +57,7 @@ export default function SelectCategory({
   return (
     <div className="text-center">
       <div className="mb-4">
-        <h1 className="mb-0 text-uppercase">
-          {currentPlayer.name}
-        </h1>
+        <h1 className="mb-0 text-uppercase">{currentPlayer.name}</h1>
         <div>"{currentPlayer.description}"</div>
         <div>({currentPlayer.points} points)</div>
         {currentPlayer.perks.freedomOfChoice > 0 && (

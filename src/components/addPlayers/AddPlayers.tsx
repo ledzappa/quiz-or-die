@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
 import api from '../../api/Api';
 import { Player } from '../../interfaces/interfaces';
@@ -66,7 +67,10 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
   return (
     <div className="row justify-content-center">
       <div className="col-12 col-sm-6 col-lg-6 col-xl-4">
-        <h1>Add players</h1>
+        <h2>
+          <FontAwesomeIcon className="mr-2" icon="plus" />
+          Add players
+        </h2>
         <p>Enter a name and press enter or the "Add" button.</p>
         <label>Name</label>
         <div className="input-group mb-3">

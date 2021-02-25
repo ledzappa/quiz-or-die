@@ -20,7 +20,15 @@ const api = {
     }),
   getRoundAndRoundThemes: () =>
     axios.get(true ? 'mocks/roundAndRound.json' : '/api/round-and-round'),
-  addQuestion: (formData) => axios.post('/api/questions', formData),
+  addQuestion: (formData) => {
+    const _formData = new FormData();
+    Object.keys(formData).forEach((key) =>
+      _formData.append(key, formData[key])
+    );
+    return axios.post('/api/questions', formData, {
+      'content-type': 'multipart/form-data',
+    });
+  },
   saveQuestion: (formData) => axios.put('/api/questions', formData),
   deleteQuestion: (formData) => axios.delete('/api/questions', formData),
   addUser: (formData) => axios.post('/api/users', formData),

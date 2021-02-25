@@ -127,13 +127,13 @@ export default function ViewQuestions({
         </table>
       )}
       <AddQuestion
+        categoryId={categoryId}
         categories={categories}
         question={selectedQuestion}
         showModal={showModal}
         setShowModal={setShowModal}
         setAllQuestions={(question: Question) => {
           const questions = [...allQuestions, question];
-          console.log(questions);
           setAllQuestions(questions);
         }}
       ></AddQuestion>

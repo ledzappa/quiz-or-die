@@ -20,3 +20,18 @@ body,
   background-color: #459256;
   border-color: #459256;
 }
+
+.alert-danger {
+  color: #ffffff;
+  background-color: #c11d2c;
+  border-color: #c11d2c;
+}
+
+.modal .modal-content {
+  background-color: #313131;
+  color: #fff;
+}
+
+.modal .close {
+  color: #fff;
+}

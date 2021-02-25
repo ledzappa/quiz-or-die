@@ -5,6 +5,7 @@ import {
   faTrophy,
   faHandSparkles,
   faBomb,
+  faPlus,
   faCheck,
   faTimes,
   faArrowRight,
@@ -33,6 +34,7 @@ library.add(
   faTrophy,
   faHandSparkles,
   faBomb,
+  faPlus,
   faCheck,
   faTimes,
   faArrowRight
@@ -45,6 +47,7 @@ function App() {
     probRoundAndRound: 0.05,
     probPerk: 0.2,
     probPlayerPerk: 0.6,
+    imgBaseUrl: 'https://leds3aws.s3.eu-north-1.amazonaws.com/images/',
   });
   const [questions, setQuestions] = useState({});
   const [categories, setCategories] = useState([]);
@@ -79,7 +82,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home
+              categories={categories}
               user={user}
+              settings={settings}
               setCategories={setCategories}
               setQuestions={setQuestions}
               setThemes={setThemes}
@@ -121,7 +126,7 @@ function App() {
               currentPlayer={
                 players.filter((player) => player.isPlayersTurn)[0]
               }
-              categories={categories}
+              categories={categories.filter((category) => !category.disabled)}
               play={play}
               setCurrentCategory={_setCurrentQuestion}
             ></SelectCategory>
@@ -133,6 +138,7 @@ function App() {
               }
               currentQuestion={currentQuestion}
               players={players}
+              settings={settings}
               playBtnSound={playBtnSound}
               setPlayers={setPlayers}
             ></Question>
