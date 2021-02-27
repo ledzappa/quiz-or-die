@@ -3,7 +3,10 @@
 context('Add Players', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000');
+    cy.get('input.username').type('mikael');
+    cy.get('input.password').type('mikael');
     cy.get('button').first().click();
+    cy.get('button.play-quizmageddon').click();
   });
 
   it('Add player input should be focused', () => {

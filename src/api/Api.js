@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const mocks = false;
 
 const api = {
@@ -20,13 +21,17 @@ const api = {
     }),
   getRoundAndRoundThemes: () =>
     axios.get(true ? 'mocks/roundAndRound.json' : '/api/round-and-round'),
-  addQuestion: (formData) => {
-    const _formData = new FormData();
-    Object.keys(formData).forEach((key) =>
-      _formData.append(key, formData[key])
-    );
-    return axios.post('/api/questions', formData, {
-      'content-type': 'multipart/form-data',
+  addQuestion: (formData, img) => {
+    console.log(img);
+    const fd = new FormData();
+    Object.keys(formData).forEach((key) => fd.append(key, formData[key]));
+    if (img) {
+      fd.append('img', img, 'img.jpg');
+    }
+    // using fetch because axios refused to set content type to multipart
+    return fetch('/api/questions', {
+      method: 'POST',
+      body: fd,
     });
   },
   saveQuestion: (formData) => axios.put('/api/questions', formData),

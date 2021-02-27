@@ -36,7 +36,7 @@ export default function Login({ setUser }: any) {
           <div className="form-group">
             <label>Username</label>
             <input
-              className="form-control"
+              className="form-control username"
               name="username"
               onChange={(e) => handleFormChange(e.target)}
             ></input>
@@ -47,7 +47,7 @@ export default function Login({ setUser }: any) {
             <input
               type="password"
               name="password"
-              className="form-control"
+              className="form-control password"
               onChange={(e) => handleFormChange(e.target)}
             ></input>
           </div>

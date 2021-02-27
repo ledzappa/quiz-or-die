@@ -17,6 +17,9 @@ const defaultFormValues = {
   categoryId: 0,
 };
 
+// can't keep selected image in state
+let addedImage: any;
+
 export default function AddQuestion({
   categories,
   categoryId,
@@ -42,14 +45,14 @@ export default function AddQuestion({
   };
 
   const handleImageChange = (target: any) => {
-    console.log(target.files[0]);
-  }
+    addedImage = target.files[0];
+  };
 
   const handleClose = () => setShowModal(false);
 
   const handleAddQuestionClick = () => {
     api
-      .addQuestion(formData)
+      .addQuestion(formData, addedImage)
       .then(() => {
         setAllQuestions(formData);
         setFormData({ ...formData, question: '', answer: '' });
@@ -108,12 +111,13 @@ export default function AddQuestion({
           </div>
           <div className="form-group">
             <label>Image</label>
-            <input
-              type="file"
-              onChange={(e) => handleImageChange(e.target)}
-              className="form-control"
-              name="img"
-            />
+            <div>
+              <input
+                type="file"
+                onChange={(e) => handleImageChange(e.target)}
+                name="img"
+              />
+            </div>
           </div>
           <div className="form-group">
             <label>Answer</label>

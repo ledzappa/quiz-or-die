@@ -3002,6 +3002,39 @@
       "img": null,
       "createdAt": "2021-02-15T14:49:14.000Z",
       "identifier": "general"
+    },
+    {
+      "id": 334,
+      "categoryId": 7,
+      "question": "\"Teqball\" is a ball sport that combines elements of which two (more traditional) ball sports?",
+      "answer": "Football and table tennis",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-20T12:17:31.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 335,
+      "categoryId": 7,
+      "question": "Which of the following sports does NOT include a goal to score points: Cricket, Lacrosse or Polo?",
+      "answer": "Cricket",
+      "adult": 0,
+      "sound": null,
+      "img": null,
+      "createdAt": "2021-02-20T12:20:57.000Z",
+      "identifier": "sport"
+    },
+    {
+      "id": 399,
+      "categoryId": 2,
+      "question": "Who's this?",
+      "answer": "Liv Tyler",
+      "adult": null,
+      "sound": null,
+      "img": "83e21e7f-4d85-4ff3-ab19-54ea1a13292e.jpg",
+      "createdAt": "2021-02-25T13:26:41.000Z",
+      "identifier": "music"
     }
   ]
 }

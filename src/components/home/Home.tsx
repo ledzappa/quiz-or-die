@@ -71,7 +71,7 @@ export default function Home({
           Start the game by adding players!
         </p>
         <button
-          className="btn btn-primary"
+          className="btn btn-primary play-quizmageddon"
           onClick={() => history.push('/add-players')}
         >
           Play Quizmageddon

@@ -30,7 +30,7 @@
       "name": "Music",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 31
+      "questions": 32
     },
     {
       "id": 3,
@@ -62,7 +62,7 @@
       "name": "Sport",
       "description": null,
       "createdAt": "2021-01-25T12:03:09.000Z",
-      "questions": 32
+      "questions": 34
     },
     {
       "id": 9,
