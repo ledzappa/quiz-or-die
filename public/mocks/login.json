@@ -1,13 +1,1 @@
-{
-  "settings": {
-    "disabledCategories": [],
-    "disabledPerks": [],
-    "theme": "dark",
-    "adult": false,
-    "gameLength": 10,
-    "probability": {
-      "roundAndRound": 0.05,
-      "getPerk": 0.2
-    }
-  }
-}
+{}
