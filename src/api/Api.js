@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const mocks = false;
+const mocks = true;
 
 const api = {
   getCategories: () =>
