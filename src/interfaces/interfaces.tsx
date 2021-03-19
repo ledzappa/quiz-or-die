@@ -8,7 +8,9 @@ export interface Player {
     landmine: number;
   };
   isPlayersTurn: boolean;
-  isRoundAndRoundWinner: boolean;
+  isMiniGameWinner: boolean;
+  isEliminated: boolean;
+  reactionTime: number;
   points: number;
 }
 
@@ -36,6 +38,14 @@ export interface Question {
   img?: string;
   category?: string;
   createdAt?: string;
+}
+
+export interface Settings {
+  pointsToWin: number;
+  probRoundAndRound: number;
+  probPerk: number;
+  probPlayerPerk: number;
+  imgBaseUrl: 'https://leds3aws.s3.eu-north-1.amazonaws.com/images/';
 }
 
 export interface RoundAndRoundTheme {

@@ -1,0 +1,7 @@
+div.button-container {
+  max-width: 500px;
+}
+
+div.button-container button {
+  font-weight: bold;
+}

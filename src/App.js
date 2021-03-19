@@ -1,14 +1,17 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faAngleDoubleUp,
-  faSync,
-  faTrophy,
-  faHandSparkles,
-  faBomb,
-  faPlus,
-  faCheck,
-  faTimes,
   faArrowRight,
+  faBomb,
+  faCheck,
+  faCog,
+  faHandSparkles,
+  faPlay,
+  faPlus,
+  faSync,
+  faTimes,
+  faTools,
+  faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { MemoryRouter, Route, Switch } from 'react-router-dom';
@@ -16,28 +19,32 @@ import useSound from 'use-sound';
 import './App.css';
 import AddPlayers from './components/addPlayers/AddPlayers';
 import Home from './components/home/Home';
+import Login from './components/login/Login';
+import RoundAndRound from './components/minigames/roundAndRound/RoundAndRound';
+import TriggerFinger from './components/minigames/triggerFinger/TriggerFinger';
 import Perks from './components/perks/Perks';
 import Question from './components/question/Question';
-import RoundAndRound from './components/roundAndRound/RoundAndRound';
 import Scoreboard from './components/scoreboard/Scoreboard';
 import SelectCategory from './components/selectCategory/SelectCategory';
 import ShowTurn from './components/showTurn/ShowTurn';
 import ViewQuestions from './components/viewQuestions/ViewQuestions';
-import sound from './sounds/robots.mp3';
 import soundButton from './sounds/button.mp3';
 import goodPerk from './sounds/goodPerk.mp3';
-import Login from './components/login/Login';
+import sound from './sounds/robots.mp3';
 
 library.add(
   faSync,
   faAngleDoubleUp,
+  faCog,
   faTrophy,
   faHandSparkles,
   faBomb,
   faPlus,
   faCheck,
   faTimes,
-  faArrowRight
+  faArrowRight,
+  faPlay,
+  faTools
 );
 
 function App() {
@@ -49,6 +56,7 @@ function App() {
     probPlayerPerk: 0.6,
     imgBaseUrl: 'https://leds3aws.s3.eu-north-1.amazonaws.com/images/',
   });
+  const soundLevel = 0.75;
   const [questions, setQuestions] = useState({});
   const [categories, setCategories] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
@@ -56,9 +64,9 @@ function App() {
   const [direction, setDirection] = useState(1);
   const [user, setUser] = useState({});
   const [isRoundAndRound, setIsRoundAndRound] = useState(false);
-  const [play] = useSound(sound, { volume: 0.25 });
-  const [playBtnSound] = useSound(soundButton, { volume: 0.25 });
-  const [playGoodPerkSound] = useSound(goodPerk, { volume: 0.25 });
+  const [play] = useSound(sound, soundLevel);
+  const [playBtnSound] = useSound(soundButton, soundLevel);
+  const [playGoodPerkSound] = useSound(goodPerk, soundLevel);
 
   const _setCurrentQuestion = (category) => {
     const questionsByCategory = questions.filter(
@@ -74,7 +82,7 @@ function App() {
   };
 
   return (
-    <div className="App" onClick={(e) => console.log(e.target)}>
+    <div className="App">
       <MemoryRouter>
         <Switch>
           <Route exact path="/">
@@ -99,6 +107,7 @@ function App() {
           </Route>
           <Route path="/show-turn">
             <ShowTurn
+              settings={settings}
               currentPlayer={
                 players.filter((player) => player.isPlayersTurn)[0]
               }
@@ -106,6 +115,7 @@ function App() {
           </Route>
           <Route path="/perks">
             <Perks
+              settings={settings}
               players={players}
               playGoodPerkSound={playGoodPerkSound}
               setPlayers={setPlayers}
@@ -120,6 +130,14 @@ function App() {
               playBtnSound={playBtnSound}
               setPlayers={setPlayers}
             ></RoundAndRound>
+          </Route>
+          <Route path="/trigger-finger">
+            <TriggerFinger
+              players={players}
+              playGoodPerkSound={playGoodPerkSound}
+              playBtnSound={playBtnSound}
+              setPlayers={setPlayers}
+            ></TriggerFinger>
           </Route>
           <Route path="/select-category">
             <SelectCategory
@@ -145,6 +163,7 @@ function App() {
           </Route>
           <Route path="/scoreboard">
             <Scoreboard
+              settings={settings}
               direction={direction}
               players={players}
               setPlayers={setPlayers}

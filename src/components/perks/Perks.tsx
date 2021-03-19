@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Perks.css';
-import { Perk, Player } from '../../interfaces/interfaces';
+import { Perk, Player, Settings } from '../../interfaces/interfaces';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const playerPerks = [
@@ -44,9 +44,16 @@ const globalPerks = [
 export default function Perks({
   setDirection,
   setPlayers,
+  settings,
   players,
   playGoodPerkSound,
-}: any) {
+}: {
+  setDirection: Function;
+  setPlayers: Function;
+  settings: Settings;
+  players: Player[];
+  playGoodPerkSound: Function;
+}) {
   const [perk, setPerk] = useState<Perk>({
     id: '',
     name: '',
@@ -60,7 +67,8 @@ export default function Perks({
   }, []);
 
   const randomizePerk = () => {
-    const perks = Math.random() < 0.6 ? playerPerks : globalPerks;
+    const perks =
+      Math.random() < settings.probPlayerPerk ? playerPerks : globalPerks;
     const randomPerkIndex = Math.floor(perks.length * Math.random());
     const perk = perks[randomPerkIndex] as Perk;
     if (perk.id === 'robin-hood' && !isRobinHoodEnabled(players)) {

@@ -16,7 +16,7 @@ describe('Scoreboard', () => {
         doubleUp: 0,
         landmine: 0,
       },
-      isRoundAndRoundWinner: false,
+      isMiniGameWinner: false,
       isPlayersTurn: false,
       points: 0,
     };

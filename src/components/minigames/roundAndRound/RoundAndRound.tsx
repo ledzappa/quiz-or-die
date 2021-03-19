@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Player, RoundAndRoundTheme } from '../../interfaces/interfaces';
+import { Player, RoundAndRoundTheme } from '../../../interfaces/interfaces';
 import './RoundAndRound.css';
 
 export default function RoundAndRound({
@@ -83,7 +83,7 @@ export default function RoundAndRound({
             ? {
                 ...player,
                 points: player.points + 2,
-                isRoundAndRoundWinner: true,
+                isMiniGameWinner: true,
               }
             : player
         )

@@ -22,7 +22,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
         description: getRandomDescription(),
         points: 0,
         isPlayersTurn: false,
-        isRoundAndRoundWinner: false,
+        isMiniGameWinner: false,
         perks: { freedomOfChoice: 0, doubleUp: 0 },
       },
     ]);
@@ -49,7 +49,8 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
   const startGame = () => {
     randomizeFirstTurn();
     playBtnSound();
-    history.push('/show-turn');
+    //history.push('/show-turn');
+    history.push('/trigger-finger');
   };
 
   const handlePlayerInputChange = (value: string) => setPlayerInput(value);
@@ -67,10 +68,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
   return (
     <div className="row justify-content-center">
       <div className="col-12 col-sm-6 col-lg-6 col-xl-4">
-        <h2>
-          <FontAwesomeIcon className="mr-2" icon="plus" />
-          Add players
-        </h2>
+        <h2>Add players</h2>
         <p>Enter a name and press enter or the "Add" button.</p>
         <label>Name</label>
         <div className="input-group mb-3">
@@ -86,7 +84,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
             className="btn btn-primary"
             onClick={() => addPlayer(playerInput)}
           >
-            Add
+            <FontAwesomeIcon icon="plus" />
           </button>
         </div>
         {players.map((player: Player, idx: number) => (

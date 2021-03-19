@@ -3,6 +3,8 @@ import api from '../../api/Api';
 import { useHistory } from 'react-router-dom';
 import Settings from '../settings/Settings';
 import { Question } from '../../interfaces/interfaces';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Home.css';
 
 export default function Home({
   categories,
@@ -59,6 +61,7 @@ export default function Home({
               className="btn btn-outline-light"
               onClick={() => history.push('/admin/questions')}
             >
+              <FontAwesomeIcon className="mr-2" icon="tools" />
               Admin
             </button>
           )}
@@ -66,19 +69,30 @@ export default function Home({
       </div>
       <div className="text-center">
         <h1>Quizmageddon</h1>
-        <p>
+        <p className="mb-5">
           Welcome to quizmageddon - the best quiz game ever created by men.
           Start the game by adding players!
         </p>
-        <button
-          className="btn btn-primary play-quizmageddon"
-          onClick={() => history.push('/add-players')}
-        >
-          Play Quizmageddon
-        </button>
-        <button className="btn btn-outline-light" onClick={handleSettingsClick}>
-          Settings
-        </button>
+        <div className="row justify-content-center">
+          <div className="col-12 text-center">
+            <div className="button-container d-inline-block">
+              <button
+                className="btn btn-primary play-quizmageddon mb-3 w-100 p-3"
+                onClick={() => history.push('/add-players')}
+              >
+                <FontAwesomeIcon className="mr-2" icon="play" />
+                Play Quizmageddon
+              </button>
+              <button
+                className="btn btn-outline-light w-100 p-3"
+                onClick={handleSettingsClick}
+              >
+                <FontAwesomeIcon className="mr-2" icon="cog" />
+                Settings
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <Settings
         categories={categories}

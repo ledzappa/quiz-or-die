@@ -1,13 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Direction, Player } from '../../interfaces/interfaces';
+import { Direction, Player, Settings } from '../../interfaces/interfaces';
 import './Scoreboard.css';
 
 export default function Scoreboard({
   players,
   setPlayers,
   direction,
+  settings,
   isRoundAndRound,
   setIsRoundAndRound,
   playGoodPerkSound,
@@ -15,6 +16,7 @@ export default function Scoreboard({
   players: Player[];
   direction: Direction;
   isRoundAndRound: boolean;
+  settings: Settings;
   setPlayers: Function;
   setIsRoundAndRound: Function;
   playGoodPerkSound: Function;
@@ -34,7 +36,7 @@ export default function Scoreboard({
   const history = useHistory();
 
   const handleNextRoundClick = () => {
-    if (Math.random() > 0.05 || isRoundAndRound) {
+    if (Math.random() > settings.probRoundAndRound || isRoundAndRound) {
       let _players = setNextPlayersTurn(players, direction);
       _players = reduceCurrentPlayersPerksByOne(_players);
       _players = resetRoundAndRoundWinner(_players);
@@ -109,10 +111,10 @@ export default function Scoreboard({
 export const shouldAnimatePlayerRow = (
   player: Player,
   isRoundAndRound: boolean
-) => (isRoundAndRound ? player.isRoundAndRoundWinner : player.isPlayersTurn);
+) => (isRoundAndRound ? player.isMiniGameWinner : player.isPlayersTurn);
 
 export const resetRoundAndRoundWinner = (players: Player[]) => {
-  return players.map((player) => ({ ...player, isRoundAndRoundWinner: false }));
+  return players.map((player) => ({ ...player, isMiniGameWinner: false }));
 };
 
 export const setNextPlayersTurn = (players: Player[], direction: Direction) => {
