@@ -51,7 +51,8 @@ function App() {
   const [players, setPlayers] = useState([]);
   const [settings, setSettings] = useState({
     pointsToWin: 10,
-    probRoundAndRound: 0.05,
+    enabledMiniGames: ['roundAndRound', 'triggerFinger', 'closestWins'],
+    probMiniGame: 0.1,
     probPerk: 0.2,
     probPlayerPerk: 0.6,
     imgBaseUrl: 'https://leds3aws.s3.eu-north-1.amazonaws.com/images/',
@@ -93,6 +94,7 @@ function App() {
               categories={categories}
               user={user}
               settings={settings}
+              setSettings={setSettings}
               setCategories={setCategories}
               setQuestions={setQuestions}
               setThemes={setThemes}

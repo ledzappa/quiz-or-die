@@ -41,11 +41,13 @@ export interface Question {
 }
 
 export interface Settings {
+  enabledMiniGames: string[];
+  politicallyCorrect: false;
   pointsToWin: number;
-  probRoundAndRound: number;
+  probMiniGame: number;
   probPerk: number;
   probPlayerPerk: number;
-  imgBaseUrl: 'https://leds3aws.s3.eu-north-1.amazonaws.com/images/';
+  imgBaseUrl: string;
 }
 
 export interface RoundAndRoundTheme {

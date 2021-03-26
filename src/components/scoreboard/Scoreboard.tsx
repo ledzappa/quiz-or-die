@@ -24,7 +24,9 @@ export default function Scoreboard({
   const [winner, setWinner] = useState<Player>();
   const [showWinner, setShowWinner] = useState(false);
   useEffect(() => {
-    const winner = players.filter((player) => player.points >= 10)[0];
+    const winner = players.filter(
+      (player) => player.points >= settings.pointsToWin
+    )[0];
     setWinner(winner);
     if (winner) {
       setTimeout(() => {
@@ -36,7 +38,11 @@ export default function Scoreboard({
   const history = useHistory();
 
   const handleNextRoundClick = () => {
-    if (Math.random() > settings.probRoundAndRound || isRoundAndRound) {
+    if (
+      settings.enabledMiniGames.length === 0 ||
+      Math.random() > settings.probMiniGame ||
+      isRoundAndRound
+    ) {
       let _players = setNextPlayersTurn(players, direction);
       _players = reduceCurrentPlayersPerksByOne(_players);
       _players = resetRoundAndRoundWinner(_players);
@@ -45,7 +51,9 @@ export default function Scoreboard({
       history.push('/show-turn');
     } else {
       setIsRoundAndRound(true);
-      history.push('/round-and-round');
+      history.push(
+        Math.random() < 0.6 ? '/round-and-round' : '/trigger-finger'
+      );
     }
   };
 

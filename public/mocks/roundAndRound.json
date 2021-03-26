@@ -63,6 +63,46 @@
     {
       "description": "European Countries",
       "randomizeLetter": false
+    },
+    {
+      "description": "Superheroes (Marvel and DC)",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Artists and Bands",
+      "randomizeLetter": true
+    },
+    {
+      "description": "Types of vehicles",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Authors",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Pokémon species",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Bird species",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Disney princesses",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Disney movies",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Current world leaders (presidents/prime ministers)",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Song titles by Michael Jackson",
+      "randomizeLetter": false
     }
   ]
 }

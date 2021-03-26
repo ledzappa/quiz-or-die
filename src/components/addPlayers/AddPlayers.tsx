@@ -49,8 +49,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
   const startGame = () => {
     randomizeFirstTurn();
     playBtnSound();
-    //history.push('/show-turn');
-    history.push('/trigger-finger');
+    history.push('/show-turn');
   };
 
   const handlePlayerInputChange = (value: string) => setPlayerInput(value);
@@ -63,6 +62,16 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
     const randomAdjective = Math.floor(Math.random() * adjectivesLength);
     const adjective = playerWords.adjectives[randomAdjective];
     return `The ${adjective} ${noun}`;
+  };
+
+  const updateDescription = (name: string) => {
+    setPlayers(
+      players.map((player: Player) =>
+        player.name === name
+          ? { ...player, description: getRandomDescription() }
+          : player
+      )
+    );
   };
 
   return (
@@ -88,16 +97,21 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
           </button>
         </div>
         {players.map((player: Player, idx: number) => (
-          <div
-            className="added-player"
-            key={idx}
-            onClick={() => removePlayer(idx)}
-          >
-            {idx + 1}.{' '}
-            <span className="font-weight-bold text-uppercase">
-              {player.name}
-            </span>{' '}
-            - {player.description}
+          <div className="added-player-wrapper" key={idx}>
+            <div
+              className="d-inline-block"
+              onClick={() => updateDescription(player.name)}
+            >
+              <span className="font-weight-bold text-uppercase">
+                {player.name}
+              </span>{' '}
+              <div>{player.description}</div>
+            </div>
+            <FontAwesomeIcon
+              className="ml-3 float-right"
+              icon="times"
+              onClick={() => removePlayer(idx)}
+            />
           </div>
         ))}
         <hr />

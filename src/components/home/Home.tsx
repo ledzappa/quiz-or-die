@@ -12,6 +12,7 @@ export default function Home({
   setCategories,
   setQuestions,
   setThemes,
+  setSettings,
   user,
 }: any) {
   const history = useHistory();
@@ -98,6 +99,8 @@ export default function Home({
         categories={categories}
         setCategories={setCategories}
         showModal={showSeetingsModal}
+        settings={settings}
+        setSettings={setSettings}
         setShowModal={setShowSettingsModal}
       ></Settings>
     </div>
