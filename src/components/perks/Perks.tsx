@@ -137,7 +137,7 @@ export default function Perks({
             ? getRobinHoodText(players)
             : perk.description}
         </p>
-        <button className="btn btn-outline-light" onClick={handleContinueClick}>
+        <button className="btn btn-secondary" onClick={handleContinueClick}>
           Continue
         </button>
       </div>

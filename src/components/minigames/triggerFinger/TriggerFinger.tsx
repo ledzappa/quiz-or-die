@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Player } from '../../../interfaces/interfaces';
 import './TriggerFinger.css';
@@ -7,12 +7,18 @@ export default function RoundAndRound({
   players,
   setPlayers,
   playGoodPerkSound,
+  playTriggerSound,
+  playTooEarlySound,
+  playCountdownSound,
   playBtnSound,
 }: {
   players: Player[];
   setPlayers: any;
-  playGoodPerkSound: any;
-  playBtnSound: any;
+  playGoodPerkSound: Function;
+  playTriggerSound: Function;
+  playTooEarlySound: Function;
+  playCountdownSound: Function;
+  playBtnSound: Function;
 }) {
   const [started, setStarted] = useState(false);
   const [triggerPlayers, setTriggerPlayers] = useState(
@@ -28,7 +34,7 @@ export default function RoundAndRound({
   const [timer, setTimer] = useState<any>(null);
   const [switchTime, setSwitchTime] = useState<any>();
   const [switchDate, setSwitchDate] = useState<any>();
-  const [reactionTime, setReactionTime] = useState<number>(0);
+  const [soundCountDownInterval, setSoundCountDownInterval] = useState<any>();
   const [fastestTime, setFastestTime] = useState<number>(1000000);
   const history = useHistory();
 
@@ -43,6 +49,7 @@ export default function RoundAndRound({
       updateElapsedTime();
       if (elapsedTime > switchTime && !switched) {
         setSwitched(true);
+        clearInterval(soundCountDownInterval);
         setSwitchDate(Date.now());
         clearTimeout(timer);
       }
@@ -54,6 +61,7 @@ export default function RoundAndRound({
     playBtnSound();
     setStarted(true);
     setElapsedTime(1);
+    startPlayingCountdownSound();
   };
 
   const updateElapsedTime = () => {
@@ -64,15 +72,21 @@ export default function RoundAndRound({
     );
   };
 
+  const startPlayingCountdownSound = () =>
+    setSoundCountDownInterval(setInterval(() => playCountdownSound(), 750));
+
   const trigger = () => {
+    clearInterval(soundCountDownInterval);
     setIsTriggered(true);
     let reactionTime = Date.now() - switchDate;
     reactionTime = Number.isNaN(reactionTime) ? -1 : reactionTime;
     const wasTooEarly = reactionTime === -1;
     const isFastest = reactionTime > 0 && reactionTime < fastestTime;
-    setReactionTime(reactionTime);
     if (isFastest) {
+      playTriggerSound();
       setFastestTime(reactionTime);
+    } else {
+      playTooEarlySound();
     }
 
     setTriggerPlayers(
@@ -124,6 +138,7 @@ export default function RoundAndRound({
       history.push('/scoreboard');
     } else {
       resetState();
+      startPlayingCountdownSound();
       const currentTurnIndex = triggerPlayers.findIndex(
         (player: Player) => player.isPlayersTurn
       );
@@ -153,13 +168,14 @@ export default function RoundAndRound({
           Press the button as soon as it turns to green. The fastest player gets
           one point!
         </p>
-        <button className="btn btn-outline-light" onClick={() => start()}>
+        <button className="btn btn-secondary" onClick={() => start()}>
           Let's go!
         </button>
       </div>
       {started && (
         <div className="theme-wrapper">
           <h3>Trigger finger!</h3>
+          {!isTriggered && <h4>Press the button when it turns red</h4>}
           <hr></hr>
           {isTriggered ? (
             <div>
@@ -169,7 +185,9 @@ export default function RoundAndRound({
               </h1>
               <h1>
                 {currentPlayer.reactionTime > 0
-                  ? 'YOU ARE IN THE LEAD!'
+                  ? !currentPlayer.isEliminated
+                    ? 'YOU ARE IN THE LEAD!'
+                    : 'TOO SLOW :('
                   : 'TOO EARLY! :('}
               </h1>
               <button className="btn btn-primary" onClick={() => nextTurn()}>
@@ -185,7 +203,7 @@ export default function RoundAndRound({
             >
               {switched
                 ? 'TRIGGER!!!'
-                : currentPlayer.name + '! Wait for it...'}
+                : `Wait for it ${currentPlayer.name.toUpperCase()}...`}
             </button>
           )}
         </div>

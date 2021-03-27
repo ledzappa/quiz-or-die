@@ -6,13 +6,15 @@ import { Category, Question } from '../../interfaces/interfaces';
 const filterQuestions = (
   questions: any,
   filterString: string,
-  categoryId: number
+  categoryId: number,
+  image?: boolean
 ) => {
   return questions.filter(
     (question: any) =>
       (question?.question?.toLowerCase().includes(filterString) ||
         question?.answer?.toLowerCase().includes(filterString)) &&
-      (categoryId === 0 || question?.categoryId === categoryId)
+      (categoryId === 0 || question?.categoryId === categoryId) &&
+      image === !!question.img
   );
 };
 
@@ -25,6 +27,7 @@ export default function ViewQuestions({
   const [questions, setQuestions] = useState([]);
   const [filterString, setFilterString] = useState('');
   const [categoryId, setCategoryId] = useState(0);
+  const [showOnlyImages, setShowOnlyImages] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState<
     Question | undefined
@@ -40,14 +43,14 @@ export default function ViewQuestions({
   const handleInputChange = (filterString: string) => {
     setFilterString(filterString.toLowerCase());
     setQuestions(
-      filterQuestions(allQuestions, filterString.toLowerCase(), categoryId)
+      filterQuestions(allQuestions, filterString.toLowerCase(), categoryId, showOnlyImages)
     );
   };
 
   const handleSelectCategoryChange = (categoryId: string) => {
     setCategoryId(Number(categoryId));
     setQuestions(
-      filterQuestions(allQuestions, filterString, Number(categoryId))
+      filterQuestions(allQuestions, filterString, Number(categoryId), showOnlyImages)
     );
   };
 
@@ -59,6 +62,15 @@ export default function ViewQuestions({
   const handleEditModalClick = (question: Question) => {
     setSelectedQuestion(question);
     setShowModal(true);
+  };
+
+  const handleShowImageQuestionsCheck = ({
+    target: { checked, name },
+  }: any) => {
+    setShowOnlyImages(checked);
+    setQuestions(
+      filterQuestions(allQuestions, filterString, Number(categoryId), checked)
+    );
   };
 
   return (
@@ -94,11 +106,26 @@ export default function ViewQuestions({
           <div className="form-group">
             <label className="d-none d-sm-block">&nbsp;</label>
             <button
-              className="btn btn-outline-light w-100"
+              className="btn btn-secondary w-100"
               onClick={handleAddQuestionClick}
             >
               Add Question
             </button>
+          </div>
+        </div>
+        <div className="col-12">
+          <div className="form-group">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                checked={showOnlyImages}
+                onChange={handleShowImageQuestionsCheck}
+              />
+              <label className="form-check-label">
+                Show only image questions
+              </label>
+            </div>
           </div>
         </div>
       </div>

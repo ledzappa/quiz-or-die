@@ -59,7 +59,7 @@ export default function Home({
         <div className="col-12 text-right">
           {user.roleId === 0 && (
             <button
-              className="btn btn-outline-light"
+              className="btn btn-secondary"
               onClick={() => history.push('/admin/questions')}
             >
               <FontAwesomeIcon className="mr-2" icon="tools" />
@@ -78,14 +78,14 @@ export default function Home({
           <div className="col-12 text-center">
             <div className="button-container d-inline-block">
               <button
-                className="btn btn-primary play-quizmageddon mb-3 w-100 p-3"
+                className="btn btn-primary play-quizmageddon mb-3 w-100 btn-lg"
                 onClick={() => history.push('/add-players')}
               >
                 <FontAwesomeIcon className="mr-2" icon="play" />
                 Play Quizmageddon
               </button>
               <button
-                className="btn btn-outline-light w-100 p-3"
+                className="btn btn-secondary w-100 btn-lg"
                 onClick={handleSettingsClick}
               >
                 <FontAwesomeIcon className="mr-2" icon="cog" />

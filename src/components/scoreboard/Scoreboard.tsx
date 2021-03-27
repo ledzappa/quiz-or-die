@@ -9,16 +9,16 @@ export default function Scoreboard({
   setPlayers,
   direction,
   settings,
-  isRoundAndRound,
-  setIsRoundAndRound,
+  isMiniGame,
+  setIsMiniGame,
   playGoodPerkSound,
 }: {
   players: Player[];
   direction: Direction;
-  isRoundAndRound: boolean;
+  isMiniGame: boolean;
   settings: Settings;
   setPlayers: Function;
-  setIsRoundAndRound: Function;
+  setIsMiniGame: Function;
   playGoodPerkSound: Function;
 }) {
   const [winner, setWinner] = useState<Player>();
@@ -41,16 +41,16 @@ export default function Scoreboard({
     if (
       settings.enabledMiniGames.length === 0 ||
       Math.random() > settings.probMiniGame ||
-      isRoundAndRound
+      isMiniGame
     ) {
       let _players = setNextPlayersTurn(players, direction);
       _players = reduceCurrentPlayersPerksByOne(_players);
-      _players = resetRoundAndRoundWinner(_players);
+      _players = resetMiniGameWinner(_players);
       setPlayers(_players);
-      setIsRoundAndRound(false);
+      setIsMiniGame(false);
       history.push('/show-turn');
     } else {
-      setIsRoundAndRound(true);
+      setIsMiniGame(true);
       history.push(
         Math.random() < 0.6 ? '/round-and-round' : '/trigger-finger'
       );
@@ -73,7 +73,7 @@ export default function Scoreboard({
               <tr
                 key={idx}
                 className={
-                  shouldAnimatePlayerRow(player, isRoundAndRound)
+                  shouldAnimatePlayerRow(player, isMiniGame)
                     ? 'animate__animated animate__flash'
                     : ''
                 }
@@ -104,7 +104,7 @@ export default function Scoreboard({
             </div>
             <h1 className="mb-5">{winner?.name} wins!</h1>
             <button
-              className="btn btn-outline-light"
+              className="btn btn-secondary"
               onClick={handlePlayAgainClick}
             >
               Play again
@@ -116,12 +116,10 @@ export default function Scoreboard({
   );
 }
 
-export const shouldAnimatePlayerRow = (
-  player: Player,
-  isRoundAndRound: boolean
-) => (isRoundAndRound ? player.isMiniGameWinner : player.isPlayersTurn);
+export const shouldAnimatePlayerRow = (player: Player, isMiniGame: boolean) =>
+  isMiniGame ? player.isMiniGameWinner : player.isPlayersTurn;
 
-export const resetRoundAndRoundWinner = (players: Player[]) => {
+export const resetMiniGameWinner = (players: Player[]) => {
   return players.map((player) => ({ ...player, isMiniGameWinner: false }));
 };
 

@@ -109,16 +109,25 @@ export default function AddQuestion({
               rows={2}
             ></textarea>
           </div>
-          <div className="form-group">
-            <label>Image</label>
+          {!question && (
+            <div className="form-group">
+              <label>Image</label>
+              <div>
+                <input
+                  type="file"
+                  onChange={(e) => handleImageChange(e.target)}
+                  name="img"
+                />
+              </div>
+            </div>
+          )}
+          {question?.img && (
             <div>
-              <input
-                type="file"
-                onChange={(e) => handleImageChange(e.target)}
-                name="img"
+              <img
+                src={`https://quizmageddon.s3.eu-north-1.amazonaws.com/${question.img}`}
               />
             </div>
-          </div>
+          )}
           <div className="form-group">
             <label>Answer</label>
             <input

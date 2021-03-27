@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Category, Player } from '../../interfaces/interfaces';
 import './SelectCategory.css';
@@ -68,13 +68,16 @@ export default function SelectCategory({
       </div>
       <div className="row">
         {categories.map((item: Category, idx: number) => (
-          <div className="col-6 p-1" key={idx}>
+          <div className="col-12 col-sm-6 p-1" key={idx}>
             <div
               onClick={() => handleClick(item)}
               className={
-                'category text-center ' +
+                'category text-center p-sm-3 ' +
                 item.identifier +
-                (item.name === activeCategory?.name ? ' active' : '')
+                (item.name === activeCategory?.name ||
+                currentPlayer.perks.freedomOfChoice > 0
+                  ? ' active'
+                  : '')
               }
             >
               {item.name}

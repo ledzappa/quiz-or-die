@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Righteous&family=Roboto:wght@300;400;500;600;700&display=swap');
+$darkFont: #333;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #131313;
+  color: #fff;
+}
+
+body.light-mode {
+  background-color: #eee;
+  color: $darkFont;
+  .modal-content {
+    background-color: #f1f1f1;
+    color: $darkFont;
+  }
+  .added-player-wrapper {
+    background-color: #fff;
+    color: $darkFont;
+  }
+  table {
+    color: $darkFont !important;
+  }
+  .category {
+    background-color: #dadada;
+    &.active {
+      color: #fff;
+    }
+  }
+  .perk-wrapper {
+    color: #fff;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.05em !important;
+}

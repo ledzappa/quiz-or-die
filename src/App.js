@@ -13,10 +13,10 @@ import {
   faTools,
   faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MemoryRouter, Route, Switch } from 'react-router-dom';
 import useSound from 'use-sound';
-import './App.css';
+import './App.scss';
 import AddPlayers from './components/addPlayers/AddPlayers';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
@@ -31,6 +31,9 @@ import ViewQuestions from './components/viewQuestions/ViewQuestions';
 import soundButton from './sounds/button.mp3';
 import goodPerk from './sounds/goodPerk.mp3';
 import sound from './sounds/robots.mp3';
+import countdown from './sounds/countdown2.mp3';
+import trigger from './sounds/trigger.mp3';
+import tooearly from './sounds/tooearly.mp3';
 
 library.add(
   faSync,
@@ -55,19 +58,29 @@ function App() {
     probMiniGame: 0.1,
     probPerk: 0.2,
     probPlayerPerk: 0.6,
-    imgBaseUrl: 'https://leds3aws.s3.eu-north-1.amazonaws.com/images/',
+    lightMode: false,
+    imgBaseUrl: 'https://quizmageddon.s3.eu-north-1.amazonaws.com/',
   });
-  const soundLevel = 0.75;
+  const soundConfig = { volume: 1 };
   const [questions, setQuestions] = useState({});
   const [categories, setCategories] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [themes, setThemes] = useState({});
   const [direction, setDirection] = useState(1);
   const [user, setUser] = useState({});
-  const [isRoundAndRound, setIsRoundAndRound] = useState(false);
-  const [play] = useSound(sound, soundLevel);
-  const [playBtnSound] = useSound(soundButton, soundLevel);
-  const [playGoodPerkSound] = useSound(goodPerk, soundLevel);
+  const [isMiniGame, setIsMiniGame] = useState(false);
+  const [play] = useSound(sound, soundConfig);
+  const [playBtnSound] = useSound(soundButton, soundConfig);
+  const [playGoodPerkSound] = useSound(goodPerk, soundConfig);
+  const [playTriggerSound] = useSound(trigger, soundConfig);
+  const [playCountdownSound] = useSound(countdown, { volume: 0.5 });
+  const [playTooEarlySound] = useSound(tooearly, soundConfig);
+
+  useEffect(() => {
+    settings.lightMode
+      ? document.body.classList.add('light-mode')
+      : document.body.classList.remove('light-mode');
+  }, [settings]);
 
   const _setCurrentQuestion = (category) => {
     const questionsByCategory = questions.filter(
@@ -137,6 +150,9 @@ function App() {
             <TriggerFinger
               players={players}
               playGoodPerkSound={playGoodPerkSound}
+              playTriggerSound={playTriggerSound}
+              playCountdownSound={playCountdownSound}
+              playTooEarlySound={playTooEarlySound}
               playBtnSound={playBtnSound}
               setPlayers={setPlayers}
             ></TriggerFinger>
@@ -169,8 +185,8 @@ function App() {
               direction={direction}
               players={players}
               setPlayers={setPlayers}
-              isRoundAndRound={isRoundAndRound}
-              setIsRoundAndRound={setIsRoundAndRound}
+              isMiniGame={isMiniGame}
+              setIsMiniGame={setIsMiniGame}
               playGoodPerkSound={playGoodPerkSound}
             ></Scoreboard>
           </Route>

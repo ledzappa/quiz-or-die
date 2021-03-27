@@ -1,6 +1,8 @@
 .category {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.05em !important;
   background-color: #2b2b2b;
-  padding: 1rem;
+  font-size: 2rem;
   border-radius: 0.5rem;
 }
 

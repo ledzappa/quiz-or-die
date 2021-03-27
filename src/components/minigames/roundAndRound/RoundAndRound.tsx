@@ -109,6 +109,7 @@ export default function RoundAndRound({
     }
   };
 
+  const isWinner = roundAndRoundPlayers.length === 1;
   return (
     <div>
       <div className="round-and-round animate__animated animate__rotateIn">
@@ -120,7 +121,7 @@ export default function RoundAndRound({
           player can't come up with an answer within 10 seconds the player gets
           eliminated. The last player that remains gets 3 points!
         </p>
-        <button className="btn btn-outline-light" onClick={() => handleClick()}>
+        <button className="btn btn-secondary" onClick={() => handleClick()}>
           Show theme and begin!
         </button>
       </div>
@@ -137,23 +138,27 @@ export default function RoundAndRound({
           <hr></hr>
           {started ? (
             <div>
-              <h3>{timeLeft}</h3>
-              <button
-                className="btn btn-primary btn-next w-100 p-4 mt-4"
-                onClick={() => nextTurn(false)}
-                disabled={!(timeLeft < 10)}
-              >
-                <h1 className="text-uppercase">
-                  {roundAndRoundPlayers.length > 1
-                    ? roundAndRoundPlayers.filter(
+              {!isWinner ? (
+                <button
+                  className="btn btn-primary btn-next w-100 p-4 mt-4"
+                  onClick={() => nextTurn(false)}
+                  disabled={!(timeLeft < 10)}
+                >
+                  <h1 className="text-uppercase">
+                    {
+                      roundAndRoundPlayers.filter(
                         (player: Player) => player.isPlayersTurn
                       )[0]?.name
-                    : roundAndRoundPlayers[0]?.name + ' wins!'}
-                </h1>
-              </button>
+                    }
+                  </h1>
+                  <h3>{timeLeft}</h3>
+                </button>
+              ) : (
+                <h2>{roundAndRoundPlayers[0]?.name + ' wins!'}</h2>
+              )}
             </div>
           ) : (
-            <button className="btn btn-outline-light" onClick={() => start()}>
+            <button className="btn btn-secondary" onClick={() => start()}>
               Start!
             </button>
           )}

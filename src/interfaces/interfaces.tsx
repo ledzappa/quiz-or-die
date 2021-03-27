@@ -48,6 +48,7 @@ export interface Settings {
   probPerk: number;
   probPlayerPerk: number;
   imgBaseUrl: string;
+  lightMode: boolean;
 }
 
 export interface RoundAndRoundTheme {

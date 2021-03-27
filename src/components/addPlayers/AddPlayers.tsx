@@ -50,6 +50,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
     randomizeFirstTurn();
     playBtnSound();
     history.push('/show-turn');
+    // history.push('/trigger-finger');
   };
 
   const handlePlayerInputChange = (value: string) => setPlayerInput(value);

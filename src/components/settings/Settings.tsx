@@ -59,6 +59,10 @@ export default function Settings({
     });
   };
 
+  const handleThemeClick = () => {
+    setSettings({ ...settings, lightMode: !settings.lightMode });
+  };
+
   return (
     <Modal className="text-dark" show={showModal} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -131,6 +135,19 @@ export default function Settings({
             onClick={handlePoliticallyCorrectClick}
           >
             {settings.politicallyCorrect ? 'ON' : 'OFF'}
+          </button>
+        </div>
+        <div className="form-group">
+          <h4>Color theme</h4>
+          <p>Enable light mode</p>
+          <button
+            className={
+              'btn btn-' +
+              (settings.lightMode ? 'success' : 'secondary')
+            }
+            onClick={handleThemeClick}
+          >
+            {settings.lightMode ? 'ON' : 'OFF'}
           </button>
         </div>
       </Modal.Body>
