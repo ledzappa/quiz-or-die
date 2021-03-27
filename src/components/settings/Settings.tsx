@@ -63,6 +63,10 @@ export default function Settings({
     setSettings({ ...settings, lightMode: !settings.lightMode });
   };
 
+  const handleMiniGameProbabilityChange = ({ target: { value } }: any) => {
+    setSettings({ ...settings, probMiniGame: value });
+  };
+
   return (
     <Modal className="text-dark" show={showModal} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -121,6 +125,18 @@ export default function Settings({
           ))}
         </div>
         <div className="form-group">
+          <h4>Minigame probability</h4>
+          <input
+            className="form-control"
+            type="number"
+            max="0.95"
+            min="0.1"
+            step="0.05"
+            value={settings.probMiniGame}
+            onChange={handleMiniGameProbabilityChange}
+          />
+        </div>
+        <div className="form-group">
           <h4>Politically correct mode</h4>
           <p>
             When activated, R-rated words (such as f***ing) are removed from
@@ -142,8 +158,7 @@ export default function Settings({
           <p>Enable light mode</p>
           <button
             className={
-              'btn btn-' +
-              (settings.lightMode ? 'success' : 'secondary')
+              'btn btn-' + (settings.lightMode ? 'success' : 'secondary')
             }
             onClick={handleThemeClick}
           >
