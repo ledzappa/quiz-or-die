@@ -46,13 +46,13 @@ export default function Perks({
   setPlayers,
   settings,
   players,
-  playGoodPerkSound,
+  sounds,
 }: {
   setDirection: Function;
   setPlayers: Function;
   settings: Settings;
   players: Player[];
-  playGoodPerkSound: Function;
+  sounds: any;
 }) {
   const [perk, setPerk] = useState<Perk>({
     id: '',
@@ -82,7 +82,7 @@ export default function Perks({
     }
 
     setPerk(perk);
-    playGoodPerkSound();
+    sounds.goodPerk();
   };
 
   const updatePlayerPerks = (perkName: string, count: number) => {

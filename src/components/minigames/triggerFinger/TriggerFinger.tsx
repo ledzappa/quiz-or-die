@@ -6,19 +6,11 @@ import './TriggerFinger.css';
 export default function RoundAndRound({
   players,
   setPlayers,
-  playGoodPerkSound,
-  playTriggerSound,
-  playTooEarlySound,
-  playCountdownSound,
-  playBtnSound,
+  sounds
 }: {
   players: Player[];
   setPlayers: any;
-  playGoodPerkSound: Function;
-  playTriggerSound: Function;
-  playTooEarlySound: Function;
-  playCountdownSound: Function;
-  playBtnSound: Function;
+  sounds: any
 }) {
   const [started, setStarted] = useState(false);
   const [triggerPlayers, setTriggerPlayers] = useState(
@@ -39,7 +31,7 @@ export default function RoundAndRound({
   const history = useHistory();
 
   useEffect(() => {
-    playGoodPerkSound();
+    sounds.goodPerk();
     setStarted(false);
     resetState();
   }, []);
@@ -58,7 +50,7 @@ export default function RoundAndRound({
   }, [elapsedTime, started, switched, switchTime]);
 
   const start = () => {
-    playBtnSound();
+    sounds.btn();
     setStarted(true);
     setElapsedTime(1);
     startPlayingCountdownSound();
@@ -73,7 +65,7 @@ export default function RoundAndRound({
   };
 
   const startPlayingCountdownSound = () =>
-    setSoundCountDownInterval(setInterval(() => playCountdownSound(), 750));
+    setSoundCountDownInterval(setInterval(() => sounds.countDown(), 750));
 
   const trigger = () => {
     clearInterval(soundCountDownInterval);
@@ -83,10 +75,10 @@ export default function RoundAndRound({
     const wasTooEarly = reactionTime === -1;
     const isFastest = reactionTime > 0 && reactionTime < fastestTime;
     if (isFastest) {
-      playTriggerSound();
+      sounds.trigger();
       setFastestTime(reactionTime);
     } else {
-      playTooEarlySound();
+      sounds.tooEarly();
     }
 
     setTriggerPlayers(
@@ -115,7 +107,7 @@ export default function RoundAndRound({
   };
 
   const nextTurn = () => {
-    playBtnSound();
+    sounds.btn();
 
     const remainingPlayers: Player[] = triggerPlayers.filter(
       (player) => !player.isEliminated

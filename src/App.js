@@ -15,7 +15,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 import { MemoryRouter, Route, Switch } from 'react-router-dom';
-import useSound from 'use-sound';
 import './App.scss';
 import AddPlayers from './components/addPlayers/AddPlayers';
 import Home from './components/home/Home';
@@ -28,12 +27,7 @@ import Scoreboard from './components/scoreboard/Scoreboard';
 import SelectCategory from './components/selectCategory/SelectCategory';
 import ShowTurn from './components/showTurn/ShowTurn';
 import ViewQuestions from './components/viewQuestions/ViewQuestions';
-import soundButton from './sounds/button.mp3';
-import goodPerk from './sounds/goodPerk.mp3';
-import sound from './sounds/robots.mp3';
-import countdown from './sounds/countdown2.mp3';
-import trigger from './sounds/trigger.mp3';
-import tooearly from './sounds/tooearly.mp3';
+import Sounds from './components/sounds/Sounds';
 
 library.add(
   faSync,
@@ -61,20 +55,15 @@ function App() {
     lightMode: false,
     imgBaseUrl: 'https://quizmageddon.s3.eu-north-1.amazonaws.com/',
   });
-  const soundConfig = { volume: 1 };
+
   const [questions, setQuestions] = useState({});
   const [categories, setCategories] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [themes, setThemes] = useState({});
+  const [sounds, setSounds] = useState({});
   const [direction, setDirection] = useState(1);
   const [user, setUser] = useState({});
   const [isMiniGame, setIsMiniGame] = useState(false);
-  const [play] = useSound(sound, soundConfig);
-  const [playBtnSound] = useSound(soundButton, soundConfig);
-  const [playGoodPerkSound] = useSound(goodPerk, soundConfig);
-  const [playTriggerSound] = useSound(trigger, soundConfig);
-  const [playCountdownSound] = useSound(countdown, { volume: 0.5 });
-  const [playTooEarlySound] = useSound(tooearly, soundConfig);
 
   useEffect(() => {
     settings.lightMode
@@ -97,6 +86,7 @@ function App() {
 
   return (
     <div className="App">
+      <Sounds setSounds={setSounds} />
       <MemoryRouter>
         <Switch>
           <Route exact path="/">
@@ -116,7 +106,7 @@ function App() {
           <Route path="/add-players">
             <AddPlayers
               players={players}
-              playBtnSound={playBtnSound}
+              sounds={sounds}
               setPlayers={setPlayers}
             ></AddPlayers>
           </Route>
@@ -132,28 +122,23 @@ function App() {
             <Perks
               settings={settings}
               players={players}
-              playGoodPerkSound={playGoodPerkSound}
+              sounds={sounds}
               setPlayers={setPlayers}
               setDirection={() => setDirection(direction * -1)}
             ></Perks>
           </Route>
           <Route path="/round-and-round">
             <RoundAndRound
+              sounds={sounds}
               players={players}
               themes={themes}
-              playGoodPerkSound={playGoodPerkSound}
-              playBtnSound={playBtnSound}
               setPlayers={setPlayers}
             ></RoundAndRound>
           </Route>
           <Route path="/trigger-finger">
             <TriggerFinger
               players={players}
-              playGoodPerkSound={playGoodPerkSound}
-              playTriggerSound={playTriggerSound}
-              playCountdownSound={playCountdownSound}
-              playTooEarlySound={playTooEarlySound}
-              playBtnSound={playBtnSound}
+              sounds={sounds}
               setPlayers={setPlayers}
             ></TriggerFinger>
           </Route>
@@ -163,7 +148,7 @@ function App() {
                 players.filter((player) => player.isPlayersTurn)[0]
               }
               categories={categories.filter((category) => !category.disabled)}
-              play={play}
+              sounds={sounds}
               setCurrentCategory={_setCurrentQuestion}
             ></SelectCategory>
           </Route>
@@ -175,7 +160,7 @@ function App() {
               currentQuestion={currentQuestion}
               players={players}
               settings={settings}
-              playBtnSound={playBtnSound}
+              sounds={sounds}
               setPlayers={setPlayers}
             ></Question>
           </Route>
@@ -187,7 +172,7 @@ function App() {
               setPlayers={setPlayers}
               isMiniGame={isMiniGame}
               setIsMiniGame={setIsMiniGame}
-              playGoodPerkSound={playGoodPerkSound}
+              sounds={sounds}
             ></Scoreboard>
           </Route>
           <Route path="/admin/questions">

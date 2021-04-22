@@ -7,14 +7,12 @@ export default function RoundAndRound({
   themes,
   players,
   setPlayers,
-  playGoodPerkSound,
-  playBtnSound,
+  sounds
 }: {
   themes: RoundAndRoundTheme[];
   players: Player[];
   setPlayers: any;
-  playGoodPerkSound: any;
-  playBtnSound: any;
+  sounds: any;
 }) {
   const [theme, setTheme] = useState({
     description: '',
@@ -29,7 +27,7 @@ export default function RoundAndRound({
   const history = useHistory();
 
   useEffect(() => {
-    playGoodPerkSound();
+    sounds.goodPerk();
     setTheme(themes[Math.floor(themes.length * Math.random())]);
     setRandomLetter(getRandomLetter());
   }, []);
@@ -46,7 +44,7 @@ export default function RoundAndRound({
   };
 
   const handleClick = () => {
-    playBtnSound();
+    sounds.btn();
     setShowTheme(true);
   };
 
@@ -63,13 +61,13 @@ export default function RoundAndRound({
   };
 
   const start = () => {
-    playBtnSound();
+    sounds.btn();
     setStarted(true);
     updateTime();
   };
 
   const nextTurn = (removeCurrent: boolean) => {
-    playBtnSound();
+    sounds.btn();
     clearTimeout(timer);
 
     const _players = roundAndRoundPlayers.filter((player: Player) =>

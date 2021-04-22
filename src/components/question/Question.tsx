@@ -9,13 +9,13 @@ export default function Question({
   currentPlayer,
   players,
   setPlayers,
-  playBtnSound,
+  sounds
 }: {
   currentQuestion: _Question;
   currentPlayer: Player;
   players: Player[];
   setPlayers: any;
-  playBtnSound: any;
+  sounds: any;
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(30);
@@ -57,7 +57,7 @@ export default function Question({
 
   const handleShowAnswerClick = () => {
     setShowAnswer(true);
-    playBtnSound();
+    sounds.btn();
   };
 
   const handleTimeout = () => {
@@ -68,7 +68,7 @@ export default function Question({
     const earnedPoints = currentPlayer.perks.doubleUp > 0 ? 2 : 1;
     const _players = updateCurrentPlayerPoints(players, earnedPoints);
     setPlayers(_players);
-    playBtnSound();
+    sounds.btn();
     history.push('/scoreboard');
   };
 
@@ -77,7 +77,7 @@ export default function Question({
       const _players = updateCurrentPlayerPoints(players, -1);
       setPlayers(_players);
     }
-    playBtnSound();
+    sounds.btn();
     history.push('/scoreboard');
   };
 
@@ -98,9 +98,11 @@ export default function Question({
         <div className="text-uppercase">{currentPlayer.name}</div>
         <h1 className="text-capitalize">{currentQuestion.category}</h1>
         <p>{extractAlternatives(currentQuestion.question)}</p>
-        {currentQuestion.img && <div className="text-center">
-          <img src={currentQuestion.img} />
-        </div>}
+        {currentQuestion.img && (
+          <div className="text-center">
+            <img src={currentQuestion.img} />
+          </div>
+        )}
       </div>
       {showAnswer ? (
         <div>
@@ -140,7 +142,12 @@ export default function Question({
           </button>
         </div>
       ) : (
-        'Whops! You ran out of time!'
+        <div>
+          <div className="font-weight-bold">Answer:</div>
+          <p>{currentQuestion.answer}</p>
+          <hr />
+          <h3 className="text-center">You ran out of time! :(</h3>
+        </div>
       )}
     </div>
   );

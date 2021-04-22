@@ -7,13 +7,13 @@ export default function SelectCategory({
   currentPlayer,
   setCurrentCategory,
   categories,
-  play,
+  sounds
 }: {
   currentPlayer: Player;
   setCurrentCategory: any;
   setCurrentQuestion: any;
   categories: Category[];
-  play: any;
+  sounds: any;
 }) {
   const [activeCategory, setActiveCategory] = useState({
     id: 0,
@@ -43,7 +43,7 @@ export default function SelectCategory({
         setCurrentCategory(categories[randomIndex]);
         setTimeout(() => history.push('/question'), 2000);
       }
-      play();
+      sounds.click();
     }, 200);
   };
 

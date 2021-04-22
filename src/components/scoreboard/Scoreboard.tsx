@@ -11,7 +11,7 @@ export default function Scoreboard({
   settings,
   isMiniGame,
   setIsMiniGame,
-  playGoodPerkSound,
+  sounds
 }: {
   players: Player[];
   direction: Direction;
@@ -19,7 +19,7 @@ export default function Scoreboard({
   settings: Settings;
   setPlayers: Function;
   setIsMiniGame: Function;
-  playGoodPerkSound: Function;
+  sounds: any;
 }) {
   const [winner, setWinner] = useState<Player>();
   const [showWinner, setShowWinner] = useState(false);
@@ -31,7 +31,7 @@ export default function Scoreboard({
     if (winner) {
       setTimeout(() => {
         setShowWinner(true);
-        playGoodPerkSound();
+        sounds.goodPerk();
       }, 3000);
     }
   }, []);

@@ -5,7 +5,7 @@ import api from '../../api/Api';
 import { Player } from '../../interfaces/interfaces';
 import './AddPlayers.css';
 
-export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
+export default function AddPlayers({ players, setPlayers, sounds }: any) {
   const [playerInput, setPlayerInput] = useState('');
   const [playerWords, setPlayerWords] = useState({ nouns: [], adjectives: [] });
   const history = useHistory();
@@ -48,7 +48,7 @@ export default function AddPlayers({ players, setPlayers, playBtnSound }: any) {
 
   const startGame = () => {
     randomizeFirstTurn();
-    playBtnSound();
+    sounds.btn();
     history.push('/show-turn');
     // history.push('/trigger-finger');
   };

@@ -1,29 +1,42 @@
 import React, { useEffect } from 'react';
 import useSound from 'use-sound';
-import soundButton from '../../sounds/button.mp3';
 import goodPerk from '../../sounds/goodPerk.mp3';
-import sound from '../../sounds/robots.mp3';
+import button from '../../sounds/button.mp3';
+import click from '../../sounds/robots.mp3';
+import countdown from '../../sounds/countdown2.mp3';
+import trigger from '../../sounds/trigger.mp3';
+import tooearly from '../../sounds/tooearly.mp3';
 
 export default function Sounds({ sounds, setSounds }) {
-  const [play] = useSound(sound, { volume: 0.25 });
-  const [playBtnSound] = useSound(soundButton, { volume: 0.25 });
-  const [playGoodPerkSound] = useSound(goodPerk, { volume: 0.25 });
+  const soundConfig = { volume: 1 };
+  const [playBtnSound] = useSound(button, soundConfig);
+  const [playGoodPerkSound] = useSound(goodPerk, soundConfig);
+  const [playTriggerSound] = useSound(trigger, soundConfig);
+  const [playCountdownSound] = useSound(countdown, soundConfig);
+  const [playTooEarlySound] = useSound(tooearly, soundConfig);
+  const [playClickSound] = useSound(click, soundConfig);
 
   useEffect(() => {
-    console.log(play);
     if (!sounds) {
-      console.log('setSounds');
-      setSounds({ play: () => play, playBtnSound, playGoodPerkSound });
+      setSounds(() => ({
+        btn: () => playBtnSound(),
+        goodPerk: () => playGoodPerkSound(),
+        trigger: () => playTriggerSound(),
+        countdown: () => playCountdownSound(),
+        tooEarly: () => playTooEarlySound(),
+        click: () => playClickSound(),
+      }));
     }
-  }, []);
+  }, [
+    playBtnSound,
+    playGoodPerkSound,
+    playTriggerSound,
+    playCountdownSound,
+    playTooEarlySound,
+    playClickSound,
+    setSounds,
+    sounds,
+  ]);
 
-  const handlePlayClick = () => {
-    sounds.play();
-  }
-
-  return (
-    <div>
-      <button onClick={handlePlayClick}>Sounds</button>
-    </div>
-  );
+  return <span></span>;
 }
