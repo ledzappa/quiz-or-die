@@ -6,11 +6,11 @@ import './TriggerFinger.css';
 export default function RoundAndRound({
   players,
   setPlayers,
-  sounds
+  sounds,
 }: {
   players: Player[];
   setPlayers: any;
-  sounds: any
+  sounds: any;
 }) {
   const [started, setStarted] = useState(false);
   const [triggerPlayers, setTriggerPlayers] = useState(
@@ -31,21 +31,19 @@ export default function RoundAndRound({
   const history = useHistory();
 
   useEffect(() => {
-    sounds.goodPerk();
+    sounds.miniGame();
     setStarted(false);
     resetState();
   }, []);
 
   useEffect(() => {
-    if (started) {
-      updateElapsedTime();
-      if (elapsedTime > switchTime && !switched) {
-        setSwitched(true);
-        clearInterval(soundCountDownInterval);
-        setSwitchDate(Date.now());
-        clearTimeout(timer);
-      }
-    } else {
+    if (!started) return;
+    updateElapsedTime();
+    if (elapsedTime > switchTime && !switched) {
+      setSwitched(true);
+      clearInterval(soundCountDownInterval);
+      setSwitchDate(Date.now());
+      clearTimeout(timer);
     }
   }, [elapsedTime, started, switched, switchTime]);
 
@@ -65,7 +63,7 @@ export default function RoundAndRound({
   };
 
   const startPlayingCountdownSound = () =>
-    setSoundCountDownInterval(setInterval(() => sounds.countDown(), 750));
+    setSoundCountDownInterval(setInterval(() => sounds.countdown(), 750));
 
   const trigger = () => {
     clearInterval(soundCountDownInterval);
@@ -154,21 +152,23 @@ export default function RoundAndRound({
 
   return (
     <div>
-      <div className="round-and-round animate__animated animate__rotateIn">
+      <div className="minigame animate__animated animate__rotateIn">
         <h1>Trigger finger!</h1>
         <p>
           Press the button as soon as it turns to green. The fastest player gets
           one point!
         </p>
-        <button className="btn btn-secondary" onClick={() => start()}>
-          Let's go!
-        </button>
+        <div className="text-center">
+          <button className="btn btn-outline-light" onClick={() => start()}>
+            Let's go!
+          </button>
+        </div>
       </div>
       {started && (
         <div className="theme-wrapper">
           <h3>Trigger finger!</h3>
           {!isTriggered && <h4>Press the button when it turns red</h4>}
-          <hr></hr>
+          <hr />
           {isTriggered ? (
             <div>
               <h3>{currentPlayer.name} triggered in: </h3>
@@ -182,7 +182,10 @@ export default function RoundAndRound({
                     : 'TOO SLOW :('
                   : 'TOO EARLY! :('}
               </h1>
-              <button className="btn btn-primary" onClick={() => nextTurn()}>
+              <button
+                className="btn btn-outline-light"
+                onClick={() => nextTurn()}
+              >
                 Next
               </button>
             </div>

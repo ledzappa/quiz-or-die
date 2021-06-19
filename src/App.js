@@ -28,6 +28,7 @@ import SelectCategory from './components/selectCategory/SelectCategory';
 import ShowTurn from './components/showTurn/ShowTurn';
 import ViewQuestions from './components/viewQuestions/ViewQuestions';
 import Sounds from './components/sounds/Sounds';
+import ClosestWins from './components/minigames/closestWins/ClosestWins';
 
 library.add(
   faSync,
@@ -60,6 +61,7 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({});
   const [themes, setThemes] = useState({});
+  const [closestWinsQuestions, setClosestWinsQuestions] = useState([]);
   const [sounds, setSounds] = useState({});
   const [direction, setDirection] = useState(1);
   const [user, setUser] = useState({});
@@ -101,13 +103,15 @@ function App() {
               setCategories={setCategories}
               setQuestions={setQuestions}
               setThemes={setThemes}
+              setClosestWinsQuestions={setClosestWinsQuestions}
+              sounds={sounds}
             ></Home>
           </Route>
           <Route path="/add-players">
             <AddPlayers
               players={players}
-              sounds={sounds}
               setPlayers={setPlayers}
+              sounds={sounds}
             ></AddPlayers>
           </Route>
           <Route path="/show-turn">
@@ -122,25 +126,34 @@ function App() {
             <Perks
               settings={settings}
               players={players}
-              sounds={sounds}
               setPlayers={setPlayers}
               setDirection={() => setDirection(direction * -1)}
+              sounds={sounds}
             ></Perks>
           </Route>
           <Route path="/round-and-round">
             <RoundAndRound
-              sounds={sounds}
               players={players}
               themes={themes}
               setPlayers={setPlayers}
+              sounds={sounds}
             ></RoundAndRound>
           </Route>
           <Route path="/trigger-finger">
             <TriggerFinger
               players={players}
-              sounds={sounds}
               setPlayers={setPlayers}
+              sounds={sounds}
             ></TriggerFinger>
+          </Route>
+          <Route path="/closest-wins">
+            <ClosestWins
+              questions={closestWinsQuestions}
+              setClosestWinsQuestions={setClosestWinsQuestions}
+              players={players}
+              setPlayers={setPlayers}
+              sounds={sounds}
+            ></ClosestWins>
           </Route>
           <Route path="/select-category">
             <SelectCategory
@@ -148,8 +161,8 @@ function App() {
                 players.filter((player) => player.isPlayersTurn)[0]
               }
               categories={categories.filter((category) => !category.disabled)}
-              sounds={sounds}
               setCurrentCategory={_setCurrentQuestion}
+              sounds={sounds}
             ></SelectCategory>
           </Route>
           <Route path="/question">
@@ -160,8 +173,8 @@ function App() {
               currentQuestion={currentQuestion}
               players={players}
               settings={settings}
-              sounds={sounds}
               setPlayers={setPlayers}
+              sounds={sounds}
             ></Question>
           </Route>
           <Route path="/scoreboard">

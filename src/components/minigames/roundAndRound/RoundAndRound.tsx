@@ -7,7 +7,7 @@ export default function RoundAndRound({
   themes,
   players,
   setPlayers,
-  sounds
+  sounds,
 }: {
   themes: RoundAndRoundTheme[];
   players: Player[];
@@ -27,7 +27,7 @@ export default function RoundAndRound({
   const history = useHistory();
 
   useEffect(() => {
-    sounds.goodPerk();
+    sounds.miniGame();
     setTheme(themes[Math.floor(themes.length * Math.random())]);
     setRandomLetter(getRandomLetter());
   }, []);
@@ -104,13 +104,15 @@ export default function RoundAndRound({
 
     if (_players.length > 1) {
       setTimeLeft(10);
+    } else {
+      sounds.applause();
     }
   };
 
   const isWinner = roundAndRoundPlayers.length === 1;
   return (
     <div>
-      <div className="round-and-round animate__animated animate__rotateIn">
+      <div className="minigame animate__animated animate__rotateIn">
         <h1>It's Round and round time!</h1>
         <p>
           Everyone gets 10 seconds to come up with an answer for a random theme,
@@ -119,7 +121,7 @@ export default function RoundAndRound({
           player can't come up with an answer within 10 seconds the player gets
           eliminated. The last player that remains gets 3 points!
         </p>
-        <button className="btn btn-secondary" onClick={() => handleClick()}>
+        <button className="btn btn-outline-light" onClick={() => handleClick()}>
           Show theme and begin!
         </button>
       </div>
@@ -152,12 +154,14 @@ export default function RoundAndRound({
                   <h3>{timeLeft}</h3>
                 </button>
               ) : (
-                <h2>{roundAndRoundPlayers[0]?.name + ' wins!'}</h2>
+                <h2 className="animate__animated animate__fadeIn">
+                  {roundAndRoundPlayers[0]?.name + ' wins!'}
+                </h2>
               )}
             </div>
           ) : (
-            <button className="btn btn-secondary" onClick={() => start()}>
-              Start!
+            <button className="btn btn-primary" onClick={() => start()}>
+              Let's go!
             </button>
           )}
         </div>

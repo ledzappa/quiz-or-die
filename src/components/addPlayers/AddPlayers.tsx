@@ -50,7 +50,7 @@ export default function AddPlayers({ players, setPlayers, sounds }: any) {
     randomizeFirstTurn();
     sounds.btn();
     history.push('/show-turn');
-    // history.push('/trigger-finger');
+    // history.push('/closest-wins');
   };
 
   const handlePlayerInputChange = (value: string) => setPlayerInput(value);

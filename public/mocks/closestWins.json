@@ -1,0 +1,58 @@
+{
+  "questions": [
+    {
+      "question": "How long is the Golden Gate Bridge (m)?",
+      "answer": 2737,
+      "answerText": "2737m (8980 ft)"
+    },
+    {
+      "question": "U.S. Route 20 is the longest road in the United States. How long is it (km)?",
+      "answer": 5415,
+      "answerText": "5415 km (3365 miles)"
+    },
+    {
+      "question": "What is the highest measured top speed with a car (2020)? Answer in km/h.",
+      "answer": 533,
+      "answerText": "533 km/h or 331 mph (SSC Tuatara by Koenigsegg)"
+    },
+    {
+      "question": "How many countries does the Sahara desert pass through?",
+      "answer": 11,
+      "answerText": "11"
+    },
+    {
+      "question": "In what year was the word \"pizza\" documented for the first time (A.C)?",
+      "answer": 997,
+      "answerText": "Year 997"
+    },
+    {
+      "question": "What is the length of the longest ship that has ever been built (m)?",
+      "answer": 458,
+      "answerText": "458 m (1504 ft)"
+    },
+    {
+      "question": "How many unique people have climbed Mount Everest (Jan 2021)?",
+      "answer": 5788,
+      "answerText": "5788"
+    },
+    {
+      "question": "Gordie Howe has the most played number of NHL games (2021). How many games did he play?",
+      "answer": 1767,
+      "answerText": "Answer: 1767 (he is also the oldest player to play a NHL-game, playing at the age of 52)"
+    },
+    {
+      "question": "What year was Leonardo da Vinci born?",
+      "answer": 1452
+    },
+    {
+      "question": "How many earths would fit into the sun?",
+      "answer": 1300000,
+      "answerText": "Approximately 1.3 million Earths could fit inside the sun"
+    },
+    {
+      "question": "How tall was the tallest human ever (cm)?",
+      "answer": 272,
+      "answerText": "Robert Wadlow, the \"Alton Giant,\" became world-famous for being, at 272cm, the the tallest man in recorded history."
+    }
+  ]
+}

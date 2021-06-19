@@ -81,8 +81,19 @@ export default function Perks({
       return;
     }
 
+    switch (perk.id) {
+      case 'change-direction':
+        sounds.changeDirection();
+        break;
+      case 'landmine':
+        sounds.landmine();
+        break;
+      default:
+        sounds.goodPerk();
+        break;
+    }
+
     setPerk(perk);
-    sounds.goodPerk();
   };
 
   const updatePlayerPerks = (perkName: string, count: number) => {
@@ -121,6 +132,7 @@ export default function Perks({
   };
 
   const handleContinueClick = () => {
+    sounds.btn();
     activatePerk(perk.id);
     history.push('/select-category');
   };
@@ -137,7 +149,7 @@ export default function Perks({
             ? getRobinHoodText(players)
             : perk.description}
         </p>
-        <button className="btn btn-secondary" onClick={handleContinueClick}>
+        <button className="btn btn-outline-light" onClick={handleContinueClick}>
           Continue
         </button>
       </div>

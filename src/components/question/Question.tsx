@@ -9,7 +9,7 @@ export default function Question({
   currentPlayer,
   players,
   setPlayers,
-  sounds
+  sounds,
 }: {
   currentQuestion: _Question;
   currentPlayer: Player;
@@ -45,7 +45,6 @@ export default function Question({
           if (timeRemaining > 0) {
             setTimeRemaining(timeRemaining - 1);
           } else {
-            handleTimeout();
             clearTimeout(timer);
           }
         }, 1000)
@@ -58,10 +57,6 @@ export default function Question({
   const handleShowAnswerClick = () => {
     setShowAnswer(true);
     sounds.btn();
-  };
-
-  const handleTimeout = () => {
-    setTimeout(() => history.push('/scoreboard'), 2000);
   };
 
   const rightAnswer = () => {
@@ -90,6 +85,11 @@ export default function Question({
           }
         : player;
     });
+  };
+
+  const handleNextClick = () => {
+    sounds.btn();
+    history.push('/scoreboard');
   };
 
   return (
@@ -146,7 +146,12 @@ export default function Question({
           <div className="font-weight-bold">Answer:</div>
           <p>{currentQuestion.answer}</p>
           <hr />
-          <h3 className="text-center">You ran out of time! :(</h3>
+          <div className="text-center">
+            <h3 className="mb-3">You ran out of time! :(</h3>
+            <button className="btn btn-outline-light" onClick={handleNextClick}>
+              Next
+            </button>
+          </div>
         </div>
       )}
     </div>

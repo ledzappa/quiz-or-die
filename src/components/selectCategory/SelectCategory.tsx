@@ -7,7 +7,7 @@ export default function SelectCategory({
   currentPlayer,
   setCurrentCategory,
   categories,
-  sounds
+  sounds,
 }: {
   currentPlayer: Player;
   setCurrentCategory: any;
@@ -49,6 +49,7 @@ export default function SelectCategory({
 
   const handleClick = (category: Category) => {
     if (currentPlayer.perks.freedomOfChoice > 0) {
+      sounds.btn();
       setCurrentCategory(category);
       history.push('/question');
     }
@@ -68,11 +69,11 @@ export default function SelectCategory({
       </div>
       <div className="row">
         {categories.map((item: Category, idx: number) => (
-          <div className="col-12 col-sm-6 p-1" key={idx}>
+          <div className="col-6 p-1" key={idx}>
             <div
               onClick={() => handleClick(item)}
               className={
-                'category text-center p-sm-3 ' +
+                'category text-center p-1 p-sm-3 ' +
                 item.identifier +
                 (item.name === activeCategory?.name ||
                 currentPlayer.perks.freedomOfChoice > 0

@@ -11,7 +11,7 @@ export default function Scoreboard({
   settings,
   isMiniGame,
   setIsMiniGame,
-  sounds
+  sounds,
 }: {
   players: Player[];
   direction: Direction;
@@ -31,13 +31,14 @@ export default function Scoreboard({
     if (winner) {
       setTimeout(() => {
         setShowWinner(true);
-        sounds.goodPerk();
+        sounds.playerWins();
       }, 3000);
     }
   }, []);
   const history = useHistory();
 
   const handleNextRoundClick = () => {
+    sounds.btn();
     if (
       settings.enabledMiniGames.length === 0 ||
       Math.random() > settings.probMiniGame ||
@@ -51,8 +52,13 @@ export default function Scoreboard({
       history.push('/show-turn');
     } else {
       setIsMiniGame(true);
+      const random = Math.random();
       history.push(
-        Math.random() < 0.6 ? '/round-and-round' : '/trigger-finger'
+        random < 0.4
+          ? '/round-and-round'
+          : random < 0.8
+          ? '/closest-wins'
+          : '/trigger-finger'
       );
     }
   };
@@ -104,7 +110,7 @@ export default function Scoreboard({
             </div>
             <h1 className="mb-5">{winner?.name} wins!</h1>
             <button
-              className="btn btn-secondary"
+              className="btn btn-outline-light"
               onClick={handlePlayAgainClick}
             >
               Play again

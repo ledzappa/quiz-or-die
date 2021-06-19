@@ -21,6 +21,8 @@ const api = {
     }),
   getRoundAndRoundThemes: () =>
     axios.get(true ? 'mocks/roundAndRound.json' : '/api/round-and-round'),
+  getClosestWinsQuestions: () =>
+    axios.get(true ? 'mocks/closestWins.json' : '/api/closest-wins'),
   addQuestion: (formData, img) => {
     console.log(img);
     const fd = new FormData();

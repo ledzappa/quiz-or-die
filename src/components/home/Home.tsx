@@ -12,8 +12,10 @@ export default function Home({
   setCategories,
   setQuestions,
   setThemes,
+  setClosestWinsQuestions,
   setSettings,
   user,
+  sounds,
 }: any) {
   const history = useHistory();
   const [showSeetingsModal, setShowSettingsModal] = useState(false);
@@ -40,6 +42,10 @@ export default function Home({
     api.getRoundAndRoundThemes().then((res) => {
       setThemes(res.data.themes);
     });
+
+    api.getClosestWinsQuestions().then((res) => {
+      setClosestWinsQuestions(res.data.questions);
+    });
   }, []);
 
   const cacheImages = (images: string[]) => {
@@ -47,6 +53,11 @@ export default function Home({
       const img = new Image();
       img.src = image;
     });
+  };
+
+  const handlePlayQuizmageddonClick = () => {
+    sounds.btn();
+    history.push('/add-players');
   };
 
   const handleSettingsClick = () => {
@@ -59,7 +70,7 @@ export default function Home({
         <div className="col-12 text-right">
           {user.roleId === 0 && (
             <button
-              className="btn btn-secondary"
+              className="btn btn-secondary mb-3"
               onClick={() => history.push('/admin/questions')}
             >
               <FontAwesomeIcon className="mr-2" icon="tools" />
@@ -79,7 +90,7 @@ export default function Home({
             <div className="button-container d-inline-block">
               <button
                 className="btn btn-primary play-quizmageddon mb-3 w-100 btn-lg"
-                onClick={() => history.push('/add-players')}
+                onClick={handlePlayQuizmageddonClick}
               >
                 <FontAwesomeIcon className="mr-2" icon="play" />
                 Play Quizmageddon
