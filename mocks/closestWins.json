@@ -1,0 +1,113 @@
+{
+  "questions": [
+    {
+      "question": "How long is the Golden Gate Bridge (m)?",
+      "answer": 2737,
+      "answerText": "2737m (8980 ft)"
+    },
+    {
+      "question": "U.S. Route 20 is the longest road in the United States. How long is it (km)?",
+      "answer": 5415,
+      "answerText": "5415 km (3365 miles)"
+    },
+    {
+      "question": "What is the highest measured top speed with a car (2020)? Answer in km/h.",
+      "answer": 533,
+      "answerText": "533 km/h or 331 mph (SSC Tuatara by Koenigsegg)"
+    },
+    {
+      "question": "How many countries does the Sahara desert pass through?",
+      "answer": 11,
+      "answerText": "11"
+    },
+    {
+      "question": "In what year was the word \"pizza\" documented for the first time (A.C)?",
+      "answer": 997,
+      "answerText": "Year 997"
+    },
+    {
+      "question": "What is the length of the longest ship that has ever been built (m)?",
+      "answer": 458,
+      "answerText": "458 m (1504 ft)"
+    },
+    {
+      "question": "How many unique people have climbed Mount Everest (Jan 2021)?",
+      "answer": 5788,
+      "answerText": "5788"
+    },
+    {
+      "question": "Gordie Howe has the most played number of NHL games (2021). How many games did he play?",
+      "answer": 1767,
+      "answerText": "Answer: 1767 (he is also the oldest player to play a NHL-game, playing at the age of 52)"
+    },
+    {
+      "question": "What year was Leonardo da Vinci born?",
+      "answer": 1452
+    },
+    {
+      "question": "How many earths would fit into the sun?",
+      "answer": 1300000,
+      "answerText": "Approximately 1.3 million Earths could fit inside the sun"
+    },
+    {
+      "question": "How tall was the tallest human ever (cm)?",
+      "answer": 272,
+      "answerText": "Robert Wadlow, the \"Alton Giant,\" became world-famous for being, at 272cm, the the tallest man in recorded history."
+    },
+    {
+      "question": "How high is mount everest (m)?",
+      "answer": 8849,
+      "answerText": ""
+    },
+    {
+      "question": "How deep is the deepest point of the ocean (m)?",
+      "answer": 10948,
+      "answerText": "The maximum known depth is 10,984 metres (36,037 ft) (± 25 metres [82 ft]). It's known as the Challenger Deep of the Mariana Trench"
+    },
+    {
+      "question": "How many times bigger is Russia than the smallest country in the world, Vatican City?",
+      "answer": 38859641,
+      "answerText": "Russia is 38 859 641 times bigger!"
+    },
+    {
+      "question": "What’s the world record of most straws stuffed in the mouth?",
+      "answer": 650,
+      "answerText": "It was achieved by Nataraj Karate, in Salem, Tamil Nadu, India, on 25 August 2018."
+    },
+    {
+      "question": "What year was the word \"dinosaur\" coined by Richard Owen",
+      "answer": 1841,
+      "answerText": "According to wikipedia"
+    },
+    {
+      "question": "What year was anesthesia used for the first time",
+      "answer": 1842,
+      "answerText": "According to wikipedia"
+    },
+    {
+      "question": "What year was the first piano built?",
+      "answer": 1709,
+      "answerText": "It was built by Bartolomeo Cristofori"
+    },
+    {
+      "question": "What year was Alaska discovered?",
+      "answer": 1741,
+      "answerText": "It was discovered by Vitus Bering"
+    },
+    {
+      "question": "What year did Coca-Cola start using plastic bottles?",
+      "answer": 1978,
+      "answerText": "Coca-Cola and Pepsi, introduced the first 2l PET plastic bottles to the World back in 1978."
+    },
+    {
+      "question": "How tall is Burj Khalifa, the tallest building in the world (m)?",
+      "answer": 828,
+      "answerText": "Located in Dubai, United Arab Emirates. It has 163 floors."
+    },
+    {
+      "question": "How many McDonald's resaturants existed worldwide in 2020?",
+      "answer": 39198,
+      "answerText": "39 198 restaurants according to statista.com"
+    }
+  ]
+}
