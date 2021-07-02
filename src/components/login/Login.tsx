@@ -60,6 +60,7 @@ export default function Login({ setUser }: any) {
             Login
           </button>
           <Register></Register>
+          <div className="version text-center">0.9.0-beta1</div>
         </div>
       </div>
     </div>
