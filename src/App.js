@@ -135,6 +135,7 @@ function App() {
             <RoundAndRound
               players={players}
               themes={themes}
+              setThemes={setThemes}
               setPlayers={setPlayers}
               sounds={sounds}
             ></RoundAndRound>

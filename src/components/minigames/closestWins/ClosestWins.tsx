@@ -92,8 +92,13 @@ export default function ClosestWins({
     );
   };
 
-  const handleNumberChange = (e: any) => {
-    setClosesWinGuess(e.target.value);
+  const handleNumberChange = (btn: string) => {
+    sounds.btn();
+    const val =
+      btn !== 'delete'
+        ? closestWinGuess + btn
+        : closestWinGuess.substr(0, closestWinGuess.length - 1);
+    setClosesWinGuess(val);
   };
 
   const handleSubmit = () => {
@@ -130,21 +135,37 @@ export default function ClosestWins({
 
   const currentPlayer = cwPlayers.filter((player) => player.isPlayersTurn)[0];
   const winner = cwPlayers.filter((player) => player.isMiniGameWinner)[0];
+  const btns = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'delete'];
 
   return (
     <div>
       {started ? (
         !winner ? (
           <div>
-            <h3 className="question mb-5">{question.question}</h3>
-            <input
-              className="form-control number-input"
-              type="number"
-              placeholder={currentPlayer.name}
-              min="0"
-              value={closestWinGuess}
-              onChange={handleNumberChange}
-            />
+            <h3 className="question mb-3">{question.question}</h3>
+            <div className="cw-display text-center">
+              {closestWinGuess.length === 0 ? (
+                <h3 className="name">{currentPlayer.name}</h3>
+              ) : (
+                <h3 className="number">
+                  {closestWinGuess.split('').map((number) => '*')}
+                </h3>
+              )}
+            </div>
+
+            <div className="row">
+              {btns.map((btn, idx) => (
+                <div className="col-4" key={idx}>
+                  <div
+                    className="cw-btn"
+                    onClick={() => handleNumberChange(btn)}
+                  >
+                    {btn}
+                  </div>
+                </div>
+              ))}
+            </div>
+
             {showError && (
               <h4 className="animate__animated animate__flash">
                 Sorry! That guess is already taken! :(
@@ -152,7 +173,7 @@ export default function ClosestWins({
             )}
             <hr />
             <button
-              className="btn btn-outline-light submit-btn"
+              className="btn btn-success submit-btn"
               onClick={handleSubmit}
             >
               Submit
@@ -185,8 +206,8 @@ export default function ClosestWins({
             Guess a number! The one who is closest wins 2 points.
           </h5>
           <div className="example">
-            <b className="d-block">Example question:</b> What year was Michael Jackson
-            born?
+            <b className="d-block">Example question:</b> What year was Michael
+            Jackson born?
           </div>
           <button className="btn btn-outline-light w-100" onClick={start}>
             Alright, let's go!

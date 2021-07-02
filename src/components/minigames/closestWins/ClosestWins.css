@@ -35,3 +35,35 @@ div.example {
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
+
+div.cw-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: #694e9e;
+  border-radius: 0.5rem;
+}
+
+div.cw-display {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.cw-display .number {
+  color: #0f0;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+div.cw-display .name {
+  color: #555;
+  font-size: 3rem;
+}
+

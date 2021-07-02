@@ -54,9 +54,9 @@ export default function Scoreboard({
       setIsMiniGame(true);
       const random = Math.random();
       history.push(
-        random < 0.4
+        random < 0.45
           ? '/round-and-round'
-          : random < 0.8
+          : random < 0.92
           ? '/closest-wins'
           : '/trigger-finger'
       );

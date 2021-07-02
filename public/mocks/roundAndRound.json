@@ -103,6 +103,46 @@
     {
       "description": "Song titles by Michael Jackson",
       "randomizeLetter": false
+    },
+    {
+      "description": "Bond movies",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Harry Potter characters",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Lord of the Rings charachters",
+      "randomizeLetter": false
+    },
+    {
+      "description": "States of America",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Boy Bands",
+      "randomizeLetter": false
+    },
+    {
+      "description": "War themed movies",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Movies with Aliens in them",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Famous HBTQ persons",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Beatles Songs",
+      "randomizeLetter": false
+    },
+    {
+      "description": "Horror Movies",
+      "randomizeLetter": false
     }
   ]
 }

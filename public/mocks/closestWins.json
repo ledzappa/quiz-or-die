@@ -53,6 +53,61 @@
       "question": "How tall was the tallest human ever (cm)?",
       "answer": 272,
       "answerText": "Robert Wadlow, the \"Alton Giant,\" became world-famous for being, at 272cm, the the tallest man in recorded history."
+    },
+    {
+      "question": "How high is mount everest (m)?",
+      "answer": 8849,
+      "answerText": ""
+    },
+    {
+      "question": "How deep is the deepest point of the ocean (m)?",
+      "answer": 10948,
+      "answerText": "The maximum known depth is 10,984 metres (36,037 ft) (± 25 metres [82 ft]). It's known as the Challenger Deep of the Mariana Trench"
+    },
+    {
+      "question": "How many times bigger is Russia than the smallest country in the world, Vatican City?",
+      "answer": 38859641,
+      "answerText": "Russia is 38 859 641 times bigger!"
+    },
+    {
+      "question": "What’s the world record of most straws stuffed in the mouth?",
+      "answer": 650,
+      "answerText": "It was achieved by Nataraj Karate, in Salem, Tamil Nadu, India, on 25 August 2018."
+    },
+    {
+      "question": "What year was the word \"dinosaur\" coined by Richard Owen",
+      "answer": 1841,
+      "answerText": "According to wikipedia"
+    },
+    {
+      "question": "What year was anesthesia used for the first time",
+      "answer": 1842,
+      "answerText": "According to wikipedia"
+    },
+    {
+      "question": "What year was the first piano built?",
+      "answer": 1709,
+      "answerText": "It was built by Bartolomeo Cristofori"
+    },
+    {
+      "question": "What year was Alaska discovered?",
+      "answer": 1741,
+      "answerText": "It was discovered by Vitus Bering"
+    },
+    {
+      "question": "What year did Coca-Cola start using plastic bottles?",
+      "answer": 1978,
+      "answerText": "Coca-Cola and Pepsi, introduced the first 2l PET plastic bottles to the World back in 1978."
+    },
+    {
+      "question": "How tall is Burj Khalifa, the tallest building in the world (m)?",
+      "answer": 828,
+      "answerText": "Located in Dubai, United Arab Emirates. It has 163 floors."
+    },
+    {
+      "question": "How many McDonald's resaturants existed worldwide in 2020?",
+      "answer": 39198,
+      "answerText": "39 198 restaurants according to statista.com"
     }
   ]
 }

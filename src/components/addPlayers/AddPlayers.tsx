@@ -51,6 +51,7 @@ export default function AddPlayers({ players, setPlayers, sounds }: any) {
     sounds.btn();
     history.push('/show-turn');
     // history.push('/closest-wins');
+    // history.push('/trigger-finger');
   };
 
   const handlePlayerInputChange = (value: string) => setPlayerInput(value);

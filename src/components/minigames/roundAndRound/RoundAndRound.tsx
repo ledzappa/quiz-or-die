@@ -5,11 +5,13 @@ import './RoundAndRound.css';
 
 export default function RoundAndRound({
   themes,
+  setThemes,
   players,
   setPlayers,
   sounds,
 }: {
   themes: RoundAndRoundTheme[];
+  setThemes: Function;
   players: Player[];
   setPlayers: any;
   sounds: any;
@@ -28,7 +30,9 @@ export default function RoundAndRound({
 
   useEffect(() => {
     sounds.miniGame();
-    setTheme(themes[Math.floor(themes.length * Math.random())]);
+    const randomIdx = Math.floor(themes.length * Math.random());
+    setTheme(themes[randomIdx]);
+    setThemes(themes.filter((item, idx) => idx !== randomIdx));
     setRandomLetter(getRandomLetter());
   }, []);
 

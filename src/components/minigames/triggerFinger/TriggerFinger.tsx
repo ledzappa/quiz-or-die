@@ -194,7 +194,7 @@ export default function RoundAndRound({
               className={`btn btn-trigger w-100 btn-${
                 switched ? 'danger' : 'primary'
               }`}
-              onClick={trigger}
+              onMouseDown={trigger}
             >
               {switched
                 ? 'TRIGGER!!!'
